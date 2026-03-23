@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import { sheets } from "@/data/sheets";
 import { SHEET_ICONS } from "@/lib/sheet-utils";
 
@@ -9,9 +10,24 @@ interface SidebarProps {
   sidebarOpen: boolean;
   onNavigate: (idx: number) => void;
   onClose: () => void;
+  onExport: (format: "csv" | "pdf") => void;
 }
 
-export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onClose }: SidebarProps) {
+export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onClose, onExport }: SidebarProps) {
+  const [exportOpen, setExportOpen] = useState(false);
+  const exportRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!exportOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (exportRef.current && !exportRef.current.contains(e.target as Node)) {
+        setExportOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [exportOpen]);
+
   return (
     <aside
       className={`fixed left-0 top-0 h-screen w-64 flex flex-col py-8 px-4 z-50 transition-transform duration-200 lg:translate-x-0 ${
@@ -105,14 +121,40 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
       </nav>
 
       {/* Export button */}
-      <div className="pt-6 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+      <div className="pt-6 border-t relative" style={{ borderColor: "var(--border-subtle)" }} ref={exportRef}>
+        {exportOpen && (
+          <div
+            className="absolute bottom-full mb-2 left-0 right-0 rounded-lg overflow-hidden shadow-lg"
+            style={{ backgroundColor: "var(--surface-container)", border: "1px solid var(--border-subtle)" }}
+          >
+            <button
+              onClick={() => { onExport("csv"); setExportOpen(false); }}
+              className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
+              style={{ color: "var(--on-surface-variant)", borderBottom: "1px solid var(--border-subtle)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--on-surface-variant)"; }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>table</span>
+              Export as CSV
+            </button>
+            <button
+              onClick={() => { onExport("pdf"); setExportOpen(false); }}
+              className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
+              style={{ color: "var(--on-surface-variant)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--on-surface-variant)"; }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>picture_as_pdf</span>
+              Export as PDF
+            </button>
+          </div>
+        )}
         <button
+          onClick={() => setExportOpen((o) => !o)}
           className="w-full py-2.5 text-white text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-opacity hover:opacity-90"
           style={{ background: "linear-gradient(135deg, #3525cd, #4f46e5)" }}
         >
-          <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>
-            file_download
-          </span>
+          <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>file_download</span>
           Export Dataset
         </button>
       </div>

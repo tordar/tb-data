@@ -119,9 +119,7 @@ export function DashboardView() {
               <span className="text-3xl font-extrabold" style={{ color: "var(--primary-accent)" }}>
                 {bestRange.val} km
               </span>
-              <p className="text-sm font-semibold text-white mt-1 truncate" title={bestRange.name}>
-                {bestRange.name.length > 22 ? bestRange.name.slice(0, 20) + "…" : bestRange.name}
-              </p>
+              <p className="text-sm font-semibold text-white mt-1">{bestRange.name}</p>
             </div>
             <p className="mt-1 text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
               summer, 90 km/h highway

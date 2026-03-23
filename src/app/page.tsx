@@ -30,6 +30,73 @@ export default function Home() {
   const config = SHEET_CONFIG[sheet.name];
   const icon = isDashboard ? "dashboard" : (SHEET_ICONS[sheet.name] ?? "table_chart");
 
+  async function handleExport(format: "csv" | "pdf") {
+    const sheetName = isDashboard ? "EV-Curator-All" : sheet.name;
+    const headers = isDashboard ? null : sheet.headers;
+    const rows = isDashboard ? null : filtered;
+
+    if (format === "csv") {
+      const allRows = isDashboard
+        ? sheets.flatMap((s) => [
+            [`=== ${s.name} ===`],
+            s.headers,
+            ...s.rows,
+            [],
+          ])
+        : [headers!, ...rows!];
+      const csv = allRows
+        .map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(","))
+        .join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${sheetName}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      return;
+    }
+
+    // PDF
+    const { default: jsPDF } = await import("jspdf");
+    const { default: autoTable } = await import("jspdf-autotable");
+    const doc = new jsPDF({ orientation: "landscape" });
+
+    if (isDashboard) {
+      let y = 14;
+      doc.setFontSize(16);
+      doc.text("EV Curator — Full Dataset", 14, y);
+      y += 8;
+      for (const s of sheets) {
+        doc.setFontSize(11);
+        doc.text(s.name, 14, y);
+        y += 2;
+        autoTable(doc, {
+          head: [s.headers],
+          body: s.rows,
+          startY: y,
+          styles: { fontSize: 7, cellPadding: 1.5 },
+          headStyles: { fillColor: [53, 37, 205] },
+          margin: { left: 14, right: 14 },
+        });
+        y = (doc as any).lastAutoTable.finalY + 10;
+        if (y > 185) { doc.addPage(); y = 14; }
+      }
+    } else {
+      doc.setFontSize(16);
+      doc.text(`EV Curator — ${sheetName}`, 14, 14);
+      autoTable(doc, {
+        head: [headers!],
+        body: rows!,
+        startY: 22,
+        styles: { fontSize: 8, cellPadding: 2 },
+        headStyles: { fillColor: [53, 37, 205] },
+        margin: { left: 14, right: 14 },
+      });
+    }
+    doc.save(`${sheetName}.pdf`);
+  }
+
   function navigate(idx: number) {
     setActiveSheet(idx);
     setSearch("");
@@ -111,6 +178,7 @@ export default function Home() {
         sidebarOpen={sidebarOpen}
         onNavigate={navigate}
         onClose={() => setSidebarOpen(false)}
+        onExport={handleExport}
       />
 
       <main className="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 overflow-hidden">
