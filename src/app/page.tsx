@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { sheets, type Sheet } from "@/data/sheets";
+import Charts from "@/components/Charts";
 
 type SortDir = "asc" | "desc";
 
@@ -57,6 +58,7 @@ function colMax(sheet: Sheet, colIdx: number): number {
 
 export default function Home() {
   const [activeSheet, setActiveSheet] = useState(0);
+  const [view, setView] = useState<"table" | "charts">("table");
   const [search, setSearch] = useState("");
   const [sortCol, setSortCol] = useState<number>(0);
   const [sortDir, setSortDir] = useState<SortDir>("asc");
@@ -120,9 +122,29 @@ export default function Home() {
             </h1>
             <p className="text-xs text-zinc-600 mt-0.5">EV performance database</p>
           </div>
-          <span className="text-xs text-zinc-600 tabular-nums">
-            {filtered.length} / {sheet.rows.length} rows
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-zinc-600 tabular-nums">
+              {view === "table" ? `${filtered.length} / ${sheet.rows.length} rows` : ""}
+            </span>
+            <div className="flex rounded-lg border border-zinc-800 overflow-hidden text-xs">
+              <button
+                onClick={() => setView("table")}
+                className={`px-3 py-1.5 font-medium transition-colors ${
+                  view === "table" ? "bg-zinc-800 text-zinc-100" : "text-zinc-500 hover:text-zinc-300"
+                }`}
+              >
+                Table
+              </button>
+              <button
+                onClick={() => setView("charts")}
+                className={`px-3 py-1.5 font-medium transition-colors ${
+                  view === "charts" ? "bg-zinc-800 text-zinc-100" : "text-zinc-500 hover:text-zinc-300"
+                }`}
+              >
+                Charts
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Sheet tabs */}
@@ -145,6 +167,9 @@ export default function Home() {
         </div>
       </div>
 
+      {view === "charts" && <Charts />}
+
+      {view === "table" && <>
       {/* Search */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-3">
         <div className="relative max-w-xs">
@@ -280,6 +305,7 @@ export default function Home() {
           </tbody>
         </table>
       </div>
+      </>}
     </main>
   );
 }
