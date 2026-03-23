@@ -18,20 +18,23 @@ export function NoiseHistogramChart() {
   const noiseSheet = useMemo(() => findSheet("Noise"), []);
 
   const data = useMemo(() => {
-    const buckets = new Map<number, number>();
+    const buckets = new Map<number, string[]>();
     for (const row of noiseSheet.rows) {
       const n = parseNum(row[9] ?? "");
-      if (n === null) continue;
+      const name = row[0];
+      if (n === null || !name) continue;
       const bucket = Math.round(n * 2) / 2;
-      buckets.set(bucket, (buckets.get(bucket) ?? 0) + 1);
+      if (!buckets.has(bucket)) buckets.set(bucket, []);
+      buckets.get(bucket)!.push(name);
     }
     return Array.from(buckets.entries())
       .sort(([a], [b]) => a - b)
-      .map(([db, count]) => ({ db: db.toFixed(1), count }));
+      .map(([db, cars]) => ({ db: db.toFixed(1), count: cars.length, cars }));
   }, [noiseSheet]);
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (!active || !payload?.length) return null;
+    const cars: string[] = payload[0].payload.cars ?? [];
     return (
       <div
         className="rounded-xl p-2 text-xs"
@@ -39,12 +42,15 @@ export function NoiseHistogramChart() {
           backgroundColor: "var(--surface-container-lowest)",
           border: "1px solid var(--outline-variant)",
           boxShadow: "0 8px 32px rgba(27,28,28,0.08)",
+          maxWidth: 240,
         }}
       >
-        <div style={{ color: "var(--foreground)" }}>{label} dB</div>
-        <div style={{ color: "var(--on-surface-variant-muted)" }}>
-          {payload[0].value} test{payload[0].value !== 1 ? "s" : ""}
+        <div className="font-semibold mb-1" style={{ color: "var(--foreground)" }}>
+          {label} dB — {cars.length} test{cars.length !== 1 ? "s" : ""}
         </div>
+        {cars.map((car, i) => (
+          <div key={i} style={{ color: "var(--on-surface-variant-muted)" }}>{car}</div>
+        ))}
       </div>
     );
   };
