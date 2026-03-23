@@ -1177,7 +1177,7 @@ function DashboardView() {
                 className="text-3xl font-extrabold"
                 style={{ fontFamily: "var(--font-inter), Inter, sans-serif", color: "#1b1c1c" }}
               >
-                {quietest.val}
+                {Math.round(quietest.val * 10) / 10}
               </span>
               <span className="text-sm" style={{ color: "#777587" }}>dB</span>
             </div>
