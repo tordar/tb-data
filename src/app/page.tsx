@@ -6,7 +6,6 @@ import Charts from "@/components/Charts";
 
 type SortDir = "asc" | "desc";
 
-// Columns we always show as visual bar (value sheet, col)
 const BAR_COLS: Record<string, string[]> = {
   Banana: ["Trunk", "Seats folded"],
   Weight: ["Total"],
@@ -21,26 +20,36 @@ const BAR_COLS: Record<string, string[]> = {
   Bangkok: ["Wh/km"],
 };
 
-// Columns to highlight / pin left (always "Car" is first)
-const HIGHLIGHT_COLS = ["Car"];
+const SHEET_ICONS: Record<string, string> = {
+  Banana: "luggage",
+  Weight: "monitor_weight",
+  Acceleration: "speed",
+  Noise: "volume_up",
+  Braking: "emergency_brake",
+  Range: "ev_station",
+  Sunday: "wb_sunny",
+  "1000 km": "route",
+  "500 km": "route",
+  "Arctic Circle": "ac_unit",
+  Bangkok: "travel_explore",
+  Degradation: "battery_alert",
+};
 
 function parseNum(s: string): number | null {
   if (!s || s === "") return null;
-  // Handle values like "17+4" (trunk)
   if (s.includes("+")) {
     return s.split("+").reduce((a, b) => a + (parseFloat(b) || 0), 0);
   }
-  // Handle time strings like "08:35"
   if (/^\d+:\d+$/.test(s)) {
     const [h, m] = s.split(":").map(Number);
-    return h * 60 + m; // minutes
+    return h * 60 + m;
   }
   const n = parseFloat(s.replace(/[^0-9.\-]/g, ""));
   return isNaN(n) ? null : n;
 }
 
 function isNumericCol(sheet: Sheet, colIdx: number): boolean {
-  if (colIdx === 0) return false; // Car name
+  if (colIdx === 0) return false;
   const vals = sheet.rows.slice(0, 20).map((r) => r[colIdx] ?? "");
   const nonEmpty = vals.filter((v) => v !== "");
   if (nonEmpty.length === 0) return false;
@@ -62,15 +71,16 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [sortCol, setSortCol] = useState<number>(0);
   const [sortDir, setSortDir] = useState<SortDir>("asc");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sheet = sheets[activeSheet];
 
-  // Reset sort when sheet changes
   function switchSheet(idx: number) {
     setActiveSheet(idx);
     setSearch("");
     setSortCol(0);
     setSortDir("asc");
+    setSidebarOpen(false);
   }
 
   function handleSort(colIdx: number) {
@@ -100,7 +110,6 @@ export default function Home() {
       });
   }, [sheet, search, sortCol, sortDir]);
 
-  // Precompute column metadata
   const colMeta = useMemo(
     () =>
       sheet.headers.map((_, i) => ({
@@ -111,201 +120,373 @@ export default function Home() {
     [sheet]
   );
 
+  const icon = SHEET_ICONS[sheet.name] ?? "table_chart";
+
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100 font-sans antialiased">
-      {/* Top bar */}
-      <div className="border-b border-zinc-800/60 bg-zinc-950/90 backdrop-blur-sm sticky top-0 z-20">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4 flex-wrap">
-          <div>
-            <h1 className="text-sm font-semibold tracking-tight text-zinc-200">
-              TB Test Results
-            </h1>
-            <p className="text-xs text-zinc-600 mt-0.5">EV performance database</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-zinc-600 tabular-nums">
-              {view === "table" ? `${filtered.length} / ${sheet.rows.length} rows` : ""}
-            </span>
-            <div className="flex rounded-lg border border-zinc-800 overflow-hidden text-xs">
-              <button
-                onClick={() => setView("table")}
-                className={`px-3 py-1.5 font-medium transition-colors ${
-                  view === "table" ? "bg-zinc-800 text-zinc-100" : "text-zinc-500 hover:text-zinc-300"
-                }`}
-              >
-                Table
-              </button>
-              <button
-                onClick={() => setView("charts")}
-                className={`px-3 py-1.5 font-medium transition-colors ${
-                  view === "charts" ? "bg-zinc-800 text-zinc-100" : "text-zinc-500 hover:text-zinc-300"
-                }`}
-              >
-                Charts
-              </button>
-            </div>
-          </div>
+    <div className="flex min-h-screen" style={{ backgroundColor: "#fbf9f8", color: "#1b1c1c" }}>
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/20 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`fixed left-0 top-0 h-screen w-64 flex flex-col py-8 px-4 z-50 transition-transform duration-200 lg:translate-x-0 ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        }`}
+        style={{ backgroundColor: "#f5f3f3" }}
+      >
+        {/* Brand */}
+        <div className="mb-8 px-4">
+          <h1
+            className="font-bold text-xl tracking-tight"
+            style={{ color: "#3525cd", fontFamily: "var(--font-inter), Inter, sans-serif" }}
+          >
+            EV Curator
+          </h1>
+          <p className="text-xs mt-0.5" style={{ color: "#464555", opacity: 0.6 }}>
+            Intelligence Report
+          </p>
         </div>
 
-        {/* Sheet tabs */}
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 overflow-x-auto">
-          <div className="flex gap-0.5 pb-0">
-            {sheets.map((s, i) => (
+        {/* Nav */}
+        <nav className="flex-1 space-y-0.5 overflow-y-auto">
+          {sheets.map((s, i) => {
+            const navIcon = SHEET_ICONS[s.name] ?? "table_chart";
+            const isActive = i === activeSheet;
+            return (
               <button
                 key={s.name}
                 onClick={() => switchSheet(i)}
-                className={`px-3 py-2 text-xs font-medium whitespace-nowrap border-b-2 transition-colors ${
-                  i === activeSheet
-                    ? "border-indigo-500 text-indigo-400"
-                    : "border-transparent text-zinc-500 hover:text-zinc-300 hover:border-zinc-700"
-                }`}
+                className="w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
+                style={
+                  isActive
+                    ? {
+                        color: "#3525cd",
+                        backgroundColor: "rgba(255,255,255,0.7)",
+                        fontWeight: 600,
+                        borderRight: "3px solid #3525cd",
+                        borderRadius: "0.375rem 0 0 0.375rem",
+                      }
+                    : {
+                        color: "#464555",
+                      }
+                }
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#efeded";
+                    (e.currentTarget as HTMLButtonElement).style.color = "#1b1c1c";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                    (e.currentTarget as HTMLButtonElement).style.color = "#464555";
+                  }
+                }}
               >
-                {s.name}
+                <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>
+                  {navIcon}
+                </span>
+                <span style={{ fontFamily: "var(--font-inter), Inter, sans-serif" }}>{s.name}</span>
               </button>
-            ))}
+            );
+          })}
+        </nav>
+
+        {/* Bottom actions */}
+        <div className="pt-6 border-t space-y-1" style={{ borderColor: "rgba(199,196,216,0.2)" }}>
+          <div className="flex bg-[#eae8e7] rounded-lg p-1 gap-1">
+            <button
+              onClick={() => setView("table")}
+              className="flex-1 py-1.5 text-xs font-semibold rounded-md transition-colors"
+              style={
+                view === "table"
+                  ? { backgroundColor: "white", color: "#3525cd" }
+                  : { color: "#464555" }
+              }
+            >
+              Table
+            </button>
+            <button
+              onClick={() => setView("charts")}
+              className="flex-1 py-1.5 text-xs font-semibold rounded-md transition-colors"
+              style={
+                view === "charts"
+                  ? { backgroundColor: "white", color: "#3525cd" }
+                  : { color: "#464555" }
+              }
+            >
+              Charts
+            </button>
           </div>
         </div>
-      </div>
+      </aside>
 
-      {view === "charts" && <Charts />}
+      {/* Main */}
+      <main className="flex-1 lg:ml-64 flex flex-col min-h-screen">
+        {/* Top bar */}
+        <header
+          className="fixed top-0 right-0 left-0 lg:left-64 z-40 flex items-center justify-between px-6 lg:px-10 h-16"
+          style={{
+            backgroundColor: "rgba(251,249,248,0.85)",
+            backdropFilter: "blur(16px)",
+            borderBottom: "1px solid rgba(199,196,216,0.2)",
+            boxShadow: "0 8px 32px 0 rgba(27,28,28,0.04)",
+          }}
+        >
+          <div className="flex items-center gap-4">
+            {/* Mobile menu button */}
+            <button
+              className="lg:hidden p-1.5 rounded-lg"
+              style={{ color: "#464555" }}
+              onClick={() => setSidebarOpen(true)}
+            >
+              <span className="material-symbols-outlined">menu</span>
+            </button>
 
-      {view === "table" && <>
-      {/* Search */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-3">
-        <div className="relative max-w-xs">
-          <svg
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1 0 6.5 6.5a7.5 7.5 0 0 0 10.15 10.15z"
-            />
-          </svg>
-          <input
-            type="text"
-            placeholder={`Search ${sheet.name}…`}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg pl-9 pr-3 py-1.5 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 transition"
-          />
-        </div>
-      </div>
-
-      {/* Table */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 pb-20 overflow-x-auto">
-        <table className="w-full text-sm border-collapse min-w-max">
-          <thead>
-            <tr className="border-b border-zinc-800">
-              {sheet.headers.map((h, i) => (
-                <th
-                  key={i}
-                  className={`pb-2 text-xs font-medium uppercase tracking-wider whitespace-nowrap ${
-                    i === 0 ? "text-left pr-4 sticky left-0 bg-zinc-950 z-10" : colMeta[i].isBar ? "text-left pl-3 min-w-[160px]" : "text-right pr-4"
-                  }`}
+            <div className="flex items-center gap-3">
+              <span className="material-symbols-outlined" style={{ color: "#3525cd", fontSize: "20px" }}>
+                {icon}
+              </span>
+              <span
+                className="font-bold text-base tracking-tight"
+                style={{ color: "#1b1c1c", fontFamily: "var(--font-inter), Inter, sans-serif" }}
+              >
+                {sheet.name}
+              </span>
+              {view === "table" && (
+                <span
+                  className="text-xs font-medium px-2 py-0.5 rounded-full"
+                  style={{ backgroundColor: "#e2dfff", color: "#3323cc" }}
                 >
-                  <button
-                    onClick={() => handleSort(i)}
-                    className={`flex items-center gap-0.5 transition-colors ${
-                      i !== 0 && !colMeta[i].isBar ? "ml-auto" : ""
-                    } ${
-                      sortCol === i
-                        ? "text-zinc-100"
-                        : "text-zinc-500 hover:text-zinc-300"
-                    }`}
+                  {filtered.length} / {sheet.rows.length}
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* Search — only in table view */}
+          {view === "table" && (
+            <div className="relative hidden sm:block">
+              <span
+                className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2"
+                style={{ color: "#777587", fontSize: "16px" }}
+              >
+                search
+              </span>
+              <input
+                type="text"
+                placeholder={`Search ${sheet.name}…`}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="rounded-full py-2 pl-9 pr-4 text-sm w-56 transition-all outline-none"
+                style={{
+                  backgroundColor: "#f5f3f3",
+                  border: "none",
+                  color: "#1b1c1c",
+                }}
+                onFocus={(e) =>
+                  ((e.target as HTMLInputElement).style.boxShadow = "0 0 0 2px rgba(53,37,205,0.2)")
+                }
+                onBlur={(e) =>
+                  ((e.target as HTMLInputElement).style.boxShadow = "none")
+                }
+              />
+            </div>
+          )}
+        </header>
+
+        {/* Content */}
+        <div className="mt-16 flex-1 overflow-auto">
+          {view === "charts" && <Charts />}
+
+          {view === "table" && (
+            <div className="p-6 lg:p-10">
+              {/* Mobile search */}
+              <div className="sm:hidden mb-4">
+                <div className="relative">
+                  <span
+                    className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2"
+                    style={{ color: "#777587", fontSize: "16px" }}
                   >
-                    {h}
-                    {sortCol === i ? (
-                      <span className="text-indigo-400 ml-0.5">{sortDir === "asc" ? "↑" : "↓"}</span>
-                    ) : (
-                      <span className="opacity-20 ml-0.5">↕</span>
-                    )}
-                  </button>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.length === 0 ? (
-              <tr>
-                <td
-                  colSpan={sheet.headers.length}
-                  className="py-16 text-center text-zinc-600 text-sm"
-                >
-                  No rows match your search.
-                </td>
-              </tr>
-            ) : (
-              filtered.map((row, ri) => (
-                <tr
-                  key={ri}
-                  className="border-b border-zinc-900 hover:bg-zinc-900/40 transition-colors group"
-                >
-                  {sheet.headers.map((_, ci) => {
-                    const val = row[ci] ?? "";
-                    const meta = colMeta[ci];
+                    search
+                  </span>
+                  <input
+                    type="text"
+                    placeholder={`Search ${sheet.name}…`}
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="w-full rounded-full py-2 pl-9 pr-4 text-sm outline-none"
+                    style={{ backgroundColor: "#f5f3f3", border: "none", color: "#1b1c1c" }}
+                  />
+                </div>
+              </div>
 
-                    if (ci === 0) {
-                      return (
-                        <td
-                          key={ci}
-                          className="py-2.5 pr-4 font-medium text-zinc-200 group-hover:text-zinc-50 transition-colors sticky left-0 bg-zinc-950 group-hover:bg-zinc-900 z-10 whitespace-nowrap max-w-[280px] truncate"
-                          title={val}
-                        >
-                          {val}
-                        </td>
-                      );
-                    }
+              {/* Table card */}
+              <div
+                className="rounded-xl overflow-hidden editorial-shadow"
+                style={{
+                  backgroundColor: "#ffffff",
+                  border: "1px solid rgba(199,196,216,0.15)",
+                }}
+              >
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse min-w-max text-sm">
+                    <thead style={{ backgroundColor: "#eae8e7" }}>
+                      <tr>
+                        {sheet.headers.map((h, i) => (
+                          <th
+                            key={i}
+                            className={`py-3.5 ${
+                              i === 0 ? "text-left px-6 sticky left-0" : colMeta[i].isBar ? "text-left pl-4 min-w-[180px] pr-4" : "text-right pr-6"
+                            }`}
+                            style={{
+                              backgroundColor: "#eae8e7",
+                            }}
+                          >
+                            <button
+                              onClick={() => handleSort(i)}
+                              className="flex items-center gap-1 transition-colors"
+                              style={{
+                                fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
+                                fontSize: "0.6875rem",
+                                textTransform: "uppercase",
+                                letterSpacing: "0.08em",
+                                fontWeight: 600,
+                                color: sortCol === i ? "#1b1c1c" : "#777587",
+                                marginLeft: i !== 0 && !colMeta[i].isBar ? "auto" : undefined,
+                              }}
+                            >
+                              {h}
+                              {sortCol === i ? (
+                                <span style={{ color: "#3525cd", fontSize: "0.75rem" }}>
+                                  {sortDir === "asc" ? "↑" : "↓"}
+                                </span>
+                              ) : (
+                                <span style={{ opacity: 0.25, fontSize: "0.75rem" }}>↕</span>
+                              )}
+                            </button>
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {filtered.length === 0 ? (
+                        <tr>
+                          <td
+                            colSpan={sheet.headers.length}
+                            className="py-16 text-center text-sm"
+                            style={{ color: "#777587" }}
+                          >
+                            No rows match your search.
+                          </td>
+                        </tr>
+                      ) : (
+                        filtered.map((row, ri) => (
+                          <tr
+                            key={ri}
+                            className="group transition-colors cursor-pointer"
+                            style={{ borderTop: "1px solid #efeded" }}
+                            onMouseEnter={(e) =>
+                              ((e.currentTarget as HTMLTableRowElement).style.backgroundColor =
+                                "#fafafa")
+                            }
+                            onMouseLeave={(e) =>
+                              ((e.currentTarget as HTMLTableRowElement).style.backgroundColor =
+                                "transparent")
+                            }
+                          >
+                            {sheet.headers.map((_, ci) => {
+                              const val = row[ci] ?? "";
+                              const meta = colMeta[ci];
 
-                    if (meta.isBar && meta.max > 0) {
-                      const n = parseNum(val);
-                      const pct = n !== null ? (n / meta.max) * 100 : 0;
-                      const barColor =
-                        sheet.name === "Banana"
-                          ? pct > 70 ? "bg-emerald-500" : pct > 45 ? "bg-sky-500" : pct > 25 ? "bg-indigo-500" : "bg-zinc-600"
-                          : sheet.name === "Acceleration" || sheet.name === "Braking"
-                          ? "bg-rose-500"
-                          : "bg-indigo-500";
+                              if (ci === 0) {
+                                return (
+                                  <td
+                                    key={ci}
+                                    className="py-3.5 px-6 font-semibold whitespace-nowrap max-w-[280px] truncate sticky left-0"
+                                    title={val}
+                                    style={{
+                                      color: "#1b1c1c",
+                                      backgroundColor: "inherit",
+                                    }}
+                                  >
+                                    {val}
+                                  </td>
+                                );
+                              }
 
-                      return (
-                        <td key={ci} className="py-2.5 pl-3 pr-4">
-                          <div className="flex items-center gap-2 min-w-[140px]">
-                            <div className="flex-1 h-1 bg-zinc-800 rounded-full overflow-hidden">
-                              <div
-                                className={`h-full rounded-full ${barColor}`}
-                                style={{ width: `${pct}%` }}
-                              />
-                            </div>
-                            <span className="tabular-nums text-zinc-300 text-xs w-10 text-right shrink-0">
-                              {val || "—"}
-                            </span>
-                          </div>
-                        </td>
-                      );
-                    }
+                              if (meta.isBar && meta.max > 0) {
+                                const n = parseNum(val);
+                                const pct = n !== null ? (n / meta.max) * 100 : 0;
+                                const barColor =
+                                  sheet.name === "Banana"
+                                    ? pct > 70
+                                      ? "#10b981"
+                                      : pct > 45
+                                      ? "#3b82f6"
+                                      : pct > 25
+                                      ? "#6366f1"
+                                      : "#d1d5db"
+                                    : sheet.name === "Acceleration" || sheet.name === "Braking"
+                                    ? "#f43f5e"
+                                    : "#3525cd";
 
-                    return (
-                      <td
-                        key={ci}
-                        className={`py-2.5 pr-4 tabular-nums whitespace-nowrap ${
-                          meta.isNumeric ? "text-right text-zinc-300" : "text-right text-zinc-400 text-xs"
-                        } ${!val ? "text-zinc-700" : ""}`}
-                      >
-                        {val || "—"}
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
-      </>}
-    </main>
+                                return (
+                                  <td key={ci} className="py-3.5 pl-4 pr-4">
+                                    <div className="flex items-center gap-3 min-w-[160px]">
+                                      <div
+                                        className="flex-1 h-1.5 rounded-full overflow-hidden"
+                                        style={{ backgroundColor: "#efeded" }}
+                                      >
+                                        <div
+                                          className="h-full rounded-full transition-all"
+                                          style={{ width: `${pct}%`, backgroundColor: barColor }}
+                                        />
+                                      </div>
+                                      <span
+                                        className="tabular-nums text-xs w-10 text-right shrink-0 font-medium"
+                                        style={{ color: "#464555" }}
+                                      >
+                                        {val || "—"}
+                                      </span>
+                                    </div>
+                                  </td>
+                                );
+                              }
+
+                              return (
+                                <td
+                                  key={ci}
+                                  className="py-3.5 pr-6 tabular-nums whitespace-nowrap text-right"
+                                  style={{
+                                    color: meta.isNumeric
+                                      ? "#1b1c1c"
+                                      : val
+                                      ? "#777587"
+                                      : "#c7c4d8",
+                                    fontSize: meta.isNumeric ? "0.875rem" : "0.8125rem",
+                                  }}
+                                >
+                                  {val || "—"}
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+    </div>
   );
 }
