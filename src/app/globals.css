@@ -10,6 +10,40 @@
   --surface-container-lowest: #ffffff;
   --outline-variant: #c7c4d8;
   --on-surface-variant: #464555;
+  --on-surface-variant-muted: #777587;
+  --border-subtle: rgba(199, 196, 216, 0.15);
+  --border-soft: rgba(199, 196, 216, 0.3);
+  --border-strong: rgba(199, 196, 216, 0.5);
+  --primary-container: #e2dfff;
+  --on-primary-container: #3323cc;
+  --primary-accent: #dad7ff;
+  --row-border: #f0eeee;
+  --row-hover: #fafafa;
+  --nav-active-bg: rgba(255, 255, 255, 0.6);
+  --header-bg: rgba(251, 249, 248, 0.85);
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f1f5f9;
+  --primary: #818cf8;
+  --surface-container: #334155;
+  --surface-container-low: #0f172a;
+  --surface-container-high: #1e293b;
+  --surface-container-lowest: #1e293b;
+  --outline-variant: rgba(148, 163, 184, 0.3);
+  --on-surface-variant: #cbd5e1;
+  --on-surface-variant-muted: #94a3b8;
+  --border-subtle: rgba(148, 163, 184, 0.1);
+  --border-soft: rgba(148, 163, 184, 0.15);
+  --border-strong: rgba(148, 163, 184, 0.25);
+  --primary-container: rgba(99, 102, 241, 0.2);
+  --on-primary-container: #a5b4fc;
+  --primary-accent: #c7d2fe;
+  --row-border: rgba(148, 163, 184, 0.08);
+  --row-hover: #1e293b;
+  --nav-active-bg: rgba(255, 255, 255, 0.05);
+  --header-bg: rgba(2, 6, 23, 0.85);
 }
 
 body {
