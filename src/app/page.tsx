@@ -1008,19 +1008,232 @@ function DegradationScatterChart() {
   );
 }
 
+// ─── Dashboard ───────────────────────────────────────────────────────────────
+
+function DashboardView() {
+  const totalRows = sheets.reduce((sum, s) => sum + s.rows.length, 0);
+
+  const uniqueCars = useMemo(
+    () => new Set(sheets.flatMap((s) => s.rows.map((r) => r[0]).filter(Boolean))).size,
+    []
+  );
+
+  const bestRange = useMemo(() => {
+    let best: { name: string; val: number } | null = null;
+    for (const row of findSheet("Range").rows) {
+      if (row[7] !== "90") continue;
+      const n = parseNum(row[10] ?? "");
+      if (n !== null && (best === null || n > best.val)) best = { name: row[0], val: n };
+    }
+    return best;
+  }, []);
+
+  const fastestAccel = useMemo(() => {
+    let best: { name: string; val: number } | null = null;
+    for (const row of findSheet("Acceleration").rows) {
+      const n = parseNum(row[15] ?? "");
+      if (n !== null && n > 0 && (best === null || n < best.val)) best = { name: row[0], val: n };
+    }
+    return best;
+  }, []);
+
+  const quietest = useMemo(() => {
+    let best: { name: string; val: number } | null = null;
+    for (const row of findSheet("Noise").rows) {
+      const n = parseNum(row[9] ?? "");
+      if (n !== null && (best === null || n < best.val)) best = { name: row[0], val: n };
+    }
+    return best;
+  }, []);
+
+  const bestBraking = useMemo(() => {
+    let best: { name: string; val: number } | null = null;
+    for (const row of findSheet("Braking").rows) {
+      const n = parseNum(row[8] ?? "");
+      if (n !== null && n > 0 && (best === null || n < best.val)) best = { name: row[0], val: n };
+    }
+    return best;
+  }, []);
+
+  return (
+    <div className="space-y-8">
+      <section className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {/* Total test entries */}
+        <div
+          className="p-6 rounded-xl editorial-shadow"
+          style={{ backgroundColor: "#ffffff", border: "1px solid rgba(199,196,216,0.15)" }}
+        >
+          <span
+            className="text-xs font-bold uppercase tracking-[0.18em]"
+            style={{ color: "#3525cd", fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif" }}
+          >
+            Test Entries
+          </span>
+          <div className="mt-3">
+            <span
+              className="text-4xl font-extrabold"
+              style={{ fontFamily: "var(--font-inter), Inter, sans-serif", color: "#1b1c1c" }}
+            >
+              {totalRows.toLocaleString()}
+            </span>
+          </div>
+          <p className="mt-1 text-xs" style={{ color: "#777587" }}>
+            across {sheets.length} test categories
+          </p>
+        </div>
+
+        {/* Unique EVs */}
+        <div
+          className="p-6 rounded-xl editorial-shadow"
+          style={{ backgroundColor: "#ffffff", border: "1px solid rgba(199,196,216,0.15)" }}
+        >
+          <span
+            className="text-xs font-bold uppercase tracking-[0.18em]"
+            style={{ color: "#3525cd", fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif" }}
+          >
+            Unique EVs
+          </span>
+          <div className="mt-3 flex items-baseline gap-2">
+            <span
+              className="text-4xl font-extrabold"
+              style={{ fontFamily: "var(--font-inter), Inter, sans-serif", color: "#1b1c1c" }}
+            >
+              {uniqueCars}
+            </span>
+            <span className="text-sm" style={{ color: "#777587" }}>models</span>
+          </div>
+          <p className="mt-1 text-xs" style={{ color: "#777587" }}>
+            distinct vehicles in the dataset
+          </p>
+        </div>
+
+        {/* Best range */}
+        {bestRange && (
+          <div
+            className="p-6 rounded-xl editorial-shadow"
+            style={{ backgroundColor: "#3525cd", border: "1px solid rgba(199,196,216,0.15)" }}
+          >
+            <span
+              className="text-xs font-bold uppercase tracking-[0.18em]"
+              style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif" }}
+            >
+              Best Range · 90 km/h
+            </span>
+            <div className="mt-3">
+              <span className="text-3xl font-extrabold" style={{ color: "#dad7ff" }}>
+                {bestRange.val} km
+              </span>
+              <p className="text-sm font-semibold text-white mt-1 truncate" title={bestRange.name}>
+                {bestRange.name.length > 22 ? bestRange.name.slice(0, 20) + "…" : bestRange.name}
+              </p>
+            </div>
+            <p className="mt-1 text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
+              summer, 90 km/h highway
+            </p>
+          </div>
+        )}
+
+        {/* Fastest 0-100 */}
+        {fastestAccel && (
+          <div
+            className="p-6 rounded-xl editorial-shadow"
+            style={{ backgroundColor: "#ffffff", border: "1px solid rgba(199,196,216,0.15)" }}
+          >
+            <span
+              className="text-xs font-bold uppercase tracking-[0.18em]"
+              style={{ color: "#777587", fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif" }}
+            >
+              Fastest 0–100
+            </span>
+            <div className="mt-3 flex items-baseline gap-1">
+              <span
+                className="text-3xl font-extrabold"
+                style={{ fontFamily: "var(--font-inter), Inter, sans-serif", color: "#1b1c1c" }}
+              >
+                {fastestAccel.val}
+              </span>
+              <span className="text-sm" style={{ color: "#777587" }}>s</span>
+            </div>
+            <p className="mt-1 text-xs truncate" style={{ color: "#777587" }} title={fastestAccel.name}>
+              {fastestAccel.name}
+            </p>
+          </div>
+        )}
+
+        {/* Quietest cabin */}
+        {quietest && (
+          <div
+            className="p-6 rounded-xl editorial-shadow"
+            style={{ backgroundColor: "#ffffff", border: "1px solid rgba(199,196,216,0.15)" }}
+          >
+            <span
+              className="text-xs font-bold uppercase tracking-[0.18em]"
+              style={{ color: "#777587", fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif" }}
+            >
+              Quietest Cabin
+            </span>
+            <div className="mt-3 flex items-baseline gap-1">
+              <span
+                className="text-3xl font-extrabold"
+                style={{ fontFamily: "var(--font-inter), Inter, sans-serif", color: "#1b1c1c" }}
+              >
+                {quietest.val}
+              </span>
+              <span className="text-sm" style={{ color: "#777587" }}>dB</span>
+            </div>
+            <p className="mt-1 text-xs truncate" style={{ color: "#777587" }} title={quietest.name}>
+              {quietest.name}
+            </p>
+          </div>
+        )}
+
+        {/* Best braking */}
+        {bestBraking && (
+          <div
+            className="p-6 rounded-xl editorial-shadow"
+            style={{ backgroundColor: "#ffffff", border: "1px solid rgba(199,196,216,0.15)" }}
+          >
+            <span
+              className="text-xs font-bold uppercase tracking-[0.18em]"
+              style={{ color: "#777587", fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif" }}
+            >
+              Best Braking
+            </span>
+            <div className="mt-3 flex items-baseline gap-1">
+              <span
+                className="text-3xl font-extrabold"
+                style={{ fontFamily: "var(--font-inter), Inter, sans-serif", color: "#1b1c1c" }}
+              >
+                {bestBraking.val}
+              </span>
+              <span className="text-sm" style={{ color: "#777587" }}>m</span>
+            </div>
+            <p className="mt-1 text-xs truncate" style={{ color: "#777587" }} title={bestBraking.name}>
+              {bestBraking.name}
+            </p>
+          </div>
+        )}
+      </section>
+
+      <RadarSection />
+    </div>
+  );
+}
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function Home() {
-  const [activeSheet, setActiveSheet] = useState(0);
+  const [activeSheet, setActiveSheet] = useState(-1); // -1 = dashboard
   const [search, setSearch] = useState("");
   const [sortCol, setSortCol] = useState<number>(0);
   const [sortDir, setSortDir] = useState<SortDir>("asc");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [bananaFilter, setBananaFilter] = useState<"all" | "car" | "van">("all");
 
-  const sheet = sheets[activeSheet];
+  const isDashboard = activeSheet === -1;
+  const sheet = isDashboard ? sheets[0] : sheets[activeSheet];
   const config = SHEET_CONFIG[sheet.name];
-  const icon = SHEET_ICONS[sheet.name] ?? "table_chart";
+  const icon = isDashboard ? "dashboard" : (SHEET_ICONS[sheet.name] ?? "table_chart");
 
   function switchSheet(idx: number) {
     setActiveSheet(idx);
@@ -1134,6 +1347,38 @@ export default function Home() {
 
         {/* Nav */}
         <nav className="flex-1 space-y-0.5 overflow-y-auto">
+          {/* Dashboard */}
+          <button
+            onClick={() => {
+              setActiveSheet(-1);
+              setSearch("");
+              setSortCol(0);
+              setSortDir("asc");
+              setSidebarOpen(false);
+              setBananaFilter("all");
+            }}
+            className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
+            style={
+              isDashboard
+                ? { color: "#3525cd", backgroundColor: "rgba(255,255,255,0.6)", fontWeight: 600, borderRight: "3px solid #3525cd", borderRadius: "0.375rem 0 0 0.375rem" }
+                : { color: "#464555" }
+            }
+            onMouseEnter={(e) => {
+              if (!isDashboard) {
+                e.currentTarget.style.backgroundColor = "#efeded";
+                e.currentTarget.style.color = "#1b1c1c";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isDashboard) {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#464555";
+              }
+            }}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>dashboard</span>
+            <span>Dashboard</span>
+          </button>
           {sheets.map((s, i) => {
             const navIcon = SHEET_ICONS[s.name] ?? "table_chart";
             const isActive = i === activeSheet;
@@ -1220,12 +1465,12 @@ export default function Home() {
                 {icon}
               </span>
               <span className="font-bold text-base tracking-tight" style={{ color: "#1b1c1c" }}>
-                {sheet.name}
+                {isDashboard ? "Dashboard" : sheet.name}
               </span>
             </div>
           </div>
 
-          <div className="relative hidden sm:block">
+          {!isDashboard && <div className="relative hidden sm:block">
             <span
               className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2"
               style={{ color: "#777587", fontSize: "16px" }}
@@ -1247,11 +1492,28 @@ export default function Home() {
                 (e.target as HTMLInputElement).style.boxShadow = "none";
               }}
             />
-          </div>
+          </div>}
         </header>
 
         {/* ─── Content ──────────────────────────────────────────────────── */}
         <div className="mt-16 flex-1 p-6 lg:p-10 space-y-8">
+          {isDashboard ? (
+            <>
+              <section>
+                <h2
+                  className="text-3xl font-extrabold tracking-tight"
+                  style={{ fontFamily: "var(--font-inter), Inter, sans-serif" }}
+                >
+                  Dashboard
+                </h2>
+                <p className="mt-1 text-sm" style={{ color: "#777587" }}>
+                  Overview across all {sheets.length} test categories
+                </p>
+              </section>
+              <DashboardView />
+            </>
+          ) : (
+          <>
           {/* Page heading */}
           <section>
             <div className="flex items-start justify-between gap-4">
@@ -1457,7 +1719,6 @@ export default function Home() {
           )}
 
           {/* ─── Sheet-specific charts ──────────────────────────────────── */}
-          {sheet.name === "Banana" && <RadarSection />}
           {sheet.name === "Acceleration" && <AccelScatterChart />}
           {sheet.name === "Noise" && <NoiseHistogramChart />}
           {sheet.name === "Range" && <RangeEfficiencyChart />}
@@ -1669,6 +1930,8 @@ export default function Home() {
               </div>
             </div>
           </section>
+          </>
+          )}
         </div>
       </main>
     </div>
