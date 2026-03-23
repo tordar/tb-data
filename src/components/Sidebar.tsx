@@ -158,6 +158,24 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
           Export Dataset
         </button>
       </div>
+
+      {/* Attribution */}
+      <div className="pt-4 pb-1">
+        <p className="text-xs" style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}>
+          Data source:{" "}
+          <a
+            href="https://docs.google.com/spreadsheets/d/1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE/edit?gid=244400016#gid=244400016"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+            style={{ color: "var(--on-surface-variant)" }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = ""; }}
+          >
+            Bjørn Nyland&apos;s TB Test Results
+          </a>
+        </p>
+      </div>
     </aside>
   );
 }
