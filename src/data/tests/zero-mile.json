@@ -23,7 +23,8 @@
       "Yes",
       "Yes",
       "No",
-      "No"
+      "No",
+      ""
     ],
     [
       "2021 Nio ES8 100 kWh",
@@ -58,7 +59,8 @@
       "Yes",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2019 Hyundai Ioniq 28 kWh",
@@ -69,7 +71,8 @@
       "Yes",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2022 Mercedes EQS 450+",
@@ -80,7 +83,8 @@
       "Yes",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2022 Hongqi E-HS9 99 kWh",
@@ -90,7 +94,9 @@
       "15°C",
       "Yes, but no display",
       "Yes",
-      "No"
+      "No",
+      "",
+      ""
     ],
     [
       "2022 MG Marvel R Performance",
@@ -113,7 +119,8 @@
       "Yes, but no display",
       "Yes",
       "Yes",
-      "Yes"
+      "Yes",
+      ""
     ],
     [
       "2022 Tesla Model 3 SR+ LFP",
@@ -124,7 +131,8 @@
       "No",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2022 Nissan Ariya 87 kWh FWD",
@@ -135,7 +143,8 @@
       "Yes",
       "Yes",
       "No",
-      "No"
+      "No",
+      ""
     ],
     [
       "2022 Kia Niro EV 64 kWh",
@@ -146,7 +155,8 @@
       "Yes, but no display",
       "Yes",
       "No",
-      "Yes"
+      "Yes",
+      ""
     ],
     [
       "2022 VW ID Buzz 82 kWh",
@@ -157,7 +167,8 @@
       "Yes",
       "No",
       "Yes",
-      "Yes"
+      "Yes",
+      ""
     ],
     [
       "2022 Renault Megane E-Tech 60 kWh",
@@ -168,7 +179,8 @@
       "Yes",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2023 Hyundai Ioniq 6 RWD",
@@ -191,7 +203,8 @@
       "Yes",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2023 MG4 Long Range",
@@ -226,7 +239,8 @@
       "Yes",
       "No",
       "Yes",
-      "Yes"
+      "Yes",
+      ""
     ],
     [
       "2023 BYD Atto 3 60 kWh",
@@ -237,7 +251,8 @@
       "Yes, mostly",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2024 Polestar 2 LR DM",
@@ -248,7 +263,8 @@
       "Yes, mostly",
       "Yes",
       "No",
-      "No"
+      "No",
+      ""
     ],
     [
       "2024 Volvo EX30 Twin Performance",
@@ -259,7 +275,8 @@
       "Yes, but no display",
       "Yes",
       "Not tested",
-      "No"
+      "No",
+      ""
     ],
     [
       "2023 Fisker Ocean Extreme",
@@ -270,7 +287,8 @@
       "Yes, but no display",
       "Yes",
       "No",
-      "No"
+      "No",
+      ""
     ],
     [
       "2024 Audi Q6 e-tron Quattro",
@@ -281,7 +299,8 @@
       "Yes",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2023 VW ID7 Pro",
@@ -304,7 +323,8 @@
       "Yes",
       "Yes",
       "No",
-      "No"
+      "No",
+      ""
     ],
     [
       "2024 Kia EV3 LR",
@@ -315,7 +335,8 @@
       "Yes",
       "Yes",
       "Not tested",
-      "No"
+      "No",
+      ""
     ],
     [
       "2025 Cupra Tavascan",
@@ -338,7 +359,8 @@
       "Yes, but no display",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2025 Mercedes CLA 350 4Matic",
@@ -349,7 +371,8 @@
       "Yes",
       "Yes",
       "Yes",
-      "No"
+      "No",
+      ""
     ],
     [
       "2025 Mazda 6e Standard Range",

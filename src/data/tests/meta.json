@@ -114,7 +114,7 @@
     "colName": "km/h",
     "lowerIsBetter": false,
     "unit": "km/h",
-    "description": "A ~950 km route from southern Norway to the Arctic Circle and back. Each car drives the full route including all charging stops. The key metric is average speed (km/h) — higher means faster charging and better real-world long-distance capability."
+    "description": "Arctic Circle cold-weather challenge average speed"
   },
   {
     "name": "Bangkok",
@@ -123,6 +123,6 @@
     "colName": "Wh/km",
     "lowerIsBetter": true,
     "unit": "Wh/km",
-    "description": "Energy consumption test driven in Bangkok's extreme heat (35°C+) with heavy A/C use. Measures Wh/km — lower is better. Shows how well each car handles tropical conditions where cabin cooling is a major energy drain."
+    "description": "Bangkok heat test — energy consumption in tropical conditions"
   }
 ]

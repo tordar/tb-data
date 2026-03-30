@@ -143,6 +143,14 @@
     ]
   },
   {
+    "name": "2016 Tesla Model S 85D",
+    "slug": "2016-tesla-model-s-85d",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
     "name": "2016 VW e-Golf 24 kWh",
     "slug": "2016-vw-e-golf-24-kwh",
     "type": "car",
@@ -1218,6 +1226,14 @@
     ]
   },
   {
+    "name": "2025 MGS6 AWD",
+    "slug": "2025-mgs6-awd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2025 Renault 5 E-Tech",
     "slug": "2025-renault-5-e-tech",
     "type": "car",
@@ -2029,6 +2045,31 @@
     "tests": [
       "weight",
       "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Deepal S05",
+    "slug": "deepal-s05",
+    "type": "car",
+    "tests": [
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Deepal S05 69 kWh",
+    "slug": "deepal-s05-69-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Deepal S05 69 kWh AWD",
+    "slug": "deepal-s05-69-kwh-awd",
+    "type": "car",
+    "tests": [
       "1000-km"
     ]
   },
@@ -3663,6 +3704,25 @@
     "type": "car",
     "tests": [
       "acceleration",
+      "range"
+    ]
+  },
+  {
+    "name": "MGS6",
+    "slug": "mgs6",
+    "type": "car",
+    "tests": [
+      "banana",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "MGS6 AWD",
+    "slug": "mgs6-awd",
+    "type": "car",
+    "tests": [
+      "weight",
       "range"
     ]
   },

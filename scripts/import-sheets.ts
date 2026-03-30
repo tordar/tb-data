@@ -23,17 +23,19 @@ const SPREADSHEET_ID = "1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE";
  */
 const SHEET_GIDS: Record<string, number> = {
   Banana: 0,
-  Weight: 1649190785,
-  Acceleration: 273841463,
-  Noise: 1239729478,
-  Braking: 578359142,
-  Range: 510748060,
-  Sunday: 1714104989,
-  "1000 km": 1087384629,
-  "500 km": 648088703,
-  "Arctic Circle": 1563614024,
-  Bangkok: 220365359,
-  Degradation: 1022668264,
+  Weight: 1865415711,
+  Acceleration: 378787627,
+  Noise: 2069101638,
+  Braking: 26964202,
+  Range: 735351678,
+  Sunday: 866693557,
+  "1000 km": 15442336,
+  "500 km": 1229113299,
+  Geilo: 2118810793,
+  Degradation: 244400016,
+  "Zero mile": 52159941,
+  "Arctic Circle": 478179452,
+  Bangkok: 1066718131,
 };
 
 const SHEET_CONFIG: Record<
@@ -133,6 +135,22 @@ const SHEET_CONFIG: Record<
     unit: "%",
     description: "Battery capacity degradation vs. odometer reading",
     icon: "battery_alert",
+  },
+  Geilo: {
+    colName: "Time",
+    lowerIsBetter: true,
+    unit: "min",
+    description:
+      "A mountain route challenge from Oslo to Geilo — a steep, cold-weather drive through Norwegian highlands. Measures total time and number of charging stops. Fewer stops and lower time means better real-world mountain performance.",
+    icon: "terrain",
+  },
+  "Zero mile": {
+    colName: "Zero buffer",
+    lowerIsBetter: false,
+    unit: "kWh",
+    description:
+      "What happens when you drive an EV to 0%? This test drains each car completely to see how much hidden battery buffer remains, how far you can still drive, and whether the car bricks or enters limp mode. More buffer means less range anxiety.",
+    icon: "battery_0_bar",
   },
 };
 
