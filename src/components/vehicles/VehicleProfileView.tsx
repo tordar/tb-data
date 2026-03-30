@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { VehicleProfile } from "@/lib/types";
+import videoLinks from "@/data/video-links.json";
 
 interface VehicleProfileViewProps {
   profile: VehicleProfile;
@@ -31,6 +32,7 @@ export function VehicleProfileView({ profile }: VehicleProfileViewProps) {
   );
 
   const isVan = profile.type === "van";
+  const videoId = (videoLinks as Record<string, string>)[profile.slug];
 
   return (
     <div className="space-y-8">
@@ -53,9 +55,23 @@ export function VehicleProfileView({ profile }: VehicleProfileViewProps) {
             {isVan ? "Van" : "Car"}
           </span>
         </div>
-        <p className="mt-1 text-sm" style={{ color: "var(--on-surface-variant-muted)" }}>
-          {profile.results.length} test{profile.results.length !== 1 ? "s" : ""} with recorded data
-        </p>
+        <div className="mt-2 flex items-center gap-3 flex-wrap">
+          <p className="text-sm" style={{ color: "var(--on-surface-variant-muted)" }}>
+            {profile.results.length} test{profile.results.length !== 1 ? "s" : ""} with recorded data
+          </p>
+          {videoId && (
+            <a
+              href={`https://www.youtube.com/watch?v=${videoId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-opacity hover:opacity-80"
+              style={{ backgroundColor: "#ff0000", color: "white" }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>play_arrow</span>
+              Watch test video
+            </a>
+          )}
+        </div>
       </section>
 
       {/* Summary cards */}
