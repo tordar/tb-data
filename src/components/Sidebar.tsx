@@ -56,6 +56,8 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
 
   const coreTests = tests.filter((t) => !ROUTE_CHALLENGE_SLUGS.has(t.slug));
   const routeChallenges = tests.filter((t) => ROUTE_CHALLENGE_SLUGS.has(t.slug));
+  const routeActive = routeChallenges.some((t) => pathname.startsWith(`/tests/${t.slug}`));
+  const [routesOpen, setRoutesOpen] = useState(routeActive);
 
   const navItems = [
     { label: "Dashboard", href: "/", icon: "dashboard" },
@@ -149,53 +151,73 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
           );
         })}
 
-        {/* Route Challenges section */}
-        <div className="pt-4 mt-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-          <p
-            className="px-3 pb-2 text-xs font-semibold uppercase tracking-wider"
-            style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}
+        {/* Route Challenges dropdown */}
+        <button
+          onClick={() => setRoutesOpen((o) => !o)}
+          className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left mt-1"
+          style={{ color: routeActive ? "var(--primary)" : "var(--on-surface-variant)" }}
+          onMouseEnter={(e) => {
+            if (!routeActive) {
+              e.currentTarget.style.backgroundColor = "var(--surface-container)";
+              e.currentTarget.style.color = "var(--foreground)";
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!routeActive) {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = "var(--on-surface-variant)";
+            }
+          }}
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>route</span>
+          <span className="flex-1">Route Challenges</span>
+          <span
+            className="material-symbols-outlined transition-transform"
+            style={{ fontSize: "16px", transform: routesOpen ? "rotate(180deg)" : "rotate(0deg)" }}
           >
-            Route Challenges
-          </p>
-          {routeChallenges.map((t) => {
-            const href = `/tests/${t.slug}`;
-            const isActive = pathname.startsWith(href);
-            return (
-              <Link
-                key={href}
-                href={href}
-                onClick={onClose}
-                className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
-                style={
-                  isActive
-                    ? {
-                        color: "var(--primary)",
-                        backgroundColor: "var(--nav-active-bg)",
-                        fontWeight: 600,
-                        borderRight: "3px solid var(--primary)",
-                        borderRadius: "0.375rem 0 0 0.375rem",
-                      }
-                    : { color: "var(--on-surface-variant)" }
-                }
-                onMouseEnter={(e) => {
-                  if (!isActive) {
-                    e.currentTarget.style.backgroundColor = "var(--surface-container)";
-                    e.currentTarget.style.color = "var(--foreground)";
+            expand_more
+          </span>
+        </button>
+        {routesOpen && (
+          <div className="ml-4">
+            {routeChallenges.map((t) => {
+              const href = `/tests/${t.slug}`;
+              const isActive = pathname.startsWith(href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={onClose}
+                  className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium transition-colors rounded-lg text-left"
+                  style={
+                    isActive
+                      ? {
+                          color: "var(--primary)",
+                          backgroundColor: "var(--nav-active-bg)",
+                          fontWeight: 600,
+                        }
+                      : { color: "var(--on-surface-variant)" }
                   }
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive) {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = "var(--on-surface-variant)";
-                  }
-                }}
-              >
-                <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>{t.icon}</span>
-                <span>{t.name}</span>
-              </Link>
-            );
-          })}
-        </div>
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.backgroundColor = "var(--surface-container)";
+                      e.currentTarget.style.color = "var(--foreground)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.backgroundColor = "transparent";
+                      e.currentTarget.style.color = "var(--on-surface-variant)";
+                    }
+                  }}
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>{t.icon}</span>
+                  <span>{t.name}</span>
+                </Link>
+              );
+            })}
+          </div>
+        )}
 
         {/* Compare section */}
         <div className="pt-4 mt-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
