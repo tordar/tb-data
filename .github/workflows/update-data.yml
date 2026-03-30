@@ -1,8 +1,9 @@
 name: Update EV Test Data
 
 on:
-  schedule:
-    - cron: "0 6 * * 1"
+  # Schedule disabled until SHEET_GIDS are set to real values
+  # schedule:
+  #   - cron: "0 6 * * 1"
   workflow_dispatch:
 
 jobs:

@@ -238,6 +238,7 @@ async function main() {
   }
 
   const fetchedSheets: SheetData[] = [];
+  const failedSheets: string[] = [];
 
   for (const [sheetName, gid] of Object.entries(SHEET_GIDS)) {
     const url = csvUrl(gid);
@@ -247,53 +248,63 @@ async function main() {
     try {
       const res = await fetch(url);
       if (!res.ok) {
-        console.warn(
-          `  WARNING: HTTP ${res.status} for "${sheetName}" — skipping`
-        );
+        console.error(`  FAILED: HTTP ${res.status} for "${sheetName}"`);
+        failedSheets.push(sheetName);
         continue;
       }
       csvText = await res.text();
     } catch (err) {
-      console.warn(`  WARNING: fetch failed for "${sheetName}" — skipping`);
-      console.warn(`  ${err}`);
+      console.error(`  FAILED: fetch error for "${sheetName}" — ${err}`);
+      failedSheets.push(sheetName);
       continue;
     }
 
     const parsed = parseCsv(csvText);
-
-    // Filter out completely empty rows
     const nonEmpty = parsed.filter((r) => r.some((c) => c.trim() !== ""));
 
     if (nonEmpty.length === 0) {
-      console.warn(`  WARNING: "${sheetName}" returned no data — skipping`);
+      console.error(`  FAILED: "${sheetName}" returned no data`);
+      failedSheets.push(sheetName);
       continue;
     }
 
     const [headerRow, ...dataRows] = nonEmpty;
     const slug = slugify(sheetName);
 
-    const sheetData: SheetData = {
+    fetchedSheets.push({
       name: sheetName,
       slug,
       headers: headerRow,
       rows: dataRows,
-    };
+    });
 
-    const outPath = join(TESTS_DIR, `${slug}.json`);
-    writeFileSync(outPath, JSON.stringify(sheetData, null, 2));
-    console.log(`  Written ${outPath} (${dataRows.length} rows)`);
-
-    fetchedSheets.push(sheetData);
+    console.log(`  OK — ${dataRows.length} rows`);
   }
 
-  if (fetchedSheets.length === 0) {
-    console.error("ERROR: No sheets were fetched — aborting without writing vehicles.json");
+  // SAFETY: abort entirely if ANY sheet failed — never write partial data
+  if (failedSheets.length > 0) {
+    console.error(`\nABORTING: ${failedSheets.length} sheet(s) failed to fetch: ${failedSheets.join(", ")}`);
+    console.error("Existing data has NOT been modified.");
+    console.error("Fix the GID values in SHEET_GIDS and try again.");
     process.exit(1);
   }
 
-  // ---------------------------------------------------------------------------
+  if (fetchedSheets.length === 0) {
+    console.error("ABORTING: No sheets were fetched.");
+    process.exit(1);
+  }
+
+  // All sheets fetched successfully — safe to write files
+  console.log(`\nAll ${fetchedSheets.length} sheets fetched successfully. Writing files…`);
+
+  // Write individual sheet JSON files
+  for (const sheetData of fetchedSheets) {
+    const outPath = join(TESTS_DIR, `${sheetData.slug}.json`);
+    writeFileSync(outPath, JSON.stringify(sheetData, null, 2));
+    console.log(`  Written ${outPath} (${sheetData.rows.length} rows)`);
+  }
+
   // Write meta.json
-  // ---------------------------------------------------------------------------
   const meta = fetchedSheets.map((s) => {
     const config = SHEET_CONFIG[s.name];
     return {
