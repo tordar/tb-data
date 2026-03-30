@@ -52,9 +52,14 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
     }
   }
 
+  const ROUTE_CHALLENGE_SLUGS = new Set(["arctic-circle", "bangkok", "geilo"]);
+
+  const coreTests = tests.filter((t) => !ROUTE_CHALLENGE_SLUGS.has(t.slug));
+  const routeChallenges = tests.filter((t) => ROUTE_CHALLENGE_SLUGS.has(t.slug));
+
   const navItems = [
     { label: "Dashboard", href: "/", icon: "dashboard" },
-    ...tests.map((t) => ({
+    ...coreTests.map((t) => ({
       label: t.name,
       href: `/tests/${t.slug}`,
       icon: t.icon,
@@ -143,6 +148,54 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
             </Link>
           );
         })}
+
+        {/* Route Challenges section */}
+        <div className="pt-4 mt-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+          <p
+            className="px-3 pb-2 text-xs font-semibold uppercase tracking-wider"
+            style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}
+          >
+            Route Challenges
+          </p>
+          {routeChallenges.map((t) => {
+            const href = `/tests/${t.slug}`;
+            const isActive = pathname.startsWith(href);
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={onClose}
+                className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
+                style={
+                  isActive
+                    ? {
+                        color: "var(--primary)",
+                        backgroundColor: "var(--nav-active-bg)",
+                        fontWeight: 600,
+                        borderRight: "3px solid var(--primary)",
+                        borderRadius: "0.375rem 0 0 0.375rem",
+                      }
+                    : { color: "var(--on-surface-variant)" }
+                }
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = "var(--surface-container)";
+                    e.currentTarget.style.color = "var(--foreground)";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = "var(--on-surface-variant)";
+                  }
+                }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>{t.icon}</span>
+                <span>{t.name}</span>
+              </Link>
+            );
+          })}
+        </div>
 
         {/* Compare section */}
         <div className="pt-4 mt-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
