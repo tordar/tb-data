@@ -74,7 +74,7 @@ export function DataTable({
                     key={i}
                     className={`py-3.5 ${
                       i === 0
-                        ? "text-left px-6 sticky left-0"
+                        ? "text-left px-6 sticky left-0 z-10"
                         : colMeta[i].isBar
                         ? "text-left pl-4 min-w-[200px] pr-4"
                         : "text-right pr-6"
@@ -144,9 +144,9 @@ export function DataTable({
                         return (
                           <td
                             key={ci}
-                            className="py-3.5 px-6 font-semibold whitespace-nowrap sticky left-0"
+                            className="py-3.5 px-6 font-semibold whitespace-nowrap sticky left-0 z-10"
                             title={val}
-                            style={{ color: "var(--foreground)", backgroundColor: "inherit" }}
+                            style={{ color: "var(--foreground)", backgroundColor: "var(--surface-container-lowest)" }}
                           >
                             <div className="flex items-center gap-2">
                               <span className="truncate max-w-[260px]">{val}</span>
