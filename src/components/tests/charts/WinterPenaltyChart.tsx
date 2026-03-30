@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -14,6 +14,25 @@ import {
 } from "recharts";
 import { getTestBySlug } from "@/lib/data/tests";
 import { parseNum } from "@/lib/utils/parsing";
+
+function CustomTooltip({ active, payload }: any) {
+  if (!active || !payload?.length) return null;
+  const d = payload[0].payload;
+  return (
+    <div
+      className="rounded-xl p-2 text-xs"
+      style={{
+        backgroundColor: "var(--surface-container-lowest)",
+        border: "1px solid var(--outline-variant)",
+        boxShadow: "0 8px 32px rgba(27,28,28,0.08)",
+      }}
+    >
+      <div className="font-semibold" style={{ color: "var(--foreground)" }}>{d.name}</div>
+      <div style={{ color: "var(--on-surface-variant-muted)" }}>Summer: {d.summer} km · Winter: {d.winter} km</div>
+      <div style={{ color: "#60a5fa", fontWeight: 600 }}>−{d.penalty}% in winter ({d.retained}% retained)</div>
+    </div>
+  );
+}
 
 export function WinterPenaltyChart() {
   const sheet = useMemo(() => getTestBySlug("range")!, []);
@@ -49,31 +68,6 @@ export function WinterPenaltyChart() {
       .sort((a, b) => b.penalty - a.penalty);
   }, [sheet]);
 
-  const CustomTooltip = ({ active, payload }: any) => {
-    if (!active || !payload?.length) return null;
-    const d = payload[0].payload;
-    return (
-      <div
-        className="rounded-xl p-2 text-xs"
-        style={{
-          backgroundColor: "var(--surface-container-lowest)",
-          border: "1px solid var(--outline-variant)",
-          boxShadow: "0 8px 32px rgba(27,28,28,0.08)",
-        }}
-      >
-        <div className="font-semibold" style={{ color: "var(--foreground)" }}>
-          {d.name}
-        </div>
-        <div style={{ color: "var(--on-surface-variant-muted)" }}>
-          Summer: {d.summer} km · Winter: {d.winter} km
-        </div>
-        <div style={{ color: "#60a5fa", fontWeight: 600 }}>
-          −{d.penalty}% in winter ({d.retained}% retained)
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div
       className="p-6 lg:p-8 rounded-xl editorial-shadow"
@@ -90,30 +84,52 @@ export function WinterPenaltyChart() {
           % range lost in winter vs summer — {data.length} cars with both seasonal tests
         </p>
       </div>
-      <div style={{ height: Math.max(320, data.length * 28) }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={data}
-            layout="vertical"
-            margin={{ top: 0, right: 60, bottom: 4, left: 0 }}
-          >
-            <CartesianGrid stroke="var(--border-soft)" strokeDasharray="3 3" horizontal={false} />
-            <XAxis
-              type="number"
-              domain={[0, 60]}
-              tick={{ fill: "var(--on-surface-variant-muted)", fontSize: 11 }}
-              axisLine={false}
-              tickLine={false}
-              tickFormatter={(v) => `${v}%`}
-            />
-            <YAxis
-              type="category"
-              dataKey="name"
-              width={200}
-              tick={{ fill: "var(--on-surface-variant-muted)", fontSize: 10 }}
-              axisLine={false}
-              tickLine={false}
-            />
+      <WinterPenaltyInner data={data} />
+    </div>
+  );
+}
+
+function WinterPenaltyInner({ data }: { data: { name: string; summer: number; winter: number; penalty: number; retained: number }[] }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(600);
+
+  useEffect(() => {
+    function update() {
+      if (containerRef.current) setContainerWidth(containerRef.current.offsetWidth);
+    }
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const isSmall = containerWidth < 500;
+  const labelWidth = isSmall ? Math.max(100, Math.floor(containerWidth * 0.35)) : 200;
+
+  return (
+    <div ref={containerRef} style={{ height: Math.max(320, data.length * (isSmall ? 32 : 28)) }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={data}
+          layout="vertical"
+          margin={{ top: 0, right: isSmall ? 20 : 60, bottom: 4, left: 0 }}
+        >
+          <CartesianGrid stroke="var(--border-soft)" strokeDasharray="3 3" horizontal={false} />
+          <XAxis
+            type="number"
+            domain={[0, 60]}
+            tick={{ fill: "var(--on-surface-variant-muted)", fontSize: isSmall ? 10 : 11 }}
+            axisLine={false}
+            tickLine={false}
+            tickFormatter={(v) => `${v}%`}
+          />
+          <YAxis
+            type="category"
+            dataKey="name"
+            width={labelWidth}
+            tick={{ fill: "var(--on-surface-variant-muted)", fontSize: isSmall ? 9 : 10 }}
+            axisLine={false}
+            tickLine={false}
+          />
             <Tooltip isAnimationActive={false} content={<CustomTooltip />} cursor={{ fill: "var(--surface-container)", opacity: 0.5 }} />
             <ReferenceLine x={20} stroke="var(--on-surface-variant-muted)" strokeDasharray="4 3" strokeOpacity={0.35} />
             <Bar dataKey="penalty" radius={[0, 4, 4, 0]} maxBarSize={18}>
@@ -128,6 +144,5 @@ export function WinterPenaltyChart() {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
   );
 }

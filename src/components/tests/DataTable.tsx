@@ -57,7 +57,17 @@ export function DataTable({
         </div>
       </div>
 
-      {/* Mobile list view */}
+      {/* Mobile sort + list view */}
+      <div className="md:hidden mb-3 flex items-center gap-2">
+        <button
+          onClick={() => onSort(sortCol)}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
+          style={{ backgroundColor: "var(--surface-container)", color: "var(--on-surface-variant)" }}
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>swap_vert</span>
+          {sortDir === "asc" ? "Low to high" : "High to low"}
+        </button>
+      </div>
       <div
         className="md:hidden rounded-xl overflow-hidden editorial-shadow"
         style={{ backgroundColor: "var(--surface-container-lowest)", border: "1px solid var(--border-subtle)" }}
