@@ -12,7 +12,7 @@ import {
 import { type Stats } from "@/lib/types";
 
 export function TopChart({ stats }: { stats: Stats }) {
-  const data = [...stats.top10].reverse();
+  const data = stats.top10;
 
   return (
     <ResponsiveContainer width="100%" height={360}>
@@ -54,9 +54,9 @@ export function TopChart({ stats }: { stats: Stats }) {
             <Cell
               key={idx}
               fill={
-                idx === data.length - 1
+                idx === 0
                   ? "#3525cd"
-                  : `rgba(53,37,205,${0.25 + (idx / data.length) * 0.65})`
+                  : `rgba(53,37,205,${0.9 - (idx / data.length) * 0.65})`
               }
             />
           ))}
