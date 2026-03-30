@@ -106,6 +106,7 @@ export function HeadToHeadView({ initialA, initialB }: Props) {
       {/* Header */}
       <section>
         <h2
+          data-page-headline
           className="text-3xl font-extrabold tracking-tight"
           style={{ color: "var(--foreground)" }}
         >

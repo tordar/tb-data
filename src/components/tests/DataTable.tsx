@@ -73,28 +73,23 @@ export function DataTable({
               ? bananaVanNames.has(name) ? "Van" : "Car"
               : null;
 
-            // Show the sorted column value, or the first bar column, or first numeric column
-            const primaryCol = metricCols.find((c) => c.index === sortCol) ?? metricCols[0];
-            const primaryVal = primaryCol ? (row[primaryCol.index] ?? "") : "";
-            const primaryHeader = primaryCol?.header ?? "";
-
-            // Find a second metric to show (different from primary)
-            const secondaryCol = metricCols.find((c) => c.index !== primaryCol?.index);
-            const secondaryVal = secondaryCol ? (row[secondaryCol.index] ?? "") : "";
-            const secondaryHeader = secondaryCol?.header ?? "";
+            // Collect all non-empty data columns
+            const dataValues = headers
+              .map((h, i) => ({ header: h, value: row[i] ?? "", index: i }))
+              .filter((c) => c.index > 0 && c.value);
 
             return (
               <Link
                 key={ri}
                 href={`/vehicles/${vehicleSlug(name)}`}
-                className="flex items-center justify-between px-4 py-3"
+                className="block px-4 py-3"
                 style={ri > 0 ? { borderTopWidth: 1, borderTopStyle: "solid", borderTopColor: "var(--row-border)" } : undefined}
               >
-                <div className="flex items-center gap-2 min-w-0 flex-1">
-                  <span className="text-sm tabular-nums font-medium w-6 shrink-0" style={{ color: "var(--on-surface-variant-muted)" }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs tabular-nums font-medium w-5 shrink-0" style={{ color: "var(--on-surface-variant-muted)" }}>
                     {ri + 1}
                   </span>
-                  <span className="font-semibold text-sm truncate" style={{ color: "var(--foreground)" }}>
+                  <span className="font-semibold text-sm" style={{ color: "var(--foreground)" }}>
                     {name}
                   </span>
                   {vehicleType && (
@@ -109,19 +104,13 @@ export function DataTable({
                     </span>
                   )}
                 </div>
-                <div className="flex items-center gap-4 shrink-0 ml-3">
-                  {secondaryVal && (
-                    <div className="text-right">
-                      <div className="text-[10px]" style={{ color: "var(--on-surface-variant-muted)" }}>{secondaryHeader}</div>
-                      <div className="text-xs tabular-nums font-medium" style={{ color: "var(--on-surface-variant)" }}>{secondaryVal}</div>
-                    </div>
-                  )}
-                  {primaryVal && (
-                    <div className="text-right min-w-[3rem]">
-                      <div className="text-[10px]" style={{ color: "var(--on-surface-variant-muted)" }}>{primaryHeader}</div>
-                      <div className="text-sm tabular-nums font-bold" style={{ color: "var(--foreground)" }}>{primaryVal}</div>
-                    </div>
-                  )}
+                <div className="ml-7 flex flex-wrap gap-x-4 gap-y-0.5">
+                  {dataValues.map((col) => (
+                    <span key={col.index} className="text-xs">
+                      <span style={{ color: "var(--on-surface-variant-muted)" }}>{col.header} </span>
+                      <span className="tabular-nums font-medium" style={{ color: "var(--foreground)" }}>{col.value}</span>
+                    </span>
+                  ))}
                 </div>
               </Link>
             );

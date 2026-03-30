@@ -40,6 +40,7 @@ export function VehicleProfileView({ profile }: VehicleProfileViewProps) {
       <section>
         <div className="flex items-center gap-3 flex-wrap">
           <h2
+            data-page-headline
             className="text-3xl font-extrabold tracking-tight"
             style={{ fontFamily: "var(--font-inter), Inter, sans-serif", color: "var(--foreground)" }}
           >
