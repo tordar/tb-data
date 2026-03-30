@@ -28,7 +28,13 @@ export function WeightedRankerView() {
   const [weights, setWeights] = useState<Record<string, number>>(initialWeights);
 
   const vehiclesWithScores = useMemo(() => {
+    const seen = new Set<string>();
     return getVehicles()
+      .filter((v) => {
+        if (seen.has(v.slug)) return false;
+        seen.add(v.slug);
+        return true;
+      })
       .map((v) => {
         const scores = getMetricScores(v.name);
         return scores ? { name: v.name, slug: v.slug, scores } : null;
