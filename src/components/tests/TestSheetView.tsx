@@ -60,20 +60,6 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
     return new Set(sheet.rows.slice(pivotIdx + 1).map((r) => r[0]));
   }, [isBanana, sheet.rows]);
 
-  // Column metadata for DataTable
-  const colMeta = useMemo(() => {
-    const barColNames = BAR_COLS[sheet.name] ?? [];
-    return sheet.headers.map((h, i) => {
-      const isNum = isNumericCol(sheet.rows, i);
-      const isBar = barColNames.includes(h);
-      return {
-        isNumeric: isNum,
-        max: isBar ? colMax(sheet.rows, i) : 0,
-        isBar,
-      };
-    });
-  }, [sheet]);
-
   // Filter + sort rows
   const filtered = useMemo(() => {
     let rows = sheet.rows;
@@ -113,6 +99,20 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
 
     return sorted;
   }, [sheet.rows, search, sortCol, sortDir, bananaFilter, isBanana, bananaVanNames]);
+
+  // Column metadata for DataTable — computed from filtered rows so bars reflect current filter
+  const colMeta = useMemo(() => {
+    const barColNames = BAR_COLS[sheet.name] ?? [];
+    return sheet.headers.map((h, i) => {
+      const isNum = isNumericCol(filtered, i);
+      const isBar = barColNames.includes(h);
+      return {
+        isNumeric: isNum,
+        max: isBar ? colMax(filtered, i) : 0,
+        isBar,
+      };
+    });
+  }, [sheet.headers, sheet.name, filtered]);
 
   function handleSort(colIdx: number) {
     if (colIdx === sortCol) {
