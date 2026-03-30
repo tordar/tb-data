@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { parseNum } from "@/lib/utils/parsing";
+import { vehicleSlug } from "@/lib/utils/formatting";
 import { type SortDir } from "@/lib/types";
 
 interface ColMeta {
@@ -149,7 +151,13 @@ export function DataTable({
                             style={{ color: "var(--foreground)", backgroundColor: "var(--surface-container-lowest)" }}
                           >
                             <div className="flex items-center gap-2">
-                              <span className="truncate max-w-[260px]">{val}</span>
+                              <Link
+                                href={`/vehicles/${vehicleSlug(val)}`}
+                                className="truncate max-w-[260px] hover:underline underline-offset-2"
+                                style={{ color: "var(--foreground)" }}
+                              >
+                                {val}
+                              </Link>
                               {vehicleType && (
                                 <span
                                   className="shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] px-1.5 py-0.5 rounded"

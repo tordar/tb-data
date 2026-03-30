@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { getTests, getAllTestSheets } from "@/lib/data/tests";
+import { searchVehicles } from "@/lib/data/vehicles";
 
 interface SidebarProps {
   pathname: string;
@@ -14,8 +16,11 @@ interface SidebarProps {
 
 export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onThemeToggle }: SidebarProps) {
   const [exportOpen, setExportOpen] = useState(false);
+  const [vehicleQuery, setVehicleQuery] = useState("");
   const exportRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   const tests = getTests();
+  const vehicleSuggestions = searchVehicles(vehicleQuery, 6);
 
   useEffect(() => {
     if (!exportOpen) return;
@@ -103,6 +108,56 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
             {resolvedTheme === "dark" ? "light_mode" : "dark_mode"}
           </span>
         </button>
+      </div>
+
+      {/* Vehicle search */}
+      <div className="mb-4 px-1 relative">
+        <div className="relative">
+          <span
+            className="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2"
+            style={{ fontSize: "16px", color: "var(--on-surface-variant-muted)" }}
+          >
+            search
+          </span>
+          <input
+            type="text"
+            placeholder="Search vehicles..."
+            value={vehicleQuery}
+            onChange={(e) => setVehicleQuery(e.target.value)}
+            className="w-full rounded-lg py-2 pl-8 pr-3 text-sm outline-none"
+            style={{
+              backgroundColor: "var(--surface-container)",
+              color: "var(--foreground)",
+              border: "1px solid var(--border-subtle)",
+            }}
+          />
+        </div>
+        {vehicleSuggestions.length > 0 && (
+          <div
+            className="absolute left-1 right-1 mt-1 rounded-lg shadow-xl z-50 overflow-hidden"
+            style={{ backgroundColor: "var(--surface-container-lowest)", border: "1px solid var(--outline-variant)" }}
+          >
+            {vehicleSuggestions.map((v) => (
+              <button
+                key={v.slug}
+                onClick={() => {
+                  router.push(`/vehicles/${v.slug}`);
+                  setVehicleQuery("");
+                  onClose();
+                }}
+                className="w-full text-left px-3 py-2 text-sm truncate flex items-center gap-2"
+                style={{ color: "var(--foreground)" }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "var(--on-surface-variant-muted)" }}>
+                  directions_car
+                </span>
+                {v.name}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Scrollable nav — everything scrolls together */}
