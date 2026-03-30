@@ -101,11 +101,11 @@
   {
     "name": "Zero mile",
     "slug": "zero-mile",
-    "icon": "table_chart",
-    "colName": "",
+    "icon": "battery_0_bar",
+    "colName": "Zero buffer",
     "lowerIsBetter": false,
-    "unit": "",
-    "description": ""
+    "unit": "kWh",
+    "description": "What happens when you drive an EV to 0%? This test drains each car completely to see how much hidden battery buffer remains, how far you can still drive, and whether the car bricks or enters limp mode. More buffer means less range anxiety."
   },
   {
     "name": "Arctic Circle",
