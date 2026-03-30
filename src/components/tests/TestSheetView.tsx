@@ -80,6 +80,9 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
       }
     }
 
+    // Filter out annotation rows (e.g., "* = Aftermarket soundproofing")
+    rows = rows.filter((r) => !r[0]?.startsWith("*"));
+
     // Search
     if (search) {
       const q = search.toLowerCase();
