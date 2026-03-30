@@ -88,7 +88,7 @@ export function DataTable({
                 key={ri}
                 href={`/vehicles/${vehicleSlug(name)}`}
                 className="flex items-center justify-between px-4 py-3"
-                style={{ borderTop: ri > 0 ? "1px solid var(--row-border)" : undefined }}
+                style={ri > 0 ? { borderTopWidth: 1, borderTopStyle: "solid", borderTopColor: "var(--row-border)" } : undefined}
               >
                 <div className="flex items-center gap-2 min-w-0 flex-1">
                   <span className="text-sm tabular-nums font-medium w-6 shrink-0" style={{ color: "var(--on-surface-variant-muted)" }}>
