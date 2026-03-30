@@ -20,7 +20,7 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
   const exportRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const tests = getTests();
-  const vehicleSuggestions = searchVehicles(vehicleQuery, 6);
+  const vehicleSuggestions = searchVehicles(vehicleQuery, 50);
 
   useEffect(() => {
     if (!exportOpen) return;
@@ -134,7 +134,7 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
         </div>
         {vehicleSuggestions.length > 0 && (
           <div
-            className="absolute left-1 right-1 mt-1 rounded-lg shadow-xl z-50 overflow-hidden"
+            className="absolute left-1 right-1 mt-1 rounded-lg shadow-xl z-50 overflow-y-auto max-h-64"
             style={{ backgroundColor: "var(--surface-container-lowest)", border: "1px solid var(--outline-variant)" }}
           >
             {vehicleSuggestions.map((v) => (
