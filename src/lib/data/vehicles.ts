@@ -1,7 +1,9 @@
 import vehiclesData from "@/data/vehicles.json";
 import type { Vehicle } from "@/lib/types";
 
-const vehicles = vehiclesData as Vehicle[];
+const vehicles = (vehiclesData as Vehicle[]).filter(
+  (v) => v.name && !v.name.startsWith("*") && !(v.name === "Van" && v.tests.includes("banana"))
+);
 
 export function getVehicles(): Vehicle[] {
   return vehicles;
