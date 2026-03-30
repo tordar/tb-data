@@ -9,6 +9,11 @@ interface VehicleProfileViewProps {
 
 const SUMMARY_TEST_NAMES = ["Range", "Acceleration", "Noise", "Weight", "Banana", "Braking"];
 
+function fmtValue(n: number): string {
+  if (n % 1 === 0) return String(n);
+  return n.toFixed(1);
+}
+
 function getPercentileColor(percentile: number): string {
   if (percentile >= 75) return "#34d399";
   if (percentile >= 50) return "#3525cd";
@@ -92,7 +97,7 @@ export function VehicleProfileView({ profile }: VehicleProfileViewProps) {
                       className="text-2xl font-extrabold tabular-nums"
                       style={{ color: "var(--foreground)" }}
                     >
-                      {result.value}
+                      {fmtValue(result.value)}
                     </span>
                     <span className="text-xs" style={{ color: "var(--on-surface-variant-muted)" }}>
                       {result.unit === "banana" ? "🍌" : result.unit}
@@ -182,7 +187,7 @@ export function VehicleProfileView({ profile }: VehicleProfileViewProps) {
                         className="py-3.5 pr-6 tabular-nums whitespace-nowrap text-right font-medium"
                         style={{ color: "var(--foreground)" }}
                       >
-                        {result.value}{" "}
+                        {fmtValue(result.value)}{" "}
                         <span style={{ color: "var(--on-surface-variant-muted)", fontWeight: 400 }}>
                           {result.unit === "banana" ? "🍌" : result.unit}
                         </span>
