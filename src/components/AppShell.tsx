@@ -4,7 +4,6 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Sidebar } from "@/components/Sidebar";
-import { AppHeader } from "@/components/AppHeader";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -25,16 +24,23 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         pathname={pathname}
         sidebarOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
+        resolvedTheme={resolvedTheme}
+        onThemeToggle={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       />
 
       <main className="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0 overflow-hidden">
-        <AppHeader
-          resolvedTheme={resolvedTheme}
-          onThemeToggle={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-          onMenuOpen={() => setSidebarOpen(true)}
-        />
+        {/* Mobile menu button */}
+        <div className="lg:hidden flex items-center px-6 py-4">
+          <button
+            className="p-1.5 rounded-lg"
+            style={{ color: "var(--on-surface-variant)" }}
+            onClick={() => setSidebarOpen(true)}
+          >
+            <span className="material-symbols-outlined">menu</span>
+          </button>
+        </div>
 
-        <div className="mt-16 flex-1 p-6 lg:p-10 space-y-8">
+        <div className="flex-1 p-6 lg:p-10 space-y-8">
           {children}
         </div>
       </main>

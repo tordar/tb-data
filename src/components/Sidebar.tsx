@@ -8,9 +8,11 @@ interface SidebarProps {
   pathname: string;
   sidebarOpen: boolean;
   onClose: () => void;
+  resolvedTheme: string | undefined;
+  onThemeToggle: () => void;
 }
 
-export function Sidebar({ pathname, sidebarOpen, onClose }: SidebarProps) {
+export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onThemeToggle }: SidebarProps) {
   const [exportOpen, setExportOpen] = useState(false);
   const exportRef = useRef<HTMLDivElement>(null);
   const tests = getTests();
@@ -213,8 +215,8 @@ export function Sidebar({ pathname, sidebarOpen, onClose }: SidebarProps) {
         </button>
       </div>
 
-      {/* Attribution */}
-      <div className="pt-4 pb-1">
+      {/* Theme toggle + Attribution */}
+      <div className="pt-4 flex items-center justify-between pb-1">
         <p className="text-xs" style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}>
           Data by{" "}
           <a
@@ -229,6 +231,16 @@ export function Sidebar({ pathname, sidebarOpen, onClose }: SidebarProps) {
             Bjørn Nyland
           </a>
         </p>
+        <button
+          onClick={onThemeToggle}
+          className="p-2 rounded-lg transition-colors"
+          style={{ color: "var(--on-surface-variant)", backgroundColor: "var(--surface-container)" }}
+          aria-label="Toggle dark mode"
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: "18px" }} suppressHydrationWarning>
+            {resolvedTheme === "dark" ? "light_mode" : "dark_mode"}
+          </span>
+        </button>
       </div>
     </aside>
   );
