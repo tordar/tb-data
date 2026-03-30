@@ -173,6 +173,25 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
         )}
       </section>
 
+      {/* Stats bento */}
+      {stats && (
+        <StatsBento
+          stats={stats}
+          colName={meta.colName}
+          filteredCount={filtered.length}
+          search={search}
+        />
+      )}
+
+      {/* Charts */}
+      {charts.length > 0 && (
+        <section className="space-y-6">
+          {charts.map((Chart, i) => (
+            <Chart key={i} />
+          ))}
+        </section>
+      )}
+
       {/* Search bar + Banana filter */}
       <section className="flex items-center gap-4 flex-wrap">
         <div className="relative flex-1 max-w-md">
@@ -184,7 +203,7 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
           </span>
           <input
             type="text"
-            placeholder="Search vehicles\u2026"
+            placeholder="Search vehicles..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full rounded-full py-2.5 pl-10 pr-4 text-sm outline-none"
@@ -215,25 +234,6 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
           </div>
         )}
       </section>
-
-      {/* Stats bento */}
-      {stats && (
-        <StatsBento
-          stats={stats}
-          colName={meta.colName}
-          filteredCount={filtered.length}
-          search={search}
-        />
-      )}
-
-      {/* Charts */}
-      {charts.length > 0 && (
-        <section className="space-y-6">
-          {charts.map((Chart, i) => (
-            <Chart key={i} />
-          ))}
-        </section>
-      )}
 
       {/* Data table */}
       <DataTable

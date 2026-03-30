@@ -52,7 +52,7 @@ export function DataTable({
         <div className="sm:hidden">
           <input
             type="text"
-            placeholder="Search\u2026"
+            placeholder="Search..."
             value={search}
             onChange={(e) => onSearch(e.target.value)}
             className="rounded-full py-1.5 px-4 text-sm outline-none"
