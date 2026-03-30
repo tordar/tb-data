@@ -25,7 +25,13 @@ export function searchVehicles(query: string, limit = 10): Vehicle[] {
   if (!query || query.length < 2) return [];
   const lower = query.toLowerCase();
   const terms = lower.split(/\s+/).filter(Boolean);
+  const seen = new Set<string>();
   return vehicles
-    .filter((v) => terms.every((t) => v.name.toLowerCase().includes(t)))
+    .filter((v) => {
+      if (seen.has(v.slug)) return false;
+      if (!terms.every((t) => v.name.toLowerCase().includes(t))) return false;
+      seen.add(v.slug);
+      return true;
+    })
     .slice(0, limit);
 }

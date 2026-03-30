@@ -137,9 +137,9 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
             className="absolute left-1 right-1 mt-1 rounded-lg shadow-xl z-50 overflow-y-auto max-h-64"
             style={{ backgroundColor: "var(--surface-container-lowest)", border: "1px solid var(--outline-variant)" }}
           >
-            {vehicleSuggestions.map((v) => (
+            {vehicleSuggestions.map((v, i) => (
               <button
-                key={v.slug}
+                key={`${v.slug}-${i}`}
                 onClick={() => {
                   router.push(`/vehicles/${v.slug}`);
                   setVehicleQuery("");
