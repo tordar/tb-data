@@ -198,7 +198,7 @@ export function WeightedRankerView() {
               <thead style={{ backgroundColor: "var(--surface-container-high)" }}>
                 <tr>
                   <th
-                    className="py-3.5 pl-6 pr-3 text-left"
+                    className="py-3.5 pl-4 sm:pl-6 pr-2 sm:pr-3 text-left w-8"
                     style={{
                       fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
                       fontSize: "0.6875rem",
@@ -211,7 +211,7 @@ export function WeightedRankerView() {
                     #
                   </th>
                   <th
-                    className="py-3.5 px-3 text-left"
+                    className="py-3.5 px-2 sm:px-3 text-left"
                     style={{
                       fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
                       fontSize: "0.6875rem",
@@ -226,7 +226,7 @@ export function WeightedRankerView() {
                   {RANKING_METRICS.map((metric) => (
                     <th
                       key={metric.key}
-                      className="py-3.5 px-3 text-right hidden sm:table-cell"
+                      className="py-3.5 px-3 text-right hidden lg:table-cell"
                       style={{
                         fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
                         fontSize: "0.6875rem",
@@ -243,7 +243,7 @@ export function WeightedRankerView() {
                     </th>
                   ))}
                   <th
-                    className="py-3.5 pl-3 pr-6 text-right"
+                    className="py-3.5 pl-2 sm:pl-3 pr-4 sm:pr-6 text-right"
                     style={{
                       fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
                       fontSize: "0.6875rem",
@@ -272,12 +272,12 @@ export function WeightedRankerView() {
                     }}
                   >
                     <td
-                      className="py-3 pl-6 pr-3 tabular-nums text-sm font-semibold"
+                      className="py-3 pl-4 sm:pl-6 pr-2 sm:pr-3 tabular-nums text-sm font-semibold w-8"
                       style={{ color: "var(--on-surface-variant-muted)" }}
                     >
                       {idx + 1}
                     </td>
-                    <td className="py-3 px-3 font-semibold whitespace-nowrap">
+                    <td className="py-3 px-2 sm:px-3 font-semibold">
                       <Link
                         href={`/vehicles/${vehicle.slug}`}
                         className="hover:underline"
@@ -289,7 +289,7 @@ export function WeightedRankerView() {
                     {RANKING_METRICS.map((metric) => (
                       <td
                         key={metric.key}
-                        className="py-3 px-3 tabular-nums text-right hidden sm:table-cell"
+                        className="py-3 px-3 tabular-nums text-right hidden lg:table-cell"
                         style={{
                           color:
                             vehicle.scores[metric.key] !== undefined
@@ -302,7 +302,7 @@ export function WeightedRankerView() {
                           : "—"}
                       </td>
                     ))}
-                    <td className="py-3 pl-3 pr-6 text-right">
+                    <td className="py-3 pl-2 sm:pl-3 pr-4 sm:pr-6 text-right">
                       <span
                         className="inline-block tabular-nums text-xs font-bold px-2.5 py-1 rounded-full"
                         style={{
