@@ -38,6 +38,11 @@ export function DataTable({
   onSearch,
   onSort,
 }: DataTableProps) {
+  // Find the key metric columns (bar columns + numeric columns) for mobile cards
+  const metricCols = headers
+    .map((h, i) => ({ header: h, index: i, meta: colMeta[i] }))
+    .filter((c) => c.index > 0 && (c.meta.isBar || c.meta.isNumeric));
+
   return (
     <section>
       <div className="flex items-center justify-between mb-4">
@@ -50,21 +55,68 @@ export function DataTable({
             {search && ` matching "${search}"`}
           </p>
         </div>
-        {/* Mobile search */}
-        <div className="sm:hidden">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={search}
-            onChange={(e) => onSearch(e.target.value)}
-            className="rounded-full py-1.5 px-4 text-sm outline-none"
-            style={{ backgroundColor: "var(--surface-container-low)", color: "var(--foreground)" }}
-          />
-        </div>
       </div>
 
+      {/* Mobile card view */}
+      <div className="md:hidden space-y-2">
+        {filtered.length === 0 ? (
+          <p className="py-8 text-center text-sm" style={{ color: "var(--on-surface-variant-muted)" }}>
+            No rows match your search.
+          </p>
+        ) : (
+          filtered.map((row, ri) => {
+            const name = row[0] ?? "";
+            const vehicleType = bananaVanNames
+              ? bananaVanNames.has(name) ? "Van" : "Car"
+              : null;
+
+            return (
+              <Link
+                key={ri}
+                href={`/vehicles/${vehicleSlug(name)}`}
+                className="block rounded-lg p-4 transition-colors"
+                style={{
+                  backgroundColor: "var(--surface-container-lowest)",
+                  border: "1px solid var(--border-subtle)",
+                }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="font-semibold text-sm" style={{ color: "var(--foreground)" }}>
+                    {name}
+                  </span>
+                  {vehicleType && (
+                    <span
+                      className="text-[10px] font-bold uppercase tracking-[0.12em] px-1.5 py-0.5 rounded"
+                      style={{
+                        backgroundColor: vehicleType === "Van" ? "#e2dfff" : "#f0fdf4",
+                        color: vehicleType === "Van" ? "#3323cc" : "#15803d",
+                      }}
+                    >
+                      {vehicleType}
+                    </span>
+                  )}
+                </div>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                  {metricCols.slice(0, 6).map((col) => {
+                    const val = row[col.index] ?? "";
+                    if (!val) return null;
+                    return (
+                      <div key={col.index} className="flex items-center justify-between text-xs">
+                        <span style={{ color: "var(--on-surface-variant-muted)" }}>{col.header}</span>
+                        <span className="tabular-nums font-medium" style={{ color: "var(--foreground)" }}>{val}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Link>
+            );
+          })
+        )}
+      </div>
+
+      {/* Desktop table view */}
       <div
-        className="rounded-xl overflow-hidden editorial-shadow"
+        className="rounded-xl overflow-hidden editorial-shadow hidden md:block"
         style={{ backgroundColor: "var(--surface-container-lowest)", border: "1px solid var(--border-subtle)" }}
       >
         <div className="overflow-x-auto">
