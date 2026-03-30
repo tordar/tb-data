@@ -95,7 +95,7 @@ export function DataTable({
                 </span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <span className="font-semibold text-sm truncate" style={{ color: "var(--foreground)" }}>
+                    <span className="font-semibold text-sm truncate" style={{ color: "var(--primary)" }}>
                       {name}
                     </span>
                     {vehicleType && (
