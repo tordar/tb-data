@@ -359,7 +359,19 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
         </div>
 
         {/* Attribution */}
-        <div className="pt-4 mt-4 px-3" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+        <div className="pt-4 mt-4 px-3 space-y-1" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+          <p className="text-xs" style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}>
+            Created by{" "}
+            <a
+              href="https://tordar.no"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2"
+              style={{ color: "var(--on-surface-variant)" }}
+            >
+              tordar
+            </a>
+          </p>
           <p className="text-xs" style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}>
             Data by{" "}
             <a
@@ -368,8 +380,6 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
               rel="noopener noreferrer"
               className="underline underline-offset-2"
               style={{ color: "var(--on-surface-variant)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.opacity = ""; }}
             >
               Bjørn Nyland
             </a>
