@@ -35,32 +35,6 @@ const BAR_COLS: Record<string, string[]> = {
   Bangkok: ["Wh/km"],
 };
 
-// Known van names for the Banana test
-const BANANA_VAN_NAMES = new Set([
-  "Citroën ë-Berlingo",
-  "Citroën ë-SpaceTourer",
-  "Fiat E-Doblò",
-  "Fiat E-Scudo",
-  "Ford E-Transit Custom",
-  "Maxus eDeliver 3",
-  "Maxus eDeliver 7",
-  "Maxus eDeliver 9",
-  "Mercedes eVito Tourer",
-  "Mercedes EQV",
-  "Nissan e-NV200",
-  "Nissan Townstar",
-  "Opel Combo-e Life",
-  "Opel Vivaro-e",
-  "Opel Zafira-e Life",
-  "Peugeot e-Partner",
-  "Peugeot e-Rifter",
-  "Peugeot e-Traveller",
-  "Renault Kangoo E-Tech",
-  "Toyota Proace City Electric",
-  "Toyota Proace Electric",
-  "Volkswagen ID. Buzz",
-  "Volkswagen ID. Buzz LWB",
-]);
 
 interface TestSheetViewProps {
   sheet: TestSheet;
@@ -78,15 +52,12 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
   const isBanana = sheet.slug === "banana";
 
   // Determine which rows are vans (only for Banana sheet)
+  // The data has a pivot row ["Van", "Trunk", "Seats folded"] — everything after it is a van
   const bananaVanNames = useMemo(() => {
     if (!isBanana) return null;
-    // Match rows against known van names
-    const vanSet = new Set<string>();
-    for (const row of sheet.rows) {
-      const name = row[0] ?? "";
-      if (BANANA_VAN_NAMES.has(name)) vanSet.add(name);
-    }
-    return vanSet;
+    const pivotIdx = sheet.rows.findIndex((r) => r[0] === "Van" && r[1] === "Trunk");
+    if (pivotIdx < 0) return new Set<string>();
+    return new Set(sheet.rows.slice(pivotIdx + 1).map((r) => r[0]));
   }, [isBanana, sheet.rows]);
 
   // Column metadata for DataTable
@@ -107,12 +78,15 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
   const filtered = useMemo(() => {
     let rows = sheet.rows;
 
-    // Banana car/van filter
-    if (isBanana && bananaFilter !== "all" && bananaVanNames) {
-      rows = rows.filter((r) => {
-        const isVan = bananaVanNames.has(r[0] ?? "");
-        return bananaFilter === "van" ? isVan : !isVan;
-      });
+    // Banana: filter out the pivot row, then apply car/van filter
+    if (isBanana) {
+      rows = rows.filter((r) => !(r[0] === "Van" && r[1] === "Trunk"));
+      if (bananaFilter !== "all" && bananaVanNames) {
+        rows = rows.filter((r) => {
+          const isVan = bananaVanNames.has(r[0] ?? "");
+          return bananaFilter === "van" ? isVan : !isVan;
+        });
+      }
     }
 
     // Search
