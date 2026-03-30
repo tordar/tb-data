@@ -1,21 +1,19 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { sheets } from "@/data/sheets";
-import { SHEET_ICONS } from "@/lib/sheet-utils";
+import Link from "next/link";
+import { getTests, getAllTestSheets } from "@/lib/data/tests";
 
 interface SidebarProps {
-  activeSheet: number;
-  isDashboard: boolean;
+  pathname: string;
   sidebarOpen: boolean;
-  onNavigate: (idx: number) => void;
   onClose: () => void;
-  onExport: (format: "csv" | "pdf") => void;
 }
 
-export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onClose, onExport }: SidebarProps) {
+export function Sidebar({ pathname, sidebarOpen, onClose }: SidebarProps) {
   const [exportOpen, setExportOpen] = useState(false);
   const exportRef = useRef<HTMLDivElement>(null);
+  const tests = getTests();
 
   useEffect(() => {
     if (!exportOpen) return;
@@ -28,6 +26,39 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
     return () => document.removeEventListener("mousedown", handleClick);
   }, [exportOpen]);
 
+  function handleExport(format: "csv" | "pdf") {
+    const sheets = getAllTestSheets();
+
+    if (format === "csv") {
+      const csvParts = sheets.map((s) => {
+        const headerLine = s.headers.join(",");
+        const dataLines = s.rows.map((r) =>
+          r.map((c) => (c.includes(",") || c.includes('"') ? `"${c.replace(/"/g, '""')}"` : c)).join(",")
+        );
+        return `--- ${s.name} ---\n${headerLine}\n${dataLines.join("\n")}`;
+      });
+      const blob = new Blob([csvParts.join("\n\n")], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "tb-test-results.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+    } else {
+      // PDF export — open print dialog
+      window.print();
+    }
+  }
+
+  const navItems = [
+    { label: "Dashboard", href: "/", icon: "dashboard" },
+    ...tests.map((t) => ({
+      label: t.name,
+      href: `/tests/${t.slug}`,
+      icon: t.icon,
+    })),
+  ];
+
   return (
     <aside
       className={`fixed left-0 top-0 h-screen w-64 flex flex-col py-8 px-4 z-50 transition-transform duration-200 lg:translate-x-0 ${
@@ -38,7 +69,7 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
       {/* Brand */}
       <div className="mb-8 px-2">
         <h1 className="font-bold text-xl tracking-tight" style={{ color: "var(--primary)" }}>
-          EV Curator
+          TB Test Results
         </h1>
         <p
           className="text-xs mt-0.5 uppercase tracking-[0.18em]"
@@ -49,49 +80,29 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
             fontSize: "0.625rem",
           }}
         >
-          Intelligence Report
+          Explorer
         </p>
       </div>
 
       {/* Nav */}
       <nav className="flex-1 space-y-0.5 overflow-y-auto">
-        <button
-          onClick={() => onNavigate(-1)}
-          className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
-          style={
-            isDashboard
-              ? { color: "var(--primary)", backgroundColor: "var(--nav-active-bg)", fontWeight: 600, borderRight: "3px solid var(--primary)", borderRadius: "0.375rem 0 0 0.375rem" }
-              : { color: "var(--on-surface-variant)" }
-          }
-          onMouseEnter={(e) => {
-            if (!isDashboard) {
-              e.currentTarget.style.backgroundColor = "var(--surface-container)";
-              e.currentTarget.style.color = "var(--foreground)";
-            }
-          }}
-          onMouseLeave={(e) => {
-            if (!isDashboard) {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.color = "var(--on-surface-variant)";
-            }
-          }}
-        >
-          <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>dashboard</span>
-          <span>Dashboard</span>
-        </button>
-        {sheets.map((s, i) => {
-          const navIcon = SHEET_ICONS[s.name] ?? "table_chart";
-          const isActive = i === activeSheet;
+        {navItems.map((item) => {
+          const isActive =
+            item.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(item.href);
+
           return (
-            <button
-              key={s.name}
-              onClick={() => onNavigate(i)}
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={onClose}
               className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
               style={
                 isActive
                   ? {
                       color: "var(--primary)",
-                      backgroundColor: "rgba(255,255,255,0.6)",
+                      backgroundColor: "var(--nav-active-bg)",
                       fontWeight: 600,
                       borderRight: "3px solid var(--primary)",
                       borderRadius: "0.375rem 0 0 0.375rem",
@@ -112,12 +123,55 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
               }}
             >
               <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>
-                {navIcon}
+                {item.icon}
               </span>
-              <span>{s.name}</span>
-            </button>
+              <span>{item.label}</span>
+            </Link>
           );
         })}
+
+        {/* Compare section */}
+        <div className="pt-4 mt-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+          <p
+            className="px-3 pb-2 text-xs font-semibold uppercase tracking-wider"
+            style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}
+          >
+            Compare
+          </p>
+          <Link
+            href="/compare"
+            onClick={onClose}
+            className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
+            style={
+              pathname.startsWith("/compare")
+                ? {
+                    color: "var(--primary)",
+                    backgroundColor: "var(--nav-active-bg)",
+                    fontWeight: 600,
+                    borderRight: "3px solid var(--primary)",
+                    borderRadius: "0.375rem 0 0 0.375rem",
+                  }
+                : { color: "var(--on-surface-variant)" }
+            }
+            onMouseEnter={(e) => {
+              if (!pathname.startsWith("/compare")) {
+                e.currentTarget.style.backgroundColor = "var(--surface-container)";
+                e.currentTarget.style.color = "var(--foreground)";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!pathname.startsWith("/compare")) {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "var(--on-surface-variant)";
+              }
+            }}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>
+              electric_car
+            </span>
+            <span>Find Your EV</span>
+          </Link>
+        </div>
       </nav>
 
       {/* Export button */}
@@ -128,7 +182,7 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
             style={{ backgroundColor: "var(--surface-container)", border: "1px solid var(--border-subtle)" }}
           >
             <button
-              onClick={() => { onExport("csv"); setExportOpen(false); }}
+              onClick={() => { handleExport("csv"); setExportOpen(false); }}
               className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
               style={{ color: "var(--on-surface-variant)", borderBottom: "1px solid var(--border-subtle)" }}
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
@@ -138,7 +192,7 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
               Export as CSV
             </button>
             <button
-              onClick={() => { onExport("pdf"); setExportOpen(false); }}
+              onClick={() => { handleExport("pdf"); setExportOpen(false); }}
               className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
               style={{ color: "var(--on-surface-variant)" }}
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
@@ -162,7 +216,7 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
       {/* Attribution */}
       <div className="pt-4 pb-1">
         <p className="text-xs" style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}>
-          Data source:{" "}
+          Data by{" "}
           <a
             href="https://docs.google.com/spreadsheets/d/1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE/edit?gid=244400016#gid=244400016"
             target="_blank"
@@ -172,7 +226,7 @@ export function Sidebar({ activeSheet, isDashboard, sidebarOpen, onNavigate, onC
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = ""; }}
           >
-            Bjørn Nyland&apos;s TB Test Results
+            Bjørn Nyland
           </a>
         </p>
       </div>
