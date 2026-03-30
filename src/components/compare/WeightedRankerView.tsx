@@ -6,7 +6,23 @@ import { getVehicles } from "@/lib/data/vehicles";
 import { RANKING_METRICS, getMetricScores } from "@/lib/data/comparison";
 import { computeWeightedRank } from "@/lib/utils/scoring";
 
-const initialWeights = Object.fromEntries(RANKING_METRICS.map((m) => [m.key, 50]));
+const PRIORITY_LEVELS = [
+  { label: "Don't care", value: 0 },
+  { label: "Nice to have", value: 25 },
+  { label: "Important", value: 60 },
+  { label: "Essential", value: 100 },
+] as const;
+
+const METRIC_DESCRIPTIONS: Record<string, string> = {
+  range: "How far can it go on a single charge at highway speed?",
+  cargo: "How much stuff fits in the trunk?",
+  acceleration: "How fast does it get to 100 km/h?",
+  noise: "How quiet is the cabin at highway speed?",
+  braking: "How quickly does it stop from 100 km/h?",
+  weight: "How light is the vehicle?",
+};
+
+const initialWeights = Object.fromEntries(RANKING_METRICS.map((m) => [m.key, 25]));
 
 export function WeightedRankerView() {
   const [weights, setWeights] = useState<Record<string, number>>(initialWeights);
@@ -30,6 +46,14 @@ export function WeightedRankerView() {
 
   const top50 = ranked.slice(0, 50);
 
+  function getPriorityIndex(value: number): number {
+    return PRIORITY_LEVELS.findIndex((p) => p.value === value);
+  }
+
+  function setPriority(key: string, value: number) {
+    setWeights((prev) => ({ ...prev, [key]: value }));
+  }
+
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -41,11 +65,11 @@ export function WeightedRankerView() {
           Find Your EV
         </h2>
         <p className="mt-1 text-sm" style={{ color: "var(--on-surface-variant-muted)" }}>
-          Adjust the sliders to match your priorities — we&apos;ll rank all tested vehicles accordingly.
+          Tell us what matters to you and we&apos;ll rank the best matches from real test data.
         </p>
       </section>
 
-      {/* Sliders card */}
+      {/* Priority cards */}
       <section
         className="rounded-xl p-6 editorial-shadow"
         style={{
@@ -62,38 +86,66 @@ export function WeightedRankerView() {
         >
           What matters to you?
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-          {RANKING_METRICS.map((metric) => (
-            <div key={metric.key} className="flex flex-col gap-2">
-              <div className="flex items-center justify-between">
-                <label
-                  className="text-sm font-semibold"
-                  style={{ color: "var(--foreground)" }}
-                  htmlFor={`slider-${metric.key}`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {RANKING_METRICS.map((metric) => {
+            const currentIdx = getPriorityIndex(weights[metric.key]);
+            return (
+              <div
+                key={metric.key}
+                className="rounded-lg p-4"
+                style={{
+                  backgroundColor: weights[metric.key] > 0 ? "var(--surface-container-low)" : "transparent",
+                  border: "1px solid var(--border-subtle)",
+                }}
+              >
+                <div className="mb-1">
+                  <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                    {metric.label}
+                  </span>
+                </div>
+                <p
+                  className="text-xs mb-3"
+                  style={{ color: "var(--on-surface-variant-muted)" }}
                 >
-                  {metric.label}
-                </label>
-                <span
-                  className="text-xs font-bold tabular-nums"
-                  style={{ color: "var(--primary)" }}
-                >
-                  {weights[metric.key]}%
-                </span>
+                  {METRIC_DESCRIPTIONS[metric.key]}
+                </p>
+                <div className="flex gap-1">
+                  {PRIORITY_LEVELS.map((level, i) => (
+                    <button
+                      key={level.value}
+                      onClick={() => setPriority(metric.key, level.value)}
+                      className="flex-1 py-1.5 text-xs font-medium rounded-md transition-colors"
+                      style={
+                        i === currentIdx
+                          ? {
+                              backgroundColor: "var(--primary)",
+                              color: "white",
+                            }
+                          : {
+                              backgroundColor: "transparent",
+                              color: "var(--on-surface-variant-muted)",
+                            }
+                      }
+                      onMouseEnter={(e) => {
+                        if (i !== currentIdx) {
+                          e.currentTarget.style.backgroundColor = "var(--surface-container)";
+                          e.currentTarget.style.color = "var(--foreground)";
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (i !== currentIdx) {
+                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.color = "var(--on-surface-variant-muted)";
+                        }
+                      }}
+                    >
+                      {level.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <input
-                id={`slider-${metric.key}`}
-                type="range"
-                min={0}
-                max={100}
-                value={weights[metric.key]}
-                onChange={(e) =>
-                  setWeights((prev) => ({ ...prev, [metric.key]: Number(e.target.value) }))
-                }
-                className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
-                style={{ accentColor: "var(--primary)" }}
-              />
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -119,7 +171,6 @@ export function WeightedRankerView() {
             <table className="w-full border-collapse text-sm">
               <thead style={{ backgroundColor: "var(--surface-container-high)" }}>
                 <tr>
-                  {/* # */}
                   <th
                     className="py-3.5 pl-6 pr-3 text-left"
                     style={{
@@ -133,7 +184,6 @@ export function WeightedRankerView() {
                   >
                     #
                   </th>
-                  {/* Vehicle */}
                   <th
                     className="py-3.5 px-3 text-left"
                     style={{
@@ -147,7 +197,6 @@ export function WeightedRankerView() {
                   >
                     Vehicle
                   </th>
-                  {/* Metric columns — hidden on mobile */}
                   {RANKING_METRICS.map((metric) => (
                     <th
                       key={metric.key}
@@ -167,7 +216,6 @@ export function WeightedRankerView() {
                       {metric.label}
                     </th>
                   ))}
-                  {/* Score */}
                   <th
                     className="py-3.5 pl-3 pr-6 text-right"
                     style={{
@@ -197,14 +245,12 @@ export function WeightedRankerView() {
                         "transparent";
                     }}
                   >
-                    {/* Rank number */}
                     <td
                       className="py-3 pl-6 pr-3 tabular-nums text-sm font-semibold"
                       style={{ color: "var(--on-surface-variant-muted)" }}
                     >
                       {idx + 1}
                     </td>
-                    {/* Vehicle name */}
                     <td className="py-3 px-3 font-semibold whitespace-nowrap">
                       <Link
                         href={`/vehicles/${vehicle.slug}`}
@@ -214,7 +260,6 @@ export function WeightedRankerView() {
                         {vehicle.name}
                       </Link>
                     </td>
-                    {/* Metric scores */}
                     {RANKING_METRICS.map((metric) => (
                       <td
                         key={metric.key}
@@ -231,7 +276,6 @@ export function WeightedRankerView() {
                           : "—"}
                       </td>
                     ))}
-                    {/* Weighted score badge */}
                     <td className="py-3 pl-3 pr-6 text-right">
                       <span
                         className="inline-block tabular-nums text-xs font-bold px-2.5 py-1 rounded-full"
