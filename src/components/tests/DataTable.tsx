@@ -73,44 +73,52 @@ export function DataTable({
               ? bananaVanNames.has(name) ? "Van" : "Car"
               : null;
 
-            // Collect all non-empty data columns
-            const dataValues = headers
-              .map((h, i) => ({ header: h, value: row[i] ?? "", index: i }))
-              .filter((c) => c.index > 0 && c.value);
+            // Primary value: the sorted column
+            const primaryIdx = sortCol > 0 ? sortCol : metricCols[0]?.index ?? 1;
+            const primaryVal = row[primaryIdx] ?? "";
+            const primaryHeader = headers[primaryIdx] ?? "";
+            const primaryMeta = colMeta[primaryIdx];
+
+            // Bar percentage for the primary value
+            const n = parseNum(primaryVal);
+            const pct = n !== null && primaryMeta?.max > 0 ? (n / primaryMeta.max) * 100 : 0;
 
             return (
               <Link
                 key={ri}
                 href={`/vehicles/${vehicleSlug(name)}`}
-                className="block px-4 py-3"
+                className="flex items-center gap-3 px-4 py-3"
                 style={ri > 0 ? { borderTopWidth: 1, borderTopStyle: "solid", borderTopColor: "var(--row-border)" } : undefined}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs tabular-nums font-medium w-5 shrink-0" style={{ color: "var(--on-surface-variant-muted)" }}>
-                    {ri + 1}
-                  </span>
-                  <span className="font-semibold text-sm" style={{ color: "var(--foreground)" }}>
-                    {name}
-                  </span>
-                  {vehicleType && (
-                    <span
-                      className="shrink-0 text-[9px] font-bold uppercase px-1 py-0.5 rounded"
-                      style={{
-                        backgroundColor: vehicleType === "Van" ? "#e2dfff" : "#f0fdf4",
-                        color: vehicleType === "Van" ? "#3323cc" : "#15803d",
-                      }}
-                    >
-                      {vehicleType}
+                <span className="text-xs tabular-nums font-medium w-5 shrink-0 text-right" style={{ color: "var(--on-surface-variant-muted)" }}>
+                  {ri + 1}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-semibold text-sm truncate" style={{ color: "var(--foreground)" }}>
+                      {name}
                     </span>
+                    {vehicleType && (
+                      <span
+                        className="shrink-0 text-[9px] font-bold uppercase px-1 py-0.5 rounded"
+                        style={{
+                          backgroundColor: vehicleType === "Van" ? "#e2dfff" : "#f0fdf4",
+                          color: vehicleType === "Van" ? "#3323cc" : "#15803d",
+                        }}
+                      >
+                        {vehicleType}
+                      </span>
+                    )}
+                  </div>
+                  {primaryMeta?.isBar && pct > 0 && (
+                    <div className="mt-1.5 h-1 rounded-full overflow-hidden" style={{ backgroundColor: "var(--surface-container)" }}>
+                      <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: "var(--primary)", opacity: 0.6 }} />
+                    </div>
                   )}
                 </div>
-                <div className="ml-7 flex flex-wrap gap-x-4 gap-y-0.5">
-                  {dataValues.map((col) => (
-                    <span key={col.index} className="text-xs">
-                      <span style={{ color: "var(--on-surface-variant-muted)" }}>{col.header} </span>
-                      <span className="tabular-nums font-medium" style={{ color: "var(--foreground)" }}>{col.value}</span>
-                    </span>
-                  ))}
+                <div className="text-right shrink-0 ml-2">
+                  <div className="text-[10px]" style={{ color: "var(--on-surface-variant-muted)" }}>{primaryHeader}</div>
+                  <div className="text-sm tabular-nums font-bold" style={{ color: "var(--foreground)" }}>{primaryVal || "—"}</div>
                 </div>
               </Link>
             );
