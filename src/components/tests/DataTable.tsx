@@ -57,8 +57,11 @@ export function DataTable({
         </div>
       </div>
 
-      {/* Mobile card view */}
-      <div className="md:hidden space-y-2">
+      {/* Mobile list view */}
+      <div
+        className="md:hidden rounded-xl overflow-hidden editorial-shadow"
+        style={{ backgroundColor: "var(--surface-container-lowest)", border: "1px solid var(--border-subtle)" }}
+      >
         {filtered.length === 0 ? (
           <p className="py-8 text-center text-sm" style={{ color: "var(--on-surface-variant-muted)" }}>
             No rows match your search.
@@ -70,23 +73,33 @@ export function DataTable({
               ? bananaVanNames.has(name) ? "Van" : "Car"
               : null;
 
+            // Show the sorted column value, or the first bar column, or first numeric column
+            const primaryCol = metricCols.find((c) => c.index === sortCol) ?? metricCols[0];
+            const primaryVal = primaryCol ? (row[primaryCol.index] ?? "") : "";
+            const primaryHeader = primaryCol?.header ?? "";
+
+            // Find a second metric to show (different from primary)
+            const secondaryCol = metricCols.find((c) => c.index !== primaryCol?.index);
+            const secondaryVal = secondaryCol ? (row[secondaryCol.index] ?? "") : "";
+            const secondaryHeader = secondaryCol?.header ?? "";
+
             return (
               <Link
                 key={ri}
                 href={`/vehicles/${vehicleSlug(name)}`}
-                className="block rounded-lg p-4 transition-colors"
-                style={{
-                  backgroundColor: "var(--surface-container-lowest)",
-                  border: "1px solid var(--border-subtle)",
-                }}
+                className="flex items-center justify-between px-4 py-3"
+                style={{ borderTop: ri > 0 ? "1px solid var(--row-border)" : undefined }}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="font-semibold text-sm" style={{ color: "var(--foreground)" }}>
+                <div className="flex items-center gap-2 min-w-0 flex-1">
+                  <span className="text-sm tabular-nums font-medium w-6 shrink-0" style={{ color: "var(--on-surface-variant-muted)" }}>
+                    {ri + 1}
+                  </span>
+                  <span className="font-semibold text-sm truncate" style={{ color: "var(--foreground)" }}>
                     {name}
                   </span>
                   {vehicleType && (
                     <span
-                      className="text-[10px] font-bold uppercase tracking-[0.12em] px-1.5 py-0.5 rounded"
+                      className="shrink-0 text-[9px] font-bold uppercase px-1 py-0.5 rounded"
                       style={{
                         backgroundColor: vehicleType === "Van" ? "#e2dfff" : "#f0fdf4",
                         color: vehicleType === "Van" ? "#3323cc" : "#15803d",
@@ -96,17 +109,19 @@ export function DataTable({
                     </span>
                   )}
                 </div>
-                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                  {metricCols.slice(0, 6).map((col) => {
-                    const val = row[col.index] ?? "";
-                    if (!val) return null;
-                    return (
-                      <div key={col.index} className="flex items-center justify-between text-xs">
-                        <span style={{ color: "var(--on-surface-variant-muted)" }}>{col.header}</span>
-                        <span className="tabular-nums font-medium" style={{ color: "var(--foreground)" }}>{val}</span>
-                      </div>
-                    );
-                  })}
+                <div className="flex items-center gap-4 shrink-0 ml-3">
+                  {secondaryVal && (
+                    <div className="text-right">
+                      <div className="text-[10px]" style={{ color: "var(--on-surface-variant-muted)" }}>{secondaryHeader}</div>
+                      <div className="text-xs tabular-nums font-medium" style={{ color: "var(--on-surface-variant)" }}>{secondaryVal}</div>
+                    </div>
+                  )}
+                  {primaryVal && (
+                    <div className="text-right min-w-[3rem]">
+                      <div className="text-[10px]" style={{ color: "var(--on-surface-variant-muted)" }}>{primaryHeader}</div>
+                      <div className="text-sm tabular-nums font-bold" style={{ color: "var(--foreground)" }}>{primaryVal}</div>
+                    </div>
+                  )}
                 </div>
               </Link>
             );
