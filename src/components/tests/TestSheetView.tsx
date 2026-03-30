@@ -42,7 +42,9 @@ interface TestSheetViewProps {
 }
 
 export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
-  const defaultSortCol = meta.colName ? sheet.headers.indexOf(meta.colName) : 0;
+  const defaultSortCol = sheet.headers.indexOf(
+    sheet.slug === "banana" ? "Trunk" : (meta.colName || "")
+  );
   const defaultSortDir: SortDir = meta.lowerIsBetter ? "asc" : "desc";
 
   const [search, setSearch] = useState("");
