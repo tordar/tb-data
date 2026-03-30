@@ -42,9 +42,12 @@ interface TestSheetViewProps {
 }
 
 export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
+  const defaultSortCol = meta.colName ? sheet.headers.indexOf(meta.colName) : 0;
+  const defaultSortDir: SortDir = meta.lowerIsBetter ? "asc" : "desc";
+
   const [search, setSearch] = useState("");
-  const [sortCol, setSortCol] = useState(0);
-  const [sortDir, setSortDir] = useState<SortDir>("asc");
+  const [sortCol, setSortCol] = useState(defaultSortCol >= 0 ? defaultSortCol : 0);
+  const [sortDir, setSortDir] = useState<SortDir>(defaultSortDir);
   const [bananaFilter, setBananaFilter] = useState<"all" | "car" | "van">("all");
 
   const stats = useMemo(() => computeStats(sheet, meta), [sheet, meta]);
