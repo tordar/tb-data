@@ -80,8 +80,8 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
       }
     }
 
-    // Filter out annotation rows (e.g., "* = Aftermarket soundproofing")
-    rows = rows.filter((r) => !r[0]?.startsWith("*"));
+    // Filter out annotation rows and duplicate header rows
+    rows = rows.filter((r) => !r[0]?.startsWith("*") && !(r[0] === sheet.headers[0] && r[1] === sheet.headers[1]));
 
     // Search
     if (search) {
