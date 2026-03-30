@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TB Test Results Explorer
 
-## Getting Started
+An interactive explorer for [Bjorn Nyland's](https://www.youtube.com/@bjornnyland) publicly available EV test data. Browse, compare, and visualize real-world electric vehicle performance data across 14 test categories and 650+ vehicles.
 
-First, run the development server:
+**Data source:** [TB Test Results spreadsheet](https://docs.google.com/spreadsheets/d/1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE/edit?gid=244400016#gid=244400016)
+
+## What's in here
+
+- **Dashboard** -- overview stats and radar comparison across 6 key metrics
+- **14 test categories** -- Range, Acceleration, Noise, Braking, Weight, Banana (cargo), Degradation, 1000 km challenge, 500 km challenge, Sunday drive, and route challenges (Arctic Circle, Bangkok, Geilo, Zero mile)
+- **Vehicle profiles** -- every test result for a single car in one place, with rankings and percentiles
+- **Find Your EV** -- set your priorities (range, cargo, noise, etc.) and get a ranked list of matches
+- **Head-to-head comparison** -- side-by-side metrics for any two vehicles
+- **YouTube video links** -- 113 vehicles link directly to Bjorn's test videos (sourced from Zerofy)
+
+## Tech stack
+
+- Next.js 16 (App Router) with React 19
+- TypeScript
+- Tailwind CSS 4
+- Recharts for data visualizations
+- Vitest for testing
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/                    Route pages (dashboard, tests, vehicles, compare)
+  components/
+    dashboard/            Dashboard stats and radar chart
+    tests/                Test sheet views and chart visualizations
+    vehicles/             Vehicle profile page
+    compare/              Weighted ranker and head-to-head comparison
+  lib/
+    data/                 Typed data access layer (tests, vehicles, comparison)
+    utils/                Parsing, scoring, formatting helpers
+    types.ts              Shared TypeScript interfaces
+  data/
+    tests/                JSON files per test category (generated)
+    vehicles.json         Unified vehicle list (generated)
+    video-links.json      YouTube video ID mappings
+scripts/
+  import-sheets.ts        Google Sheets CSV import pipeline
+  scrape-zerofy-videos.ts Video link scraper
+```
 
-## Learn More
+## Updating data
 
-To learn more about Next.js, take a look at the following resources:
+The test data lives as static JSON files in `src/data/`, generated from Bjorn's Google spreadsheet.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run import-data
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A GitHub Action (`.github/workflows/update-data.yml`) runs this weekly and commits any changes automatically.
 
-## Deploy on Vercel
+## Tests
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm test
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project visualizes publicly available data collected and shared by Bjorn Nyland. The data itself belongs to him. This tool is an independent community project -- not affiliated with or endorsed by Bjorn Nyland.
