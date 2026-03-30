@@ -1,0 +1,87 @@
+{
+  "name": "Bangkok",
+  "slug": "bangkok",
+  "headers": [
+    "Car",
+    "Date",
+    "Time",
+    "Wh/km",
+    "Comments"
+  ],
+  "rows": [
+    [
+      "Mercedes EQS 500",
+      "2023-02-01",
+      "06:50",
+      "205"
+    ],
+    [
+      "Tesla Model Y LR RWD Juniper",
+      "2026-01-29",
+      "06:50",
+      "155"
+    ],
+    [
+      "Tesla Model Y RWD",
+      "2023-01-05",
+      "07:15",
+      "168"
+    ],
+    [
+      "Volvo XC40",
+      "2023-01-12",
+      "07:25",
+      "224"
+    ],
+    [
+      "Tesla Model 3 LR",
+      "2021-12-16",
+      "08:00",
+      "161"
+    ],
+    [
+      "MG4 51 kWh",
+      "2023-01-27",
+      "08:25",
+      "192"
+    ],
+    [
+      "Ora Good Cat 500 Ultra",
+      "2022-01-10",
+      "08:35",
+      "~190"
+    ],
+    [
+      "BYD Atto 3 60 kWh",
+      "2022-12-10",
+      "08:40",
+      "~185"
+    ],
+    [
+      "MG ZS EV 44.5 kWh",
+      "2021-12-24",
+      "09:00",
+      "177"
+    ],
+    [
+      "Ora Good Cat GT",
+      "2022-12-21",
+      "09:00",
+      "~200"
+    ],
+    [
+      "Nissan Leaf 40 kWh",
+      "2023-01-26",
+      "10:50",
+      "128",
+      "Driving slow because of rapidgate"
+    ],
+    [
+      "Nissan Leaf 40 kWh",
+      "2023-01-23",
+      "11:50",
+      "135",
+      "Driving slow because of rapidgate"
+    ]
+  ]
+}

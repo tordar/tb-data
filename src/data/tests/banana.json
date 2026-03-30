@@ -1,0 +1,879 @@
+{
+  "name": "Banana",
+  "slug": "banana",
+  "headers": [
+    "Car",
+    "Trunk",
+    "Seats folded"
+  ],
+  "rows": [
+    [
+      "Ford F-150 Lightning",
+      "17+4",
+      "44"
+    ],
+    [
+      "Tesla Cybertruck",
+      "23",
+      "43"
+    ],
+    [
+      "Maxus Mifa 9",
+      "31",
+      "39"
+    ],
+    [
+      "Hyundai Ioniq 9 6-seater",
+      "24",
+      "39"
+    ],
+    [
+      "Maxus Euniq 5",
+      "20",
+      "35"
+    ],
+    [
+      "Maxus eTerron 9",
+      "2+15",
+      "35"
+    ],
+    [
+      "Kia EV9",
+      "19",
+      "34"
+    ],
+    [
+      "Maxus eT90",
+      "17",
+      "34"
+    ],
+    [
+      "Mercedes G580",
+      "17",
+      "33"
+    ],
+    [
+      "Nio ES8 6 seater",
+      "16",
+      "32"
+    ],
+    [
+      "Volvo EX90",
+      "15",
+      "31"
+    ],
+    [
+      "Hongqi E-HS7",
+      "9",
+      "31"
+    ],
+    [
+      "Hongqi E-HS9 6 seater",
+      "16",
+      "30"
+    ],
+    [
+      "KGM Torres EVX",
+      "14",
+      "30"
+    ],
+    [
+      "Nio EL7",
+      "10",
+      "30"
+    ],
+    [
+      "Smart #5 Brabus",
+      "9",
+      "29"
+    ],
+    [
+      "HiPhi X",
+      "17",
+      "28"
+    ],
+    [
+      "Nio EL8 Executive 6 seater",
+      "16",
+      "28"
+    ],
+    [
+      "BYD Tang",
+      "15",
+      "28"
+    ],
+    [
+      "Model X 5 seater",
+      "10+1",
+      "28"
+    ],
+    [
+      "Fisker Ocean Extreme",
+      "9",
+      "28"
+    ],
+    [
+      "Zeekr 7X",
+      "9",
+      "28"
+    ],
+    [
+      "Audi Q6 e-tron",
+      "10+1",
+      "27"
+    ],
+    [
+      "Xpeng G9",
+      "10",
+      "27"
+    ],
+    [
+      "Xpeng G6",
+      "9",
+      "27"
+    ],
+    [
+      "Zeekr 001 AWD",
+      "9",
+      "27"
+    ],
+    [
+      "Leapmotor C10",
+      "7",
+      "27"
+    ],
+    [
+      "Mercedes EQS SUV",
+      "13",
+      "26"
+    ],
+    [
+      "Peugeot e-5008",
+      "13",
+      "26"
+    ],
+    [
+      "VW ID7 Tourer",
+      "11",
+      "26"
+    ],
+    [
+      "BYD Seal U",
+      "10",
+      "26"
+    ],
+    [
+      "KGM Musso EV",
+      "10",
+      "26"
+    ],
+    [
+      "Nio EL6",
+      "10",
+      "26"
+    ],
+    [
+      "Tesla Model Y",
+      "9+1",
+      "26"
+    ],
+    [
+      "Voyah Free",
+      "9",
+      "26"
+    ],
+    [
+      "Mercedes EQB",
+      "12",
+      "25"
+    ],
+    [
+      "Hyundai Ioniq 5",
+      "11",
+      "25"
+    ],
+    [
+      "Skoda Enyaq iV 80",
+      "10",
+      "25"
+    ],
+    [
+      "BYD Sealion 7",
+      "9",
+      "25"
+    ],
+    [
+      "Lexus RZ 450e",
+      "9",
+      "25"
+    ],
+    [
+      "VW ID4",
+      "9",
+      "25"
+    ],
+    [
+      "BMW iX",
+      "8",
+      "25"
+    ],
+    [
+      "Renault Scenic E-Tech",
+      "8",
+      "25"
+    ],
+    [
+      "Model S pre-facelift",
+      "8+2",
+      "24"
+    ],
+    [
+      "Audi Q4 e-tron",
+      "9",
+      "24"
+    ],
+    [
+      "BMW iX3",
+      "9",
+      "24"
+    ],
+    [
+      "Mercedes EQE SUV",
+      "9",
+      "24"
+    ],
+    [
+      "Skoda Enyaq Coupé RS",
+      "9",
+      "24"
+    ],
+    [
+      "VW ID5",
+      "9",
+      "24"
+    ],
+    [
+      "VW ID7",
+      "9",
+      "24"
+    ],
+    [
+      "Audi Q4 e-tron Sportback",
+      "8",
+      "24"
+    ],
+    [
+      "Ford Capri",
+      "8",
+      "24"
+    ],
+    [
+      "Jaecoo 5",
+      "8",
+      "24"
+    ],
+    [
+      "Leapmotor B10",
+      "8",
+      "24"
+    ],
+    [
+      "Mercedes EQS",
+      "8",
+      "24"
+    ],
+    [
+      "MG5",
+      "8",
+      "24"
+    ],
+    [
+      "Nissan Ariya",
+      "8",
+      "24"
+    ],
+    [
+      "Ford Explorer",
+      "7",
+      "24"
+    ],
+    [
+      "MG IM6",
+      "7",
+      "24"
+    ],
+    [
+      "Polestar 4",
+      "7",
+      "24"
+    ],
+    [
+      "Jaecoo 6",
+      "6",
+      "24"
+    ],
+    [
+      "Model X 6 seater",
+      "9+1",
+      "23"
+    ],
+    [
+      "Audi Q6 e-tron Sportback",
+      "8+1",
+      "23"
+    ],
+    [
+      "Ford Mustang Mach-E",
+      "8+1",
+      "23"
+    ],
+    [
+      "Audi e-tron",
+      "8",
+      "23"
+    ],
+    [
+      "BMW iX1",
+      "8",
+      "23"
+    ],
+    [
+      "Cupra Tavascan",
+      "8",
+      "23"
+    ],
+    [
+      "MGS5",
+      "8",
+      "23"
+    ],
+    [
+      "Kia EV6",
+      "8",
+      "23"
+    ],
+    [
+      "Kia Niro EV",
+      "8",
+      "23"
+    ],
+    [
+      "Skoda Elroq 60",
+      "8",
+      "23"
+    ],
+    [
+      "Tesla Model S Plaid",
+      "8",
+      "23"
+    ],
+    [
+      "Toyota bZ4X",
+      "8",
+      "23"
+    ],
+    [
+      "Audi e-tron Sportback",
+      "7",
+      "23"
+    ],
+    [
+      "Kia e-Soul",
+      "7",
+      "23"
+    ],
+    [
+      "Nio ET5 Touring",
+      "7",
+      "23"
+    ],
+    [
+      "Polestar 3",
+      "7",
+      "23"
+    ],
+    [
+      "Deepal S07",
+      "6+1",
+      "23"
+    ],
+    [
+      "Seres 5",
+      "7+1",
+      "23"
+    ],
+    [
+      "GAC Aion ES",
+      "6",
+      "23"
+    ],
+    [
+      "Mercedes EQA",
+      "6",
+      "23"
+    ],
+    [
+      "Audi S6 e-tron Avant",
+      "9",
+      "22"
+    ],
+    [
+      "Audi A6 e-tron Sportback",
+      "8",
+      "22"
+    ],
+    [
+      "Hyundai Kona MY2024",
+      "8",
+      "22"
+    ],
+    [
+      "Kia e-Niro",
+      "8",
+      "22"
+    ],
+    [
+      "Kia EV3",
+      "8",
+      "22"
+    ],
+    [
+      "Opel Astra-e Tourer",
+      "8",
+      "22"
+    ],
+    [
+      "Model S facelift",
+      "8",
+      "22"
+    ],
+    [
+      "BYD Atto 3",
+      "7",
+      "22"
+    ],
+    [
+      "Porsche Macan",
+      "7",
+      "22"
+    ],
+    [
+      "Volvo C40",
+      "6",
+      "22"
+    ],
+    [
+      "Avatr 11",
+      "5+1",
+      "22"
+    ],
+    [
+      "BMW i7",
+      "5",
+      "22"
+    ],
+    [
+      "Xpeng G3",
+      "8",
+      "21"
+    ],
+    [
+      "Citroen e-C4X",
+      "7",
+      "21"
+    ],
+    [
+      "Hyundai Ioniq 28 kWh",
+      "7",
+      "21"
+    ],
+    [
+      "Mini Countryman SE All4",
+      "7",
+      "21"
+    ],
+    [
+      "Nissan Leaf 2018",
+      "7",
+      "21"
+    ],
+    [
+      "Volvo XC40",
+      "7",
+      "21"
+    ],
+    [
+      "Mazda 6e",
+      "6+1",
+      "21"
+    ],
+    [
+      "Kia Soul EV",
+      "6",
+      "21"
+    ],
+    [
+      "Mercedes EQE",
+      "6",
+      "21"
+    ],
+    [
+      "MG Marvel R Performance",
+      "6",
+      "21"
+    ],
+    [
+      "Renault Megane E-Tech",
+      "6",
+      "21"
+    ],
+    [
+      "Firefly Select",
+      "5+1",
+      "21"
+    ],
+    [
+      "Hyundai Ioniq 6",
+      "5",
+      "21"
+    ],
+    [
+      "MG ZS EV",
+      "8",
+      "20"
+    ],
+    [
+      "Porsche Taycan Cross Turismo",
+      "7+1",
+      "20"
+    ],
+    [
+      "BMW iX2",
+      "7",
+      "20"
+    ],
+    [
+      "Mercedes EQC",
+      "7",
+      "20"
+    ],
+    [
+      "Jaguar I-pace",
+      "6",
+      "20"
+    ],
+    [
+      "MG4",
+      "6",
+      "20"
+    ],
+    [
+      "Peugeot e-2008",
+      "6",
+      "20"
+    ],
+    [
+      "Volvo EX30",
+      "6",
+      "20"
+    ],
+    [
+      "BYD Dolphin",
+      "5",
+      "20"
+    ],
+    [
+      "Citroen e-C3",
+      "5",
+      "20"
+    ],
+    [
+      "Jac E30X",
+      "5",
+      "20"
+    ],
+    [
+      "Nio ET5",
+      "5",
+      "20"
+    ],
+    [
+      "Hyundai Inster",
+      "8",
+      "19"
+    ],
+    [
+      "Citroen e-C4",
+      "7",
+      "19"
+    ],
+    [
+      "VW ID.3",
+      "7",
+      "19"
+    ],
+    [
+      "Tesla Model 3 Highland",
+      "6+1",
+      "19"
+    ],
+    [
+      "BYD Han",
+      "6",
+      "19"
+    ],
+    [
+      "Honda e:Ny1",
+      "6",
+      "19"
+    ],
+    [
+      "Jeep Avenger",
+      "6",
+      "19"
+    ],
+    [
+      "Polestar 2",
+      "6",
+      "19"
+    ],
+    [
+      "BYD Seal",
+      "4",
+      "19"
+    ],
+    [
+      "Nio ET7",
+      "4",
+      "19"
+    ],
+    [
+      "Zeekr X AWD",
+      "4",
+      "19"
+    ],
+    [
+      "Lexus UX 300e",
+      "7",
+      "18"
+    ],
+    [
+      "Smart #3 Brabus",
+      "6",
+      "18"
+    ],
+    [
+      "Mercedes CLA",
+      "5+1",
+      "18"
+    ],
+    [
+      "BMW i4",
+      "5",
+      "18"
+    ],
+    [
+      "Nissan Leaf 2013",
+      "5",
+      "18"
+    ],
+    [
+      "DS 3 e-tense",
+      "5",
+      "18"
+    ],
+    [
+      "Fiat 600e",
+      "5",
+      "18"
+    ],
+    [
+      "Peugeot e-208",
+      "5",
+      "18"
+    ],
+    [
+      "Toyota Mirai",
+      "5",
+      "18"
+    ],
+    [
+      "Xpeng P7 Performance",
+      "5",
+      "18"
+    ],
+    [
+      "HiPhi Z",
+      "4",
+      "18"
+    ],
+    [
+      "Smart #1 Brabus",
+      "4",
+      "18"
+    ],
+    [
+      "Renault Zoe",
+      "6",
+      "17"
+    ],
+    [
+      "Opel Ampera-e",
+      "5",
+      "17"
+    ],
+    [
+      "Opel Corsa-e",
+      "5",
+      "17"
+    ],
+    [
+      "Opel Mokka-e",
+      "5",
+      "17"
+    ],
+    [
+      "BMW i5 M60",
+      "4",
+      "17"
+    ],
+    [
+      "Ora 07",
+      "3",
+      "17"
+    ],
+    [
+      "Ora Good Cat/Funky Cat",
+      "2",
+      "17"
+    ],
+    [
+      "Mazda MX-30",
+      "6",
+      "16"
+    ],
+    [
+      "Porsche Taycan",
+      "5+1",
+      "16"
+    ],
+    [
+      "VW e-Golf",
+      "5",
+      "16"
+    ],
+    [
+      "Renault 5 E-Tech",
+      "4",
+      "16"
+    ],
+    [
+      "Hyundai Kona",
+      "5",
+      "16"
+    ],
+    [
+      "Mitsubishi i-MiEV",
+      "3",
+      "16"
+    ],
+    [
+      "VW e-up",
+      "4",
+      "14"
+    ],
+    [
+      "BMW i3",
+      "4",
+      "14"
+    ],
+    [
+      "Honda e",
+      "2",
+      "14"
+    ],
+    [
+      "2024 Mini Cooper SE",
+      "3",
+      "13"
+    ],
+    [
+      "Mini Cooper SE",
+      "3",
+      "13"
+    ],
+    [
+      "2021 Fiat 500e",
+      "2",
+      "8"
+    ],
+    [
+      "Fiat 500e",
+      "1",
+      "8"
+    ],
+    [
+      "Ligier Myli",
+      "8"
+    ],
+    [
+      "MG Cyberster",
+      "3"
+    ],
+    [
+      "Van",
+      "Trunk",
+      "Seats folded"
+    ],
+    [
+      "VW e-Crafter cargo",
+      "156",
+      "156"
+    ],
+    [
+      "ID Buzz Cargo",
+      "56",
+      "56"
+    ],
+    [
+      "Nissan e-NV200 cargo",
+      "50",
+      "50"
+    ],
+    [
+      "Nissan Townstar",
+      "43",
+      "43"
+    ],
+    [
+      "ID Buzz 5 seater",
+      "30",
+      "49"
+    ],
+    [
+      "Mercedes EQV 7 seater",
+      "13",
+      "35"
+    ],
+    [
+      "Kia EV9 van",
+      "",
+      "34"
+    ],
+    [
+      "Denza D9",
+      "12",
+      "30"
+    ],
+    [
+      "Citroen e-Spacetourer 7 seater",
+      "10",
+      "24"
+    ],
+    [
+      "Kia e-Soul van",
+      "21",
+      "21"
+    ]
+  ]
+}

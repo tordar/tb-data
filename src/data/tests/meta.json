@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Banana",
+    "slug": "banana",
+    "icon": "luggage",
+    "colName": "Seats folded",
+    "lowerIsBetter": false,
+    "unit": "banana",
+    "description": "Cargo volume with rear seats flat — the Bjørn Nyland banana box test"
+  },
+  {
+    "name": "Weight",
+    "slug": "weight",
+    "icon": "monitor_weight",
+    "colName": "Total",
+    "lowerIsBetter": true,
+    "unit": "kg",
+    "description": "Curb weight distribution across the EV segment"
+  },
+  {
+    "name": "Acceleration",
+    "slug": "acceleration",
+    "icon": "speed",
+    "colName": "0-100",
+    "lowerIsBetter": true,
+    "unit": "s",
+    "description": "0–100 km/h acceleration benchmarks"
+  },
+  {
+    "name": "Noise",
+    "slug": "noise",
+    "icon": "volume_up",
+    "colName": "Average",
+    "lowerIsBetter": true,
+    "unit": "dB",
+    "description": "Interior noise levels at highway speeds"
+  },
+  {
+    "name": "Braking",
+    "slug": "braking",
+    "icon": "tire_repair",
+    "colName": "Distance",
+    "lowerIsBetter": true,
+    "unit": "m",
+    "description": "Emergency braking distance from 100 km/h"
+  },
+  {
+    "name": "Range",
+    "slug": "range",
+    "icon": "ev_station",
+    "colName": "km",
+    "lowerIsBetter": false,
+    "unit": "km",
+    "description": "Real-world range at 90 km/h"
+  },
+  {
+    "name": "Sunday",
+    "slug": "sunday",
+    "icon": "wb_sunny",
+    "colName": "Range",
+    "lowerIsBetter": false,
+    "unit": "km",
+    "description": "Sunday drive range estimates"
+  },
+  {
+    "name": "1000 km",
+    "slug": "1000-km",
+    "icon": "route",
+    "colName": "km/h",
+    "lowerIsBetter": false,
+    "unit": "km/h",
+    "description": "1 000 km challenge — average speed including charging stops"
+  },
+  {
+    "name": "500 km",
+    "slug": "500-km",
+    "icon": "route",
+    "colName": "km/h",
+    "lowerIsBetter": false,
+    "unit": "km/h",
+    "description": "500 km challenge — average speed including charging stops"
+  },
+  {
+    "name": "Geilo",
+    "slug": "geilo",
+    "icon": "table_chart",
+    "colName": "",
+    "lowerIsBetter": false,
+    "unit": "",
+    "description": ""
+  },
+  {
+    "name": "Degradation",
+    "slug": "degradation",
+    "icon": "battery_alert",
+    "colName": "Degradation",
+    "lowerIsBetter": true,
+    "unit": "%",
+    "description": "Battery capacity degradation vs. odometer reading"
+  },
+  {
+    "name": "Zero mile",
+    "slug": "zero-mile",
+    "icon": "table_chart",
+    "colName": "",
+    "lowerIsBetter": false,
+    "unit": "",
+    "description": ""
+  },
+  {
+    "name": "Arctic Circle",
+    "slug": "arctic-circle",
+    "icon": "ac_unit",
+    "colName": "km/h",
+    "lowerIsBetter": false,
+    "unit": "km/h",
+    "description": "Arctic Circle cold-weather challenge average speed"
+  },
+  {
+    "name": "Bangkok",
+    "slug": "bangkok",
+    "icon": "travel_explore",
+    "colName": "Wh/km",
+    "lowerIsBetter": true,
+    "unit": "Wh/km",
+    "description": "Bangkok heat test — energy consumption in tropical conditions"
+  }
+]
