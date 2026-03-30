@@ -37,19 +37,9 @@ function getBestValue(
   return best;
 }
 
-// Build set of banana van names (and pivot row) to exclude from cargo normalization
-const _bananaVanNames: Set<string> = (() => {
-  const sheet = getTestBySlug("banana");
-  if (!sheet) return new Set();
-  const pivotIdx = sheet.rows.findIndex((r) => r[0] === "Van" && r[1] === "Trunk");
-  if (pivotIdx < 0) return new Set();
-  const names = new Set(sheet.rows.slice(pivotIdx).map((r) => r[0]));
-  return names;
-})();
-
 export const RANKING_METRICS: MetricConfig[] = [
   { key: "range", label: "Range (90 km/h)", testSlug: "range", colName: "km", lowerIsBetter: false, unit: "km", filterFn: (row, headers) => row[headers.indexOf("Speed")] === "90" },
-  { key: "cargo", label: "Cargo", testSlug: "banana", colName: "Seats folded", lowerIsBetter: false, unit: "boxes", filterFn: (row) => !_bananaVanNames.has(row[0]) },
+  { key: "cargo", label: "Cargo", testSlug: "banana", colName: "Seats folded", lowerIsBetter: false, unit: "boxes" },
   { key: "acceleration", label: "Acceleration", testSlug: "acceleration", colName: "0-100", lowerIsBetter: true, unit: "s" },
   { key: "noise", label: "Noise", testSlug: "noise", colName: "Average", lowerIsBetter: true, unit: "dB" },
   { key: "braking", label: "Braking", testSlug: "braking", colName: "Distance", lowerIsBetter: true, unit: "m" },
