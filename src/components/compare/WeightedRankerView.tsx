@@ -94,9 +94,8 @@ export function WeightedRankerView() {
                 key={metric.key}
                 className="rounded-lg p-4"
                 style={{
-                  backgroundColor: weights[metric.key] === 0 ? "transparent" : "var(--surface-container-lowest)",
-                  border: weights[metric.key] === 0 ? "1px solid var(--border-subtle)" : "1px solid var(--outline-variant)",
-                  opacity: weights[metric.key] === 0 ? 0.6 : 1,
+                  backgroundColor: "var(--surface-container-lowest)",
+                  border: "1px solid var(--border-subtle)",
                 }}
               >
                 <div className="mb-1">
