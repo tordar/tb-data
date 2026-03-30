@@ -77,15 +77,35 @@ export function WeightedRankerView() {
           border: "1px solid var(--border-subtle)",
         }}
       >
-        <h3
-          className="text-xs font-bold uppercase tracking-[0.18em] mb-6"
-          style={{
-            color: "var(--on-surface-variant-muted)",
-            fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
-          }}
-        >
-          What matters to you?
-        </h3>
+        <div className="flex items-center gap-3 mb-6">
+          <h3
+            className="text-xs font-bold uppercase tracking-[0.18em]"
+            style={{
+              color: "var(--on-surface-variant-muted)",
+              fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
+            }}
+          >
+            What matters to you?
+          </h3>
+          <div className="relative group">
+            <span
+              className="material-symbols-outlined cursor-help"
+              style={{ fontSize: "16px", color: "var(--on-surface-variant-muted)" }}
+            >
+              help_outline
+            </span>
+            <div
+              className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-72 p-3 rounded-lg shadow-xl text-xs leading-relaxed opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"
+              style={{
+                backgroundColor: "var(--surface-container-high)",
+                color: "var(--foreground)",
+                border: "1px solid var(--outline-variant)",
+              }}
+            >
+              Every car in the database has been scored 0–100 on each metric based on real test results by Bjørn Nyland. Set your priorities and we&apos;ll calculate a weighted average — cars that score well on what you care about most will rank highest.
+            </div>
+          </div>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {RANKING_METRICS.map((metric) => {
             const currentIdx = getPriorityIndex(weights[metric.key]);
