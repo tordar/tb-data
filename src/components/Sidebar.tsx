@@ -68,25 +68,37 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
       }`}
       style={{ backgroundColor: "var(--surface-container-low)" }}
     >
-      {/* Brand */}
-      <div className="mb-8 px-2">
-        <h1 className="font-bold text-xl tracking-tight" style={{ color: "var(--primary)" }}>
-          TB Test Results
-        </h1>
-        <p
-          className="text-xs mt-0.5 uppercase tracking-[0.18em]"
-          style={{
-            color: "var(--on-surface-variant)",
-            opacity: 0.6,
-            fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
-            fontSize: "0.625rem",
-          }}
+      {/* Brand + theme toggle */}
+      <div className="mb-8 px-2 flex items-start justify-between">
+        <div>
+          <h1 className="font-bold text-xl tracking-tight" style={{ color: "var(--primary)" }}>
+            TB Test Results
+          </h1>
+          <p
+            className="text-xs mt-0.5 uppercase tracking-[0.18em]"
+            style={{
+              color: "var(--on-surface-variant)",
+              opacity: 0.6,
+              fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
+              fontSize: "0.625rem",
+            }}
+          >
+            Explorer
+          </p>
+        </div>
+        <button
+          onClick={onThemeToggle}
+          className="p-2 rounded-lg transition-colors mt-0.5"
+          style={{ color: "var(--on-surface-variant)", backgroundColor: "var(--surface-container)" }}
+          aria-label="Toggle dark mode"
         >
-          Explorer
-        </p>
+          <span className="material-symbols-outlined" style={{ fontSize: "18px" }} suppressHydrationWarning>
+            {resolvedTheme === "dark" ? "light_mode" : "dark_mode"}
+          </span>
+        </button>
       </div>
 
-      {/* Nav */}
+      {/* Scrollable nav — everything scrolls together */}
       <nav className="flex-1 space-y-0.5 overflow-y-auto">
         {navItems.map((item) => {
           const isActive =
@@ -174,74 +186,66 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
             <span>Find Your EV</span>
           </Link>
         </div>
-      </nav>
 
-      {/* Export button */}
-      <div className="pt-6 border-t relative" style={{ borderColor: "var(--border-subtle)" }} ref={exportRef}>
-        {exportOpen && (
-          <div
-            className="absolute bottom-full mb-2 left-0 right-0 rounded-lg overflow-hidden shadow-lg"
-            style={{ backgroundColor: "var(--surface-container)", border: "1px solid var(--border-subtle)" }}
-          >
-            <button
-              onClick={() => { handleExport("csv"); setExportOpen(false); }}
-              className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
-              style={{ color: "var(--on-surface-variant)", borderBottom: "1px solid var(--border-subtle)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--on-surface-variant)"; }}
+        {/* Export */}
+        <div className="pt-4 mt-4 relative" style={{ borderTop: "1px solid var(--border-subtle)" }} ref={exportRef}>
+          {exportOpen && (
+            <div
+              className="absolute bottom-full mb-2 left-0 right-0 rounded-lg overflow-hidden shadow-lg"
+              style={{ backgroundColor: "var(--surface-container)", border: "1px solid var(--border-subtle)" }}
             >
-              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>table</span>
-              Export as CSV
-            </button>
-            <button
-              onClick={() => { handleExport("pdf"); setExportOpen(false); }}
-              className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
-              style={{ color: "var(--on-surface-variant)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--on-surface-variant)"; }}
-            >
-              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>picture_as_pdf</span>
-              Export as PDF
-            </button>
-          </div>
-        )}
-        <button
-          onClick={() => setExportOpen((o) => !o)}
-          className="w-full py-2.5 text-white text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-opacity hover:opacity-90"
-          style={{ background: "linear-gradient(135deg, #3525cd, #4f46e5)" }}
-        >
-          <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>file_download</span>
-          Export Dataset
-        </button>
-      </div>
-
-      {/* Theme toggle + Attribution */}
-      <div className="pt-4 flex items-center justify-between pb-1">
-        <p className="text-xs" style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}>
-          Data by{" "}
-          <a
-            href="https://docs.google.com/spreadsheets/d/1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE/edit?gid=244400016#gid=244400016"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2"
+              <button
+                onClick={() => { handleExport("csv"); setExportOpen(false); }}
+                className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
+                style={{ color: "var(--on-surface-variant)", borderBottom: "1px solid var(--border-subtle)" }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--on-surface-variant)"; }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>table</span>
+                Export as CSV
+              </button>
+              <button
+                onClick={() => { handleExport("pdf"); setExportOpen(false); }}
+                className="w-full flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-left"
+                style={{ color: "var(--on-surface-variant)" }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container-high)"; e.currentTarget.style.color = "var(--foreground)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--on-surface-variant)"; }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>picture_as_pdf</span>
+                Export as PDF
+              </button>
+            </div>
+          )}
+          <button
+            onClick={() => setExportOpen((o) => !o)}
+            className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors rounded-lg text-left"
             style={{ color: "var(--on-surface-variant)" }}
-            onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.opacity = ""; }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--surface-container)"; e.currentTarget.style.color = "var(--foreground)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--on-surface-variant)"; }}
           >
-            Bjørn Nyland
-          </a>
-        </p>
-        <button
-          onClick={onThemeToggle}
-          className="p-2 rounded-lg transition-colors"
-          style={{ color: "var(--on-surface-variant)", backgroundColor: "var(--surface-container)" }}
-          aria-label="Toggle dark mode"
-        >
-          <span className="material-symbols-outlined" style={{ fontSize: "18px" }} suppressHydrationWarning>
-            {resolvedTheme === "dark" ? "light_mode" : "dark_mode"}
-          </span>
-        </button>
-      </div>
+            <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>file_download</span>
+            <span>Export Dataset</span>
+          </button>
+        </div>
+
+        {/* Attribution */}
+        <div className="pt-4 mt-4 px-3" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+          <p className="text-xs" style={{ color: "var(--on-surface-variant)", opacity: 0.5 }}>
+            Data by{" "}
+            <a
+              href="https://docs.google.com/spreadsheets/d/1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE/edit?gid=244400016#gid=244400016"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2"
+              style={{ color: "var(--on-surface-variant)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = ""; }}
+            >
+              Bjørn Nyland
+            </a>
+          </p>
+        </div>
+      </nav>
     </aside>
   );
 }
