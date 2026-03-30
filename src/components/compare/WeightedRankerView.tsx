@@ -35,7 +35,7 @@ export function WeightedRankerView() {
       })
       .filter(
         (v): v is { name: string; slug: string; scores: Record<string, number> } =>
-          v !== null && Object.keys(v.scores).length >= 3
+          v !== null && Object.keys(v.scores).length >= 1
       );
   }, []);
 
@@ -44,7 +44,7 @@ export function WeightedRankerView() {
     [vehiclesWithScores, weights]
   );
 
-  const top50 = ranked.slice(0, 50);
+  const displayed = ranked;
 
   function getPriorityIndex(value: number): number {
     return PRIORITY_LEVELS.findIndex((p) => p.value === value);
@@ -252,7 +252,7 @@ export function WeightedRankerView() {
                 </tr>
               </thead>
               <tbody>
-                {top50.map((vehicle, idx) => (
+                {displayed.map((vehicle, idx) => (
                   <tr
                     key={vehicle.slug}
                     style={{ borderTop: "1px solid var(--row-border)" }}
