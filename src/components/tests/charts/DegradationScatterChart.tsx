@@ -103,7 +103,7 @@ export function DegradationScatterChart() {
                 fontSize: 11,
               }}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip isAnimationActive={false} content={<CustomTooltip />} />
             <Scatter data={data} fill="#3525cd" fillOpacity={0.65} />
           </ScatterChart>
         </ResponsiveContainer>

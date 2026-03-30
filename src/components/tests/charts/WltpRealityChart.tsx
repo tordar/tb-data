@@ -129,7 +129,7 @@ export function WltpRealityChart() {
               tickLine={false}
               label={{ value: "Actual (km)", angle: -90, position: "insideLeft", offset: 15, fill: "var(--on-surface-variant-muted)", fontSize: 11 }}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip isAnimationActive={false} content={<CustomTooltip />} />
             <Line
               data={parityLine}
               dataKey="actual"

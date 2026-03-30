@@ -97,7 +97,7 @@ export function NoiseHistogramChart() {
               interval={3}
             />
             <YAxis tick={{ fill: "var(--on-surface-variant-muted)", fontSize: 11 }} axisLine={false} tickLine={false} />
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(53,37,205,0.04)" }} />
+            <Tooltip isAnimationActive={false} content={<CustomTooltip />} cursor={{ fill: "rgba(53,37,205,0.04)" }} />
             <Bar dataKey="count" radius={[3, 3, 0, 0]}>
               {data.map((_, i) => (
                 <Cell

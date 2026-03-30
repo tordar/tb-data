@@ -129,7 +129,7 @@ export function RangeEfficiencyChart() {
                 fontSize: 11,
               }}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip isAnimationActive={false} content={<CustomTooltip />} />
             <Scatter data={data} shape={<CustomDot />} />
           </ScatterChart>
         </ResponsiveContainer>

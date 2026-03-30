@@ -114,7 +114,7 @@ export function WinterPenaltyChart() {
               axisLine={false}
               tickLine={false}
             />
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: "var(--surface-container)", opacity: 0.5 }} />
+            <Tooltip isAnimationActive={false} content={<CustomTooltip />} cursor={{ fill: "var(--surface-container)", opacity: 0.5 }} />
             <ReferenceLine x={20} stroke="var(--on-surface-variant-muted)" strokeDasharray="4 3" strokeOpacity={0.35} />
             <Bar dataKey="penalty" radius={[0, 4, 4, 0]} maxBarSize={18}>
               {data.map((d) => (

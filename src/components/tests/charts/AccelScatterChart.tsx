@@ -134,7 +134,7 @@ export function AccelScatterChart() {
                 fontSize: 11,
               }}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip content={<CustomTooltip />} isAnimationActive={false} />
             <Scatter data={data} shape={<CustomDot />} />
           </ScatterChart>
         </ResponsiveContainer>
