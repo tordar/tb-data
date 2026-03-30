@@ -219,7 +219,7 @@ export function TestSheetView({ sheet, meta }: TestSheetViewProps) {
         sheetName={sheet.name}
         headers={sheet.headers}
         filtered={filtered}
-        totalRows={sheet.rows.length}
+        totalRows={isBanana ? sheet.rows.length - 1 : sheet.rows.length}
         colMeta={colMeta}
         bananaVanNames={bananaVanNames}
         sortCol={sortCol}
