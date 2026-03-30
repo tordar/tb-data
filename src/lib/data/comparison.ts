@@ -4,6 +4,39 @@ import { parseNum } from "@/lib/utils/parsing";
 import { normalizeScore, colMinMax } from "@/lib/utils/scoring";
 import type { MetricConfig, VehicleProfile, VehicleTestResult, ComparisonMetric } from "@/lib/types";
 
+/**
+ * Find all rows in a sheet whose vehicle name starts with the given name.
+ * Bjørn's data uses variants like "Tesla Model Y LR", "Tesla Model Y Performance",
+ * etc. — we match by prefix so "Tesla Model Y" finds all of them.
+ */
+function findVehicleRows(rows: string[][], vehicleName: string): string[][] {
+  // Try exact match first
+  const exact = rows.filter((r) => r[0] === vehicleName);
+  if (exact.length > 0) return exact;
+  // Fall back to prefix match
+  return rows.filter((r) => r[0]?.startsWith(vehicleName));
+}
+
+/**
+ * Get the best value for a vehicle in a column, considering all variant rows.
+ * "Best" means lowest for lowerIsBetter, highest otherwise.
+ */
+function getBestValue(
+  rows: string[][],
+  colIdx: number,
+  lowerIsBetter: boolean,
+  filterFn?: (row: string[]) => boolean
+): number | null {
+  let best: number | null = null;
+  for (const row of rows) {
+    if (filterFn && !filterFn(row)) continue;
+    const n = parseNum(row[colIdx] ?? "");
+    if (n === null) continue;
+    if (best === null || (lowerIsBetter ? n < best : n > best)) best = n;
+  }
+  return best;
+}
+
 export const RANKING_METRICS: MetricConfig[] = [
   { key: "range", label: "Range (90 km/h)", testSlug: "range", colName: "km", lowerIsBetter: false, unit: "km", filterFn: (row, headers) => row[headers.indexOf("Speed")] === "90" },
   { key: "cargo", label: "Cargo", testSlug: "banana", colName: "Seats folded", lowerIsBetter: false, unit: "boxes" },
@@ -29,11 +62,10 @@ export function getVehicleProfile(vehicleName: string): VehicleProfile | null {
     const colIdx = sheet.headers.indexOf(meta.colName);
     if (colIdx < 0) continue;
 
-    const vehicleRow = sheet.rows.find((r) => r[0] === vehicleName);
-    if (!vehicleRow) continue;
+    const matchingRows = findVehicleRows(sheet.rows, vehicleName);
+    if (matchingRows.length === 0) continue;
 
-    const rawValue = vehicleRow[colIdx] ?? "";
-    const value = parseNum(rawValue);
+    const value = getBestValue(matchingRows, colIdx, meta.lowerIsBetter);
     if (value === null) continue;
 
     // Compute rank by collecting all valid values and sorting
@@ -90,11 +122,11 @@ export function getVehiclesForComparison(
     const colIdx = sheet.headers.indexOf(meta.colName);
     if (colIdx < 0) continue;
 
-    const rowA = sheet.rows.find((r) => r[0] === nameA);
-    const rowB = sheet.rows.find((r) => r[0] === nameB);
+    const rowsA = findVehicleRows(sheet.rows, nameA);
+    const rowsB = findVehicleRows(sheet.rows, nameB);
 
-    const valueA = rowA ? parseNum(rowA[colIdx] ?? "") : null;
-    const valueB = rowB ? parseNum(rowB[colIdx] ?? "") : null;
+    const valueA = getBestValue(rowsA, colIdx, meta.lowerIsBetter);
+    const valueB = getBestValue(rowsB, colIdx, meta.lowerIsBetter);
 
     // Only include if at least one vehicle has data
     if (valueA === null && valueB === null) continue;
@@ -147,12 +179,10 @@ export function getMetricScores(vehicleName: string): Record<string, number> | n
       ? (row: string[]) => metric.filterFn!(row, sheet.headers)
       : undefined;
 
-    const vehicleRow = sheet.rows.find(
-      (r) => r[0] === vehicleName && (!filterFn || filterFn(r))
-    );
-    if (!vehicleRow) continue;
+    const matchingRows = findVehicleRows(sheet.rows, vehicleName);
+    if (matchingRows.length === 0) continue;
 
-    const value = parseNum(vehicleRow[colIdx] ?? "");
+    const value = getBestValue(matchingRows, colIdx, metric.lowerIsBetter, filterFn);
     if (value === null) continue;
 
     const { min, max } = colMinMax(sheet.rows, colIdx, filterFn);
