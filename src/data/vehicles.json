@@ -1,10 +1,1029 @@
 [
   {
+    "name": "* = Aftermarket soundproofing",
+    "slug": "--aftermarket-soundproofing",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "2011 Nissan Leaf 24 kWh",
+    "slug": "2011-nissan-leaf-24-kwh",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2012 Nissan Leaf 24 kWh",
+    "slug": "2012-nissan-leaf-24-kwh",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2013 Nissan Leaf 24 kWh",
+    "slug": "2013-nissan-leaf-24-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km",
+      "500-km",
+      "geilo"
+    ]
+  },
+  {
+    "name": "2013 Nissan Leaf 24 kWh (FS)",
+    "slug": "2013-nissan-leaf-24-kwh-fs",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2013 Tesla Model S P85 (MF)",
+    "slug": "2013-tesla-model-s-p85-mf",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "braking",
+      "sunday",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2013 Tesla Model S P85 Signature",
+    "slug": "2013-tesla-model-s-p85-signature",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2014 BMW i3 22 kWh",
+    "slug": "2014-bmw-i3-22-kwh",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2014 Tesla Model S 85",
+    "slug": "2014-tesla-model-s-85",
+    "type": "car",
+    "tests": [
+      "range",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2014 VW e-Golf 24 kWh",
+    "slug": "2014-vw-e-golf-24-kwh",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "500-km",
+      "geilo",
+      "degradation",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2014 VW e-Up",
+    "slug": "2014-vw-e-up",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2014 VW e-Up 18.7 kWh",
+    "slug": "2014-vw-e-up-187-kwh",
+    "type": "car",
+    "tests": [
+      "500-km"
+    ]
+  },
+  {
+    "name": "2015 Kia Soul 27 kWh",
+    "slug": "2015-kia-soul-27-kwh",
+    "type": "car",
+    "tests": [
+      "500-km",
+      "geilo",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2015 VW e-Golf 24 kWh",
+    "slug": "2015-vw-e-golf-24-kwh",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2016 BMW i3 22 kWh",
+    "slug": "2016-bmw-i3-22-kwh",
+    "type": "car",
+    "tests": [
+      "500-km",
+      "geilo",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2016 Hyundai Ioniq 28 kWh",
+    "slug": "2016-hyundai-ioniq-28-kwh",
+    "type": "car",
+    "tests": [
+      "geilo",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2016 VW e-Golf 24 kWh",
+    "slug": "2016-vw-e-golf-24-kwh",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2017 BMW i3 33 kWh",
+    "slug": "2017-bmw-i3-33-kwh",
+    "type": "car",
+    "tests": [
+      "500-km",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2017 Hyundai Ioniq 28 kWh",
+    "slug": "2017-hyundai-ioniq-28-kwh",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2017 Kia Soul 30 kWh",
+    "slug": "2017-kia-soul-30-kwh",
+    "type": "car",
+    "tests": [
+      "500-km",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2017 Opel Ampera-e",
+    "slug": "2017-opel-ampera-e",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2017 Tesla Model X 100D",
+    "slug": "2017-tesla-model-x-100d",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2018 Hyundai Ioniq 28 kWh",
+    "slug": "2018-hyundai-ioniq-28-kwh",
+    "type": "car",
+    "tests": [
+      "geilo",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2018 Jaguar I-Pace",
+    "slug": "2018-jaguar-i-pace",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2018 Nissan Leaf 40 kWh",
+    "slug": "2018-nissan-leaf-40-kwh",
+    "type": "car",
+    "tests": [
+      "500-km"
+    ]
+  },
+  {
+    "name": "2018 Tesla Model X 75D",
+    "slug": "2018-tesla-model-x-75d",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2019 BMW i3 42 kWh",
+    "slug": "2019-bmw-i3-42-kwh",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2019 Hyundai Ioniq 28 kWh",
+    "slug": "2019-hyundai-ioniq-28-kwh",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "500-km",
+      "degradation",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2019 MG ZS EV",
+    "slug": "2019-mg-zs-ev",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2019 MG ZS EV 44.5 kWh",
+    "slug": "2019-mg-zs-ev-445-kwh",
+    "type": "car",
+    "tests": [
+      "500-km",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2019 Model 3 Performance",
+    "slug": "2019-model-3-performance",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2019 Tesla Model 3 LR",
+    "slug": "2019-tesla-model-3-lr",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2019 Tesla Model 3 Performance (MC)",
+    "slug": "2019-tesla-model-3-performance-mc",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2019 Tesla Model 3 SR+",
+    "slug": "2019-tesla-model-3-sr",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "2020 Audi e-tron 50",
+    "slug": "2020-audi-e-tron-50",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2020 Mercedes EQC 400",
+    "slug": "2020-mercedes-eqc-400",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2020 Polestar 2 Performance",
+    "slug": "2020-polestar-2-performance",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2020 Tesla Model 3 Performance",
+    "slug": "2020-tesla-model-3-performance",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2020 VW ID3 1st",
+    "slug": "2020-vw-id3-1st",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2020 VW ID3 Max 62 kWh",
+    "slug": "2020-vw-id3-max-62-kwh",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Audi e-tron GT",
+    "slug": "2021-audi-e-tron-gt",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 BMW iX3",
+    "slug": "2021-bmw-ix3",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 BYD Tang 86.4 kWh",
+    "slug": "2021-byd-tang-864-kwh",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2021 Fiat 500e",
     "slug": "2021-fiat-500e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "2021 Ford Mustang Mach-E LR RWD",
+    "slug": "2021-ford-mustang-mach-e-lr-rwd",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Hyundai Ioniq 5 P45",
+    "slug": "2021-hyundai-ioniq-5-p45",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Kia EV6 AWD GT-Line",
+    "slug": "2021-kia-ev6-awd-gt-line",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Mercedes EQA",
+    "slug": "2021-mercedes-eqa",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Mercedes EQC",
+    "slug": "2021-mercedes-eqc",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2021 Mercedes EQS 580 4Matic",
+    "slug": "2021-mercedes-eqs-580-4matic",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Model 3 SR+ (Fremont)",
+    "slug": "2021-model-3-sr-fremont",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "2021 Nio ES8 100 kWh",
+    "slug": "2021-nio-es8-100-kwh",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2021 Opel Corsa-e",
+    "slug": "2021-opel-corsa-e",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Polestar 2 Performance",
+    "slug": "2021-polestar-2-performance",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Polestar 2 PP upgraded",
+    "slug": "2021-polestar-2-pp-upgraded",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "2021 Porsche Taycan 4S 79 kWh",
+    "slug": "2021-porsche-taycan-4s-79-kwh",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 Long Range",
+    "slug": "2021-tesla-model-3-long-range",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 Long Range 82 kWh",
+    "slug": "2021-tesla-model-3-long-range-82-kwh",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 LR",
+    "slug": "2021-tesla-model-3-lr",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 LR (82 kWh)",
+    "slug": "2021-tesla-model-3-lr-82-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 LR 82 kWh",
+    "slug": "2021-tesla-model-3-lr-82-kwh",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 SR+",
+    "slug": "2021-tesla-model-3-sr",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 SR+ LFP",
+    "slug": "2021-tesla-model-3-sr-lfp",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model 3 SR+ MIC",
+    "slug": "2021-tesla-model-3-sr-mic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "2021 Tesla Model Y LR",
+    "slug": "2021-tesla-model-y-lr",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2021 VW ID3",
+    "slug": "2021-vw-id3",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2021 VW ID4 1st Max 82 kWh",
+    "slug": "2021-vw-id4-1st-max-82-kwh",
+    "type": "car",
+    "tests": [
+      "arctic-circle"
+    ]
+  },
+  {
+    "name": "2022 Audi e-tron 55",
+    "slug": "2022-audi-e-tron-55",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Audi e-tron 55 Black Edition",
+    "slug": "2022-audi-e-tron-55-black-edition",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 BMW i4 eDrive40",
+    "slug": "2022-bmw-i4-edrive40",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 BMW i4 M50",
+    "slug": "2022-bmw-i4-m50",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Ford Mustang Mach-E GT",
+    "slug": "2022-ford-mustang-mach-e-gt",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Hongqi E-HS9 99 kWh",
+    "slug": "2022-hongqi-e-hs9-99-kwh",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Kia e-Soul van",
+    "slug": "2022-kia-e-soul-van",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Kia Niro EV 64 kWh",
+    "slug": "2022-kia-niro-ev-64-kwh",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Mercedes EQA 250",
+    "slug": "2022-mercedes-eqa-250",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "2022 Mercedes EQS 450+",
+    "slug": "2022-mercedes-eqs-450",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 MG Marvel R Performance",
+    "slug": "2022-mg-marvel-r-performance",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 MG4 51 kWh",
+    "slug": "2022-mg4-51-kwh",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Nio ES8 100 kWh",
+    "slug": "2022-nio-es8-100-kwh",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Nissan Ariya 87 kWh FWD",
+    "slug": "2022-nissan-ariya-87-kwh-fwd",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Renault Megane E-Tech 60 kWh",
+    "slug": "2022-renault-megane-e-tech-60-kwh",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Skoda Enyaq Coupé RS",
+    "slug": "2022-skoda-enyaq-coup-rs",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model 3 LR 75 kWh LG",
+    "slug": "2022-tesla-model-3-lr-75-kwh-lg",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model 3 Performance",
+    "slug": "2022-tesla-model-3-performance",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model 3 SR+",
+    "slug": "2022-tesla-model-3-sr",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model 3 SR+ 60 kWh LFP",
+    "slug": "2022-tesla-model-3-sr-60-kwh-lfp",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model 3 SR+ LFP",
+    "slug": "2022-tesla-model-3-sr-lfp",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model S LR Palladium",
+    "slug": "2022-tesla-model-s-lr-palladium",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model Y LR",
+    "slug": "2022-tesla-model-y-lr",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model Y Performance",
+    "slug": "2022-tesla-model-y-performance",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Tesla Model Y RWD",
+    "slug": "2022-tesla-model-y-rwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Volvo C40 78 kWh AWD",
+    "slug": "2022-volvo-c40-78-kwh-awd",
+    "type": "car",
+    "tests": [
+      "degradation"
+    ]
+  },
+  {
+    "name": "2022 Volvo XC40 69 kWh FWD",
+    "slug": "2022-volvo-xc40-69-kwh-fwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 Volvo XC40 78 kWh AWD",
+    "slug": "2022-volvo-xc40-78-kwh-awd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2022 VW ID Buzz 82 kWh",
+    "slug": "2022-vw-id-buzz-82-kwh",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2022 Xpeng P7 Performance Wing Edition",
+    "slug": "2022-xpeng-p7-performance-wing-edition",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 BYD Atto 3 60 kWh",
+    "slug": "2023-byd-atto-3-60-kwh",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 Citroen e-C4X",
+    "slug": "2023-citroen-e-c4x",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2023 Fisker Ocean Extreme",
+    "slug": "2023-fisker-ocean-extreme",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 Hyundai Ioniq 6 RWD",
+    "slug": "2023-hyundai-ioniq-6-rwd",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 Mercedes EQA 250",
+    "slug": "2023-mercedes-eqa-250",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "2023 Mercedes EQE 350 4Matic",
+    "slug": "2023-mercedes-eqe-350-4matic",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2023 Mercedes EQS 500 4Matic",
+    "slug": "2023-mercedes-eqs-500-4matic",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2023 MG4 Long Range",
+    "slug": "2023-mg4-long-range",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 Tesla Model Y RWD",
+    "slug": "2023-tesla-model-y-rwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2023 Toyota bZ4X",
+    "slug": "2023-toyota-bz4x",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 VW ID Buzz",
+    "slug": "2023-vw-id-buzz",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2023 VW ID3 62 kWh facelift",
+    "slug": "2023-vw-id3-62-kwh-facelift",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 VW ID7 Pro",
+    "slug": "2023-vw-id7-pro",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2023 Xpeng G9 98 kWh",
+    "slug": "2023-xpeng-g9-98-kwh",
+    "type": "car",
+    "tests": [
+      "geilo"
+    ]
+  },
+  {
+    "name": "2024 Audi Q6 e-tron Quattro",
+    "slug": "2024-audi-q6-e-tron-quattro",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2024 Audi RS e-tron GT",
+    "slug": "2024-audi-rs-e-tron-gt",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "2024 BMW iX2 xDrive30",
+    "slug": "2024-bmw-ix2-xdrive30",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 BYD Sealion 7 82.5 kWh AWD",
+    "slug": "2024-byd-sealion-7-825-kwh-awd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Deepal S07",
+    "slug": "2024-deepal-s07",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Denza D9 Performance",
+    "slug": "2024-denza-d9-performance",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 GAC Aion ES",
+    "slug": "2024-gac-aion-es",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Hyundai Ioniq 72.6 kWh RWD",
+    "slug": "2024-hyundai-ioniq-726-kwh-rwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Jaecoo 6 AWD",
+    "slug": "2024-jaecoo-6-awd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Kia EV3 Long Range FWD",
+    "slug": "2024-kia-ev3-long-range-fwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Kia EV3 LR",
+    "slug": "2024-kia-ev3-lr",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2024 Lexus RZ 450e",
+    "slug": "2024-lexus-rz-450e",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Lotus Emeya S",
+    "slug": "2024-lotus-emeya-s",
+    "type": "car",
+    "tests": [
+      "sunday"
     ]
   },
   {
@@ -12,7 +1031,277 @@
     "slug": "2024-mini-cooper-se",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "2024 Nio EL8 100 kWh",
+    "slug": "2024-nio-el8-100-kwh",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Ora 07 Performance",
+    "slug": "2024-ora-07-performance",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Polestar 2 LR DM",
+    "slug": "2024-polestar-2-lr-dm",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2024 Polestar 2 LR SM",
+    "slug": "2024-polestar-2-lr-sm",
+    "type": "car",
+    "tests": [
+      "weight",
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Polestar 3 LR Performance",
+    "slug": "2024-polestar-3-lr-performance",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Skoda Enyaq Coupé RS",
+    "slug": "2024-skoda-enyaq-coup-rs",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range",
+      "sunday",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "2024 Tesla Model 3 LR Highland",
+    "slug": "2024-tesla-model-3-lr-highland",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "degradation"
+    ]
+  },
+  {
+    "name": "2024 Tesla Model 3 RWD Highland",
+    "slug": "2024-tesla-model-3-rwd-highland",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Volvo EX30 RWD ER",
+    "slug": "2024-volvo-ex30-rwd-er",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Volvo EX30 Twin Performance",
+    "slug": "2024-volvo-ex30-twin-performance",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2024 VW ID4 Pro 4Motion",
+    "slug": "2024-vw-id4-pro-4motion",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2024 Xpeng G6 Performance",
+    "slug": "2024-xpeng-g6-performance",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Audi A6 Avant e-tron Quattro",
+    "slug": "2025-audi-a6-avant-e-tron-quattro",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Avatr 11 Long Range",
+    "slug": "2025-avatr-11-long-range",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Cupra Tavascan",
+    "slug": "2025-cupra-tavascan",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2025 Jaecoo 5",
+    "slug": "2025-jaecoo-5",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Leapmotor C10",
+    "slug": "2025-leapmotor-c10",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Mazda 6e Standard Range",
+    "slug": "2025-mazda-6e-standard-range",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2025 Mercedes CLA 350 4Matic",
+    "slug": "2025-mercedes-cla-350-4matic",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2025 MG IM6 75 kWh RWD",
+    "slug": "2025-mg-im6-75-kwh-rwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 MGS5 64 kWh",
+    "slug": "2025-mgs5-64-kwh",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Renault 5 E-Tech",
+    "slug": "2025-renault-5-e-tech",
+    "type": "car",
+    "tests": [
+      "zero-mile"
+    ]
+  },
+  {
+    "name": "2025 Renault 5 E-Tech 55 kWh",
+    "slug": "2025-renault-5-e-tech-55-kwh",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Tesla Model 3 LR RWD Highland",
+    "slug": "2025-tesla-model-3-lr-rwd-highland",
+    "type": "car",
+    "tests": [
+      "weight",
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Tesla Model Y LR Juniper",
+    "slug": "2025-tesla-model-y-lr-juniper",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 Tesla Model Y LR RWD Juniper",
+    "slug": "2025-tesla-model-y-lr-rwd-juniper",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2025 VW ID3 Pro facelift",
+    "slug": "2025-vw-id3-pro-facelift",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "2025 VW ID3 Pure",
+    "slug": "2025-vw-id3-pure",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "2025 VW ID3 Pure 55 kWh",
+    "slug": "2025-vw-id3-pure-55-kwh",
+    "type": "car",
+    "tests": [
+      "range",
+      "sunday",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Audi A6 Avant e-tron Quattro",
+    "slug": "audi-a6-avant-e-tron-quattro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Audi A6 e-tron Avant Quattro",
+    "slug": "audi-a6-e-tron-avant-quattro",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -24,11 +1313,99 @@
     ]
   },
   {
+    "name": "Audi A6 e-tron Sportback Quattro",
+    "slug": "audi-a6-e-tron-sportback-quattro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Audi e-tron",
     "slug": "audi-e-tron",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Audi e-tron 50",
+    "slug": "audi-e-tron-50",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Audi e-tron 50 Sportback",
+    "slug": "audi-e-tron-50-sportback",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Audi e-tron 55",
+    "slug": "audi-e-tron-55",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Audi e-tron 55 Black Edition",
+    "slug": "audi-e-tron-55-black-edition",
+    "type": "car",
+    "tests": [
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Audi e-tron 55 full spec",
+    "slug": "audi-e-tron-55-full-spec",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Audi e-tron 55 w/acoustic glass",
+    "slug": "audi-e-tron-55-wacoustic-glass",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Audi e-tron Black Edition",
+    "slug": "audi-e-tron-black-edition",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Audi e-tron GT",
+    "slug": "audi-e-tron-gt",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -48,11 +1425,58 @@
     ]
   },
   {
+    "name": "Audi Q4 e-tron 40",
+    "slug": "audi-q4-e-tron-40",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Audi Q4 e-tron 45",
+    "slug": "audi-q4-e-tron-45",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Audi Q4 e-tron 45 Quattro",
+    "slug": "audi-q4-e-tron-45-quattro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Audi Q4 e-tron 45 Quattro Sportback",
+    "slug": "audi-q4-e-tron-45-quattro-sportback",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
     "name": "Audi Q4 e-tron Sportback",
     "slug": "audi-q4-e-tron-sportback",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Audi Q4 e-tron Sportback 45 Quattro",
+    "slug": "audi-q4-e-tron-sportback-45-quattro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
     ]
   },
   {
@@ -64,6 +1488,19 @@
     ]
   },
   {
+    "name": "Audi Q6 e-tron Quattro",
+    "slug": "audi-q6-e-tron-quattro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Audi Q6 e-tron Sportback",
     "slug": "audi-q6-e-tron-sportback",
     "type": "car",
@@ -72,11 +1509,61 @@
     ]
   },
   {
+    "name": "Audi Q6 e-tron Sportback Quattro",
+    "slug": "audi-q6-e-tron-sportback-quattro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Audi Q8 e-tron 55 Sportback",
+    "slug": "audi-q8-e-tron-55-sportback",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Audi RS e-tron GT Performance",
+    "slug": "audi-rs-e-tron-gt-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Audi RS e-Tron GT Performance",
+    "slug": "audi-rs-e-tron-gt-performance",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
     "name": "Audi S6 e-tron Avant",
     "slug": "audi-s6-e-tron-avant",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Audi SQ6 e-tron",
+    "slug": "audi-sq6-e-tron",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -88,11 +1575,55 @@
     ]
   },
   {
+    "name": "Avatr 11 Long Range RWD",
+    "slug": "avatr-11-long-range-rwd",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "BMW i3",
     "slug": "bmw-i3",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "BMW i3 120 Ah",
+    "slug": "bmw-i3-120-ah",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "BMW i3 22 kWh",
+    "slug": "bmw-i3-22-kwh",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "BMW i3 42 kWh",
+    "slug": "bmw-i3-42-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "BMW i3s 120 Ah",
+    "slug": "bmw-i3s-120-ah",
+    "type": "car",
+    "tests": [
+      "noise",
+      "range"
     ]
   },
   {
@@ -104,11 +1635,41 @@
     ]
   },
   {
+    "name": "BMW i4 eDrive40",
+    "slug": "bmw-i4-edrive40",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "BMW i4 M50",
+    "slug": "bmw-i4-m50",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "BMW i5 M60",
     "slug": "bmw-i5-m60",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -120,11 +1681,49 @@
     ]
   },
   {
+    "name": "BMW i7 xDrive60",
+    "slug": "bmw-i7-xdrive60",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "BMW iX",
     "slug": "bmw-ix",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "BMW iX xDrive40",
+    "slug": "bmw-ix-xdrive40",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "BMW iX xDrive50",
+    "slug": "bmw-ix-xdrive50",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -136,6 +1735,19 @@
     ]
   },
   {
+    "name": "BMW iX1 xDrive30",
+    "slug": "bmw-ix1-xdrive30",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "BMW iX2",
     "slug": "bmw-ix2",
     "type": "car",
@@ -144,11 +1756,28 @@
     ]
   },
   {
+    "name": "BMW iX2 xDrive30",
+    "slug": "bmw-ix2-xdrive30",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "BMW iX3",
     "slug": "bmw-ix3",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -156,7 +1785,20 @@
     "slug": "byd-atto-3",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "BYD Atto 3 60 kWh",
+    "slug": "byd-atto-3-60-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "bangkok"
     ]
   },
   {
@@ -164,7 +1806,12 @@
     "slug": "byd-dolphin",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
     ]
   },
   {
@@ -172,7 +1819,10 @@
     "slug": "byd-han",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -184,11 +1834,27 @@
     ]
   },
   {
+    "name": "BYD Seal Performance",
+    "slug": "byd-seal-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "BYD Seal U",
     "slug": "byd-seal-u",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -196,7 +1862,34 @@
     "slug": "byd-sealion-7",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "BYD Sealion 7 82.5 kWh Performance",
+    "slug": "byd-sealion-7-825-kwh-performance",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "BYD Sealion 7 93 kWh",
+    "slug": "byd-sealion-7-93-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "BYD Sealion 7 93 kWh AWD",
+    "slug": "byd-sealion-7-93-kwh-awd",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -204,7 +1897,40 @@
     "slug": "byd-tang",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
+    "name": "BYD Tang 111 kWh",
+    "slug": "byd-tang-111-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "BYD Tang 86.4 kWh",
+    "slug": "byd-tang-864-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Car",
+    "slug": "car",
+    "type": "car",
+    "tests": [
+      "noise",
+      "1000-km"
     ]
   },
   {
@@ -212,7 +1938,17 @@
     "slug": "citroen-e-c3",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Citroen e-C3 Aircross",
+    "slug": "citroen-e-c3-aircross",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -220,7 +1956,12 @@
     "slug": "citroen-e-c4",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -228,7 +1969,20 @@
     "slug": "citroen-e-c4x",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Citroen e-Spacetourer",
+    "slug": "citroen-e-spacetourer",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range"
     ]
   },
   {
@@ -240,6 +1994,27 @@
     ]
   },
   {
+    "name": "Cupra Born 58",
+    "slug": "cupra-born-58",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Cupra Born 82 kWh",
+    "slug": "cupra-born-82-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
     "name": "Cupra Tavascan",
     "slug": "cupra-tavascan",
     "type": "car",
@@ -248,11 +2023,29 @@
     ]
   },
   {
-    "name": "Deepal S05",
-    "slug": "deepal-s05",
+    "name": "Cupra Tavascan VZ Adrenaline",
+    "slug": "cupra-tavascan-vz-adrenaline",
     "type": "car",
     "tests": [
-      "banana"
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Deepal S05 AWD",
+    "slug": "deepal-s05-awd",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Deepal S05 AWD 69 kWh",
+    "slug": "deepal-s05-awd-69-kwh",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -260,7 +2053,9 @@
     "slug": "deepal-s07",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range"
     ]
   },
   {
@@ -272,11 +2067,31 @@
     ]
   },
   {
+    "name": "Denza D9 Performance",
+    "slug": "denza-d9-performance",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "DS 3 e-tense",
     "slug": "ds-3-e-tense",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Eurabus 3.0 8.5 m",
+    "slug": "eurabus-30-85-m",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -284,7 +2099,11 @@
     "slug": "fiat-500e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -292,7 +2111,25 @@
     "slug": "fiat-600e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Firefly",
+    "slug": "firefly",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Firefly Comfort",
+    "slug": "firefly-comfort",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -300,7 +2137,11 @@
     "slug": "firefly-select",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -308,7 +2149,12 @@
     "slug": "fisker-ocean-extreme",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -316,7 +2162,9 @@
     "slug": "ford-capri",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -324,7 +2172,12 @@
     "slug": "ford-explorer",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -332,7 +2185,20 @@
     "slug": "ford-f-150-lightning",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Ford F-150 Lightning SR",
+    "slug": "ford-f-150-lightning-sr",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "braking",
+      "1000-km"
     ]
   },
   {
@@ -344,11 +2210,48 @@
     ]
   },
   {
+    "name": "Ford Mustang Mach-E GT",
+    "slug": "ford-mustang-mach-e-gt",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
+    "name": "Ford Mustang Mach-E LR AWD",
+    "slug": "ford-mustang-mach-e-lr-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Ford Mustang Mach-E LR RWD",
+    "slug": "ford-mustang-mach-e-lr-rwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "GAC Aion ES",
     "slug": "gac-aion-es",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "range"
     ]
   },
   {
@@ -356,7 +2259,9 @@
     "slug": "hiphi-x",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range"
     ]
   },
   {
@@ -364,7 +2269,11 @@
     "slug": "hiphi-z",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -372,7 +2281,12 @@
     "slug": "honda-e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -380,7 +2294,12 @@
     "slug": "honda-eny1",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -392,6 +2311,38 @@
     ]
   },
   {
+    "name": "Hongqi E-HS7 111 kWh AWD",
+    "slug": "hongqi-e-hs7-111-kwh-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hongqi E-HS9",
+    "slug": "hongqi-e-hs9",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
+    "name": "Hongqi E-HS9 120 kWh",
+    "slug": "hongqi-e-hs9-120-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
     "name": "Hongqi E-HS9 6 seater",
     "slug": "hongqi-e-hs9-6-seater",
     "type": "car",
@@ -400,11 +2351,49 @@
     ]
   },
   {
+    "name": "Hongqi E-HS9 99 kWh",
+    "slug": "hongqi-e-hs9-99-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hongqi E-HS9 Exclusive+",
+    "slug": "hongqi-e-hs9-exclusive",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
     "name": "Hyundai Inster",
     "slug": "hyundai-inster",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
+    "name": "Hyundai Inster Long Range",
+    "slug": "hyundai-inster-long-range",
+    "type": "car",
+    "tests": [
+      "weight",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq",
+    "slug": "hyundai-ioniq",
+    "type": "car",
+    "tests": [
+      "noise"
     ]
   },
   {
@@ -412,7 +2401,20 @@
     "slug": "hyundai-ioniq-28-kwh",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq 38 kWh",
+    "slug": "hyundai-ioniq-38-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -420,7 +2422,56 @@
     "slug": "hyundai-ioniq-5",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq 5 84 kWh",
+    "slug": "hyundai-ioniq-5-84-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq 5 AWD",
+    "slug": "hyundai-ioniq-5-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq 5 AWD 84 kWh",
+    "slug": "hyundai-ioniq-5-awd-84-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq 5 N",
+    "slug": "hyundai-ioniq-5-n",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq 5 RWD 72.6 kWh",
+    "slug": "hyundai-ioniq-5-rwd-726-kwh",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -432,6 +2483,19 @@
     ]
   },
   {
+    "name": "Hyundai Ioniq 6 RWD",
+    "slug": "hyundai-ioniq-6-rwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Hyundai Ioniq 9 6-seater",
     "slug": "hyundai-ioniq-9-6-seater",
     "type": "car",
@@ -440,11 +2504,69 @@
     ]
   },
   {
+    "name": "Hyundai Ioniq 9 Long Range",
+    "slug": "hyundai-ioniq-9-long-range",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "Hyundai Ioniq 9 LR AWD",
+    "slug": "hyundai-ioniq-9-lr-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Hyundai Kona",
     "slug": "hyundai-kona",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Hyundai Kona 2024",
+    "slug": "hyundai-kona-2024",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Hyundai Kona 64 kWh",
+    "slug": "hyundai-kona-64-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Kona 64 kWh MY2024",
+    "slug": "hyundai-kona-64-kwh-my2024",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Hyundai Kona 65 kWh MY2024",
+    "slug": "hyundai-kona-65-kwh-my2024",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
     ]
   },
   {
@@ -472,11 +2594,32 @@
     ]
   },
   {
+    "name": "ID Buzz Pro",
+    "slug": "id-buzz-pro",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
     "name": "Jac E30X",
     "slug": "jac-e30x",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Jac E30X Nordic Edition 50",
+    "slug": "jac-e30x-nordic-edition-50",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -504,11 +2647,52 @@
     ]
   },
   {
+    "name": "Jaguar I-Pace",
+    "slug": "jaguar-i-pace",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Jaguar I-Pace 90 kWh",
+    "slug": "jaguar-i-pace-90-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Jaguar I-Pace EV320",
+    "slug": "jaguar-i-pace-ev320",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Jeep Avenger",
     "slug": "jeep-avenger",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "KGM Musso",
+    "slug": "kgm-musso",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range"
     ]
   },
   {
@@ -516,7 +2700,8 @@
     "slug": "kgm-musso-ev",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "1000-km"
     ]
   },
   {
@@ -524,7 +2709,21 @@
     "slug": "kgm-torres-evx",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Kia Ceed PHEV",
+    "slug": "kia-ceed-phev",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration"
     ]
   },
   {
@@ -532,7 +2731,17 @@
     "slug": "kia-e-niro",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Kia e-Niro 64 kWh",
+    "slug": "kia-e-niro-64-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
     ]
   },
   {
@@ -541,6 +2750,25 @@
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Kia e-Soul 64 kWh",
+    "slug": "kia-e-soul-64-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Kia e-Soul 64 kWh van",
+    "slug": "kia-e-soul-64-kwh-van",
+    "type": "car",
+    "tests": [
+      "noise",
+      "braking"
     ]
   },
   {
@@ -556,7 +2784,26 @@
     "slug": "kia-ev3",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Kia EV3 Long Range FWD",
+    "slug": "kia-ev3-long-range-fwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Kia EV3 LR",
+    "slug": "kia-ev3-lr",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "1000-km"
     ]
   },
   {
@@ -568,11 +2815,108 @@
     ]
   },
   {
+    "name": "Kia EV6 77 kWh AWD",
+    "slug": "kia-ev6-77-kwh-awd",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Kia EV6 77 kWh RWD",
+    "slug": "kia-ev6-77-kwh-rwd",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Kia EV6 84 kWh AWD facelift",
+    "slug": "kia-ev6-84-kwh-awd-facelift",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Kia EV6 84 kWh facelift",
+    "slug": "kia-ev6-84-kwh-facelift",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Kia EV6 AWD",
+    "slug": "kia-ev6-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Kia EV6 AWD facelift",
+    "slug": "kia-ev6-awd-facelift",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Kia EV6 GT",
+    "slug": "kia-ev6-gt",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Kia EV6 GT facelift",
+    "slug": "kia-ev6-gt-facelift",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Kia EV6 RWD",
+    "slug": "kia-ev6-rwd",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
     "name": "Kia EV9",
     "slug": "kia-ev9",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Kia EV9 GT-Line",
+    "slug": "kia-ev9-gt-line",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -588,7 +2932,28 @@
     "slug": "kia-niro-ev",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Kia Niro EV 64 kWh",
+    "slug": "kia-niro-ev-64-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Kia Soul 30 kWh",
+    "slug": "kia-soul-30-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range"
     ]
   },
   {
@@ -604,7 +2969,8 @@
     "slug": "leapmotor-b10",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "range"
     ]
   },
   {
@@ -612,7 +2978,8 @@
     "slug": "leapmotor-c10",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "range"
     ]
   },
   {
@@ -620,7 +2987,12 @@
     "slug": "lexus-rz-450e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -628,7 +3000,12 @@
     "slug": "lexus-ux-300e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -640,11 +3017,46 @@
     ]
   },
   {
+    "name": "Lotus Eletre S",
+    "slug": "lotus-eletre-s",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Lucid Air Dream Edition Performance",
+    "slug": "lucid-air-dream-edition-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Maxus e-Deliver 3",
+    "slug": "maxus-e-deliver-3",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
     "name": "Maxus eT90",
     "slug": "maxus-et90",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -652,7 +3064,10 @@
     "slug": "maxus-eterron-9",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -660,7 +3075,11 @@
     "slug": "maxus-euniq-5",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -668,7 +3087,13 @@
     "slug": "maxus-mifa-9",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -680,11 +3105,27 @@
     ]
   },
   {
+    "name": "Mazda 6e Standard Range",
+    "slug": "mazda-6e-standard-range",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Mazda MX-30",
     "slug": "mazda-mx-30",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -696,11 +3137,56 @@
     ]
   },
   {
+    "name": "Mercedes CLA 350 4Matic",
+    "slug": "mercedes-cla-350-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Mercedes EQA",
     "slug": "mercedes-eqa",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Mercedes EQA 250",
+    "slug": "mercedes-eqa-250",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQA 250+",
+    "slug": "mercedes-eqa-250",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQA 350 4Matic",
+    "slug": "mercedes-eqa-350-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -712,11 +3198,43 @@
     ]
   },
   {
+    "name": "Mercedes EQB 300 4Matic",
+    "slug": "mercedes-eqb-300-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQB 350 4Matic",
+    "slug": "mercedes-eqb-350-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Mercedes EQC",
     "slug": "mercedes-eqc",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes EQC 400",
+    "slug": "mercedes-eqc-400",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -725,6 +3243,78 @@
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Mercedes EQE 300",
+    "slug": "mercedes-eqe-300",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes EQE 350 4Matic",
+    "slug": "mercedes-eqe-350-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes EQE 350 4Matic SUV",
+    "slug": "mercedes-eqe-350-4matic-suv",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQE 43 AMG",
+    "slug": "mercedes-eqe-43-amg",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQE 43 AMG 4Matic SUV",
+    "slug": "mercedes-eqe-43-amg-4matic-suv",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes EQE 53 4Matic+",
+    "slug": "mercedes-eqe-53-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes EQE 53 4Matic+ SUV",
+    "slug": "mercedes-eqe-53-4matic-suv",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -744,11 +3334,113 @@
     ]
   },
   {
+    "name": "Mercedes EQS 450+",
+    "slug": "mercedes-eqs-450",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQS 500",
+    "slug": "mercedes-eqs-500",
+    "type": "car",
+    "tests": [
+      "bangkok"
+    ]
+  },
+  {
+    "name": "Mercedes EQS 500 4Matic",
+    "slug": "mercedes-eqs-500-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes EQS 53 4Matic+",
+    "slug": "mercedes-eqs-53-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes EQS 580",
+    "slug": "mercedes-eqs-580",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Mercedes EQS 580 4Matic",
+    "slug": "mercedes-eqs-580-4matic",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQS 580 4Matic SUV",
+    "slug": "mercedes-eqs-580-4matic-suv",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Mercedes EQS SUV",
     "slug": "mercedes-eqs-suv",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Mercedes EQS SUV Maybach 680",
+    "slug": "mercedes-eqs-suv-maybach-680",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "Mercedes EQV",
+    "slug": "mercedes-eqv",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes EQV 300",
+    "slug": "mercedes-eqv-300",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -764,7 +3456,13 @@
     "slug": "mercedes-g580",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -772,7 +3470,45 @@
     "slug": "mg-cyberster",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "MG Cyberster heater off",
+    "slug": "mg-cyberster-heater-off",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "MG Cyberster roof open, heat off",
+    "slug": "mg-cyberster-roof-open-heat-off",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "MG Cyberster roof open, heat on",
+    "slug": "mg-cyberster-roof-open-heat-on",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "MG IM5 100 kWh AWD",
+    "slug": "mg-im5-100-kwh-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
     ]
   },
   {
@@ -784,11 +3520,33 @@
     ]
   },
   {
+    "name": "MG IM6 100 kWh AWD",
+    "slug": "mg-im6-100-kwh-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "MG IM6 75 kWh RWD",
+    "slug": "mg-im6-75-kwh-rwd",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "MG Marvel R Performance",
     "slug": "mg-marvel-r-performance",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
     ]
   },
   {
@@ -796,7 +3554,30 @@
     "slug": "mg-zs-ev",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "MG ZS EV 44.5 kWh",
+    "slug": "mg-zs-ev-445-kwh",
+    "type": "car",
+    "tests": [
+      "noise",
+      "range",
+      "1000-km",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "MG ZS EV 72 kWh",
+    "slug": "mg-zs-ev-72-kwh",
+    "type": "car",
+    "tests": [
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -808,11 +3589,61 @@
     ]
   },
   {
+    "name": "MG4 51 kWh",
+    "slug": "mg4-51-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "MG4 64 kWh",
+    "slug": "mg4-64-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "MG4 Long Range",
+    "slug": "mg4-long-range",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "MG4 Xpower",
+    "slug": "mg4-xpower",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "MG4 XPower",
+    "slug": "mg4-xpower",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "MG5",
     "slug": "mg5",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
@@ -820,15 +3651,19 @@
     "slug": "mgs5",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "1000-km"
     ]
   },
   {
-    "name": "MGS6",
-    "slug": "mgs6",
+    "name": "MGS5 64 kWh",
+    "slug": "mgs5-64-kwh",
     "type": "car",
     "tests": [
-      "banana"
+      "acceleration",
+      "range"
     ]
   },
   {
@@ -836,7 +3671,19 @@
     "slug": "mini-cooper-se",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Mini Cooper SE 54 kWh",
+    "slug": "mini-cooper-se-54-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -844,7 +3691,12 @@
     "slug": "mini-countryman-se-all4",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -852,7 +3704,26 @@
     "slug": "mitsubishi-i-miev",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Model 3 Performance w/mudflaps",
+    "slug": "model-3-performance-wmudflaps",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Model 3 SR+ 60 kWh",
+    "slug": "model-3-sr-60-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -861,6 +3732,31 @@
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Model S Long Range Raven",
+    "slug": "model-s-long-range-raven",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Model S LR Raven",
+    "slug": "model-s-lr-raven",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Model S P85 7 seater",
+    "slug": "model-s-p85-7-seater",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range"
     ]
   },
   {
@@ -888,11 +3784,31 @@
     ]
   },
   {
+    "name": "Model X Long Range Raven",
+    "slug": "model-x-long-range-raven",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "Nio EL6",
     "slug": "nio-el6",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise"
+    ]
+  },
+  {
+    "name": "Nio EL6 100 kWh",
+    "slug": "nio-el6-100-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -900,7 +3816,40 @@
     "slug": "nio-el7",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "braking"
+    ]
+  },
+  {
+    "name": "Nio EL7 100 kWh",
+    "slug": "nio-el7-100-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Nio EL8",
+    "slug": "nio-el8",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Nio EL8 100 kWh",
+    "slug": "nio-el8-100-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "braking",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -912,6 +3861,25 @@
     ]
   },
   {
+    "name": "Nio ES8",
+    "slug": "nio-es8",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Nio ES8 100 kWh",
+    "slug": "nio-es8-100-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Nio ES8 6 seater",
     "slug": "nio-es8-6-seater",
     "type": "car",
@@ -920,11 +3888,31 @@
     ]
   },
   {
+    "name": "Nio ES8 75 kWh",
+    "slug": "nio-es8-75-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "Nio ET5",
     "slug": "nio-et5",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise"
+    ]
+  },
+  {
+    "name": "Nio ET5 100 kWh",
+    "slug": "nio-et5-100-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -932,7 +3920,24 @@
     "slug": "nio-et5-touring",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight"
+    ]
+  },
+  {
+    "name": "Nio ET5 Touring 100 kWh",
+    "slug": "nio-et5-touring-100-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Nio ET5 Touring 75 kWh",
+    "slug": "nio-et5-touring-75-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -940,7 +3945,20 @@
     "slug": "nio-et7",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "braking"
+    ]
+  },
+  {
+    "name": "Nio ET7 100 kWh",
+    "slug": "nio-et7-100-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -949,6 +3967,73 @@
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Nissan Ariya 63 kWh",
+    "slug": "nissan-ariya-63-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Nissan Ariya 87 kWh",
+    "slug": "nissan-ariya-87-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "braking"
+    ]
+  },
+  {
+    "name": "Nissan Ariya 87 kWh e-4orce",
+    "slug": "nissan-ariya-87-kwh-e-4orce",
+    "type": "car",
+    "tests": [
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Nissan Ariya 87 kWh FWD",
+    "slug": "nissan-ariya-87-kwh-fwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Nissan Ariya e-4orce Evolve+",
+    "slug": "nissan-ariya-e-4orce-evolve",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Nissan Ariya e-4orce Evolve+ 87 kWh",
+    "slug": "nissan-ariya-e-4orce-evolve-87-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Nissan e-NV200 40 kWh",
+    "slug": "nissan-e-nv200-40-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range"
     ]
   },
   {
@@ -976,11 +4061,60 @@
     ]
   },
   {
+    "name": "Nissan Leaf 40 kWh",
+    "slug": "nissan-leaf-40-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "Nissan Leaf 62 kWh",
+    "slug": "nissan-leaf-62-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Nissan Townstar",
     "slug": "nissan-townstar",
     "type": "van",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Nissan Townstar 45 kWh",
+    "slug": "nissan-townstar-45-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Nissan X-Trail e-Power e-4orce",
+    "slug": "nissan-x-trail-e-power-e-4orce",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Old results:",
+    "slug": "old-results",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
@@ -988,7 +4122,12 @@
     "slug": "opel-ampera-e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -996,7 +4135,12 @@
     "slug": "opel-astra-e-tourer",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1004,7 +4148,10 @@
     "slug": "opel-corsa-e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "range"
     ]
   },
   {
@@ -1012,7 +4159,10 @@
     "slug": "opel-mokka-e",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "range"
     ]
   },
   {
@@ -1021,6 +4171,33 @@
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Ora 07 Performance",
+    "slug": "ora-07-performance",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Ora Good Cat 500 Ultra",
+    "slug": "ora-good-cat-500-ultra",
+    "type": "car",
+    "tests": [
+      "range",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "Ora Good Cat GT",
+    "slug": "ora-good-cat-gt",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "bangkok"
     ]
   },
   {
@@ -1036,7 +4213,18 @@
     "slug": "peugeot-e-2008",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Peugeot e-2008 GT",
+    "slug": "peugeot-e-2008-gt",
+    "type": "car",
+    "tests": [
+      "noise",
+      "range"
     ]
   },
   {
@@ -1044,7 +4232,19 @@
     "slug": "peugeot-e-208",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Peugeot e-208 GT",
+    "slug": "peugeot-e-208-gt",
+    "type": "car",
+    "tests": [
+      "noise",
+      "range"
     ]
   },
   {
@@ -1052,7 +4252,27 @@
     "slug": "peugeot-e-5008",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Peugeot e5008",
+    "slug": "peugeot-e5008",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Polestar 1",
+    "slug": "polestar-1",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise"
     ]
   },
   {
@@ -1060,7 +4280,76 @@
     "slug": "polestar-2",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Polestar 2 LR DM",
+    "slug": "polestar-2-lr-dm",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range"
+    ]
+  },
+  {
+    "name": "Polestar 2 LR SM",
+    "slug": "polestar-2-lr-sm",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Polestar 2 LR SM refresh",
+    "slug": "polestar-2-lr-sm-refresh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Polestar 2 Performance",
+    "slug": "polestar-2-performance",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Polestar 2 Performance 2024",
+    "slug": "polestar-2-performance-2024",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range"
+    ]
+  },
+  {
+    "name": "Polestar 2 SR Single Motor",
+    "slug": "polestar-2-sr-single-motor",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "Polestar 2 SR SM",
+    "slug": "polestar-2-sr-sm",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1072,11 +4361,42 @@
     ]
   },
   {
+    "name": "Polestar 3 LR DM",
+    "slug": "polestar-3-lr-dm",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Polestar 3 LR Performance",
+    "slug": "polestar-3-lr-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
     "name": "Polestar 4",
     "slug": "polestar-4",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Polestar 4 LR DM",
+    "slug": "polestar-4-lr-dm",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1088,11 +4408,52 @@
     ]
   },
   {
+    "name": "Porsche Macan 4",
+    "slug": "porsche-macan-4",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Porsche Taycan",
     "slug": "porsche-taycan",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Porsche Taycan 4S 79 kWh",
+    "slug": "porsche-taycan-4s-79-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Porsche Taycan 4S 93 kWh",
+    "slug": "porsche-taycan-4s-93-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range"
+    ]
+  },
+  {
+    "name": "Porsche Taycan 4S w/glass",
+    "slug": "porsche-taycan-4s-wglass",
+    "type": "car",
+    "tests": [
+      "noise"
     ]
   },
   {
@@ -1104,11 +4465,60 @@
     ]
   },
   {
+    "name": "Porsche Taycan Cross Turismo 4",
+    "slug": "porsche-taycan-cross-turismo-4",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Porsche Taycan Turbo",
+    "slug": "porsche-taycan-turbo",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Porsche Taycan Turbo S",
+    "slug": "porsche-taycan-turbo-s",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Renault 5 55 kWh",
+    "slug": "renault-5-55-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
     "name": "Renault 5 E-Tech",
     "slug": "renault-5-e-tech",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking"
+    ]
+  },
+  {
+    "name": "Renault 5 E-Tech 55 kWh",
+    "slug": "renault-5-e-tech-55-kwh",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -1116,7 +4526,20 @@
     "slug": "renault-megane-e-tech",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking"
+    ]
+  },
+  {
+    "name": "Renault Megane E-Tech 60 kWh",
+    "slug": "renault-megane-e-tech-60-kwh",
+    "type": "car",
+    "tests": [
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1124,7 +4547,19 @@
     "slug": "renault-scenic-e-tech",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Renault Scenic E-Tech 92 kWh",
+    "slug": "renault-scenic-e-tech-92-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1136,11 +4571,45 @@
     ]
   },
   {
+    "name": "Renault Zoe 52 kWh",
+    "slug": "renault-zoe-52-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Renault Zoe ZE50",
+    "slug": "renault-zoe-ze50",
+    "type": "car",
+    "tests": [
+      "weight",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Seres 5",
     "slug": "seres-5",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "Seres 5 2024 80 kWh",
+    "slug": "seres-5-2024-80-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Seres 5 80 kWh",
+    "slug": "seres-5-80-kwh",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -1148,7 +4617,25 @@
     "slug": "skoda-elroq-60",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Skoda Enyaq Coupé 85x",
+    "slug": "skoda-enyaq-coup-85x",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Skoda Enyaq Coupé 85x 2025",
+    "slug": "skoda-enyaq-coup-85x-2025",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
     ]
   },
   {
@@ -1156,7 +4643,13 @@
     "slug": "skoda-enyaq-coup-rs",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1164,7 +4657,19 @@
     "slug": "skoda-enyaq-iv-80",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Skoda Enyaq iV80",
+    "slug": "skoda-enyaq-iv80",
+    "type": "car",
+    "tests": [
+      "acceleration"
     ]
   },
   {
@@ -1172,7 +4677,12 @@
     "slug": "smart-1-brabus",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1180,7 +4690,12 @@
     "slug": "smart-3-brabus",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1188,7 +4703,12 @@
     "slug": "smart-5-brabus",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1200,6 +4720,16 @@
     ]
   },
   {
+    "name": "Tesla Cybertruck Long Range",
+    "slug": "tesla-cybertruck-long-range",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Tesla Model 3 Highland",
     "slug": "tesla-model-3-highland",
     "type": "car",
@@ -1208,11 +4738,443 @@
     ]
   },
   {
+    "name": "Tesla Model 3 Long Range 2021",
+    "slug": "tesla-model-3-long-range-2021",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR",
+    "slug": "tesla-model-3-lr",
+    "type": "car",
+    "tests": [
+      "noise",
+      "braking",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR 2021",
+    "slug": "tesla-model-3-lr-2021",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR 2021 w/boost",
+    "slug": "tesla-model-3-lr-2021-wboost",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR 2022 (LG)",
+    "slug": "tesla-model-3-lr-2022-lg",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR 82 kWh",
+    "slug": "tesla-model-3-lr-82-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR Dual Motor",
+    "slug": "tesla-model-3-lr-dual-motor",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR Highland",
+    "slug": "tesla-model-3-lr-highland",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR Highland 2024",
+    "slug": "tesla-model-3-lr-highland-2024",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR RWD",
+    "slug": "tesla-model-3-lr-rwd",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 LR RWD Highland",
+    "slug": "tesla-model-3-lr-rwd-highland",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance",
+    "slug": "tesla-model-3-performance",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance (MC)",
+    "slug": "tesla-model-3-performance-mc",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance 2019",
+    "slug": "tesla-model-3-performance-2019",
+    "type": "car",
+    "tests": [
+      "weight",
+      "braking"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance 2021",
+    "slug": "tesla-model-3-performance-2021",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance 2022",
+    "slug": "tesla-model-3-performance-2022",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "braking"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance Highland",
+    "slug": "tesla-model-3-performance-highland",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance w/double glass",
+    "slug": "tesla-model-3-performance-wdouble-glass",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 Performance*",
+    "slug": "tesla-model-3-performance",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 RWD Highland",
+    "slug": "tesla-model-3-rwd-highland",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 SR+",
+    "slug": "tesla-model-3-sr",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 SR+ 60 kWh",
+    "slug": "tesla-model-3-sr-60-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 SR+ 60 kWh LFP",
+    "slug": "tesla-model-3-sr-60-kwh-lfp",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 SR+ LFP",
+    "slug": "tesla-model-3-sr-lfp",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 SR+ MIC",
+    "slug": "tesla-model-3-sr-mic",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model 3 SR+ MIC 2021",
+    "slug": "tesla-model-3-sr-mic-2021",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model S 85D 2016",
+    "slug": "tesla-model-s-85d-2016",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model S LR Palladium",
+    "slug": "tesla-model-s-lr-palladium",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model S LR Palladium w/ANC",
+    "slug": "tesla-model-s-lr-palladium-wanc",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model S LR Raven",
+    "slug": "tesla-model-s-lr-raven",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model S P100DL",
+    "slug": "tesla-model-s-p100dl",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model S P85",
+    "slug": "tesla-model-s-p85",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model S P85 (MF)",
+    "slug": "tesla-model-s-p85-mf",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model S P85 7 seater",
+    "slug": "tesla-model-s-p85-7-seater",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Tesla Model S Perf Raven",
+    "slug": "tesla-model-s-perf-raven",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model S Performance Raven",
+    "slug": "tesla-model-s-performance-raven",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "braking"
+    ]
+  },
+  {
     "name": "Tesla Model S Plaid",
     "slug": "tesla-model-s-plaid",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model S Plaid (caps off)",
+    "slug": "tesla-model-s-plaid-caps-off",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model S Plaid (caps on)",
+    "slug": "tesla-model-s-plaid-caps-on",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model S Plaid w/ANC",
+    "slug": "tesla-model-s-plaid-wanc",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model X",
+    "slug": "tesla-model-x",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model X 60D",
+    "slug": "tesla-model-x-60d",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model X Long Range Palladium",
+    "slug": "tesla-model-x-long-range-palladium",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "Tesla Model X LR Palladium",
+    "slug": "tesla-model-x-lr-palladium",
+    "type": "car",
+    "tests": [
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model X LR Raven",
+    "slug": "tesla-model-x-lr-raven",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model X P90DL",
+    "slug": "tesla-model-x-p90dl",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model X P90DL (OP)",
+    "slug": "tesla-model-x-p90dl-op",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model X Raven",
+    "slug": "tesla-model-x-raven",
+    "type": "car",
+    "tests": [
+      "noise"
     ]
   },
   {
@@ -1224,6 +5186,134 @@
     ]
   },
   {
+    "name": "Tesla Model Y Long Range RWD",
+    "slug": "tesla-model-y-long-range-rwd",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Tesla Model Y LR",
+    "slug": "tesla-model-y-lr",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model Y LR (caps off)",
+    "slug": "tesla-model-y-lr-caps-off",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model Y LR (caps on)",
+    "slug": "tesla-model-y-lr-caps-on",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model Y LR Juniper",
+    "slug": "tesla-model-y-lr-juniper",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model Y LR RWD",
+    "slug": "tesla-model-y-lr-rwd",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Tesla Model Y LR RWD Juniper",
+    "slug": "tesla-model-y-lr-rwd-juniper",
+    "type": "car",
+    "tests": [
+      "range",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "Tesla Model Y Performance",
+    "slug": "tesla-model-y-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model Y Performance Juniper",
+    "slug": "tesla-model-y-performance-juniper",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model Y RWD",
+    "slug": "tesla-model-y-rwd",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "Tesla Model Y RWD BYD",
+    "slug": "tesla-model-y-rwd-byd",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Tesla Model Y RWD BYD battery",
+    "slug": "tesla-model-y-rwd-byd-battery",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Tesla Model Y RWD CATL",
+    "slug": "tesla-model-y-rwd-catl",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
     "name": "Toyota bZ4X",
     "slug": "toyota-bz4x",
     "type": "car",
@@ -1232,11 +5322,36 @@
     ]
   },
   {
+    "name": "Toyota bZ4X AWD",
+    "slug": "toyota-bz4x-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Toyota Mirai",
     "slug": "toyota-mirai",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Toyota Mirai (hydrogen)",
+    "slug": "toyota-mirai-hydrogen",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -1248,11 +5363,53 @@
     ]
   },
   {
+    "name": "Volvo C40 AWD",
+    "slug": "volvo-c40-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Volvo EX30",
     "slug": "volvo-ex30",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Volvo EX30 RWD ER",
+    "slug": "volvo-ex30-rwd-er",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Volvo EX30 RWD Extended Range",
+    "slug": "volvo-ex30-rwd-extended-range",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Volvo EX30 Twin Performance",
+    "slug": "volvo-ex30-twin-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1264,11 +5421,71 @@
     ]
   },
   {
+    "name": "Volvo EX90 Twin Ultra",
+    "slug": "volvo-ex90-twin-ultra",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Volvo XC40",
     "slug": "volvo-xc40",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise",
+      "bangkok"
+    ]
+  },
+  {
+    "name": "Volvo XC40 69 kWh FWD",
+    "slug": "volvo-xc40-69-kwh-fwd",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Volvo XC40 78 kWh AWD",
+    "slug": "volvo-xc40-78-kwh-awd",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Volvo XC40 82 kWh AWD",
+    "slug": "volvo-xc40-82-kwh-awd",
+    "type": "car",
+    "tests": [
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Volvo XC40 AWD",
+    "slug": "volvo-xc40-awd",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Volvo XC40 FWD",
+    "slug": "volvo-xc40-fwd",
+    "type": "car",
+    "tests": [
+      "weight"
     ]
   },
   {
@@ -1276,7 +5493,18 @@
     "slug": "voyah-free",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "VW e-Crafter",
+    "slug": "vw-e-crafter",
+    "type": "car",
+    "tests": [
+      "noise",
+      "range"
     ]
   },
   {
@@ -1292,7 +5520,18 @@
     "slug": "vw-e-golf",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "VW e-Golf 35.8 kWh",
+    "slug": "vw-e-golf-358-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1304,11 +5543,221 @@
     ]
   },
   {
+    "name": "VW e-Up",
+    "slug": "vw-e-up",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "VW e-Up 18.7 kWh",
+    "slug": "vw-e-up-187-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "VW e-Up 18.7 kWh Highline",
+    "slug": "vw-e-up-187-kwh-highline",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "VW e-Up 36.8 kWh",
+    "slug": "vw-e-up-368-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID Buzz",
+    "slug": "vw-id-buzz",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "VW ID Buzz 82 kWh",
+    "slug": "vw-id-buzz-82-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID Buzz Cargo",
+    "slug": "vw-id-buzz-cargo",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "VW ID Buzz Cargo 82 kWh",
+    "slug": "vw-id-buzz-cargo-82-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID Buzz Cargo 82 kWh w/trailer",
+    "slug": "vw-id-buzz-cargo-82-kwh-wtrailer",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID Buzz LWB GTX",
+    "slug": "vw-id-buzz-lwb-gtx",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID Buzz LWB GTX 91 kWh",
+    "slug": "vw-id-buzz-lwb-gtx-91-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID Buzz Pro 82 kWh",
+    "slug": "vw-id-buzz-pro-82-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "VW ID.3",
     "slug": "vw-id3",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "VW ID3",
+    "slug": "vw-id3",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "VW ID3 1st",
+    "slug": "vw-id3-1st",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "VW ID3 1st 62 kWh",
+    "slug": "vw-id3-1st-62-kwh",
+    "type": "car",
+    "tests": [
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID3 1st Max",
+    "slug": "vw-id3-1st-max",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
+    "name": "VW ID3 1st Max 62 kWh",
+    "slug": "vw-id3-1st-max-62-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID3 1st Plus",
+    "slug": "vw-id3-1st-plus",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID3 1st Plus 62 kWh",
+    "slug": "vw-id3-1st-plus-62-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID3 55 kWh",
+    "slug": "vw-id3-55-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID3 82 kWh",
+    "slug": "vw-id3-82-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID3 Pro 62 kWh facelift",
+    "slug": "vw-id3-pro-62-kwh-facelift",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID3 Pro facelift",
+    "slug": "vw-id3-pro-facelift",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise"
     ]
   },
   {
@@ -1320,6 +5769,87 @@
     ]
   },
   {
+    "name": "VW ID4 1st",
+    "slug": "vw-id4-1st",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise"
+    ]
+  },
+  {
+    "name": "VW ID4 1st 82 kWh",
+    "slug": "vw-id4-1st-82-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID4 1st GTX 82 kWh",
+    "slug": "vw-id4-1st-gtx-82-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID4 1st Max",
+    "slug": "vw-id4-1st-max",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "VW ID4 GTX",
+    "slug": "vw-id4-gtx",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise"
+    ]
+  },
+  {
+    "name": "VW ID4 GTX 82 kWh",
+    "slug": "vw-id4-gtx-82-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID4 Max",
+    "slug": "vw-id4-max",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "VW ID4 Pro 4Motion",
+    "slug": "vw-id4-pro-4motion",
+    "type": "car",
+    "tests": [
+      "weight",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID4 Pro 4Motion 82 kWh",
+    "slug": "vw-id4-pro-4motion-82-kwh",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
     "name": "VW ID5",
     "slug": "vw-id5",
     "type": "car",
@@ -1328,11 +5858,62 @@
     ]
   },
   {
+    "name": "VW ID5 GTX",
+    "slug": "vw-id5-gtx",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID5 GTX 82 kWh",
+    "slug": "vw-id5-gtx-82-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
     "name": "VW ID7",
     "slug": "vw-id7",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "noise"
+    ]
+  },
+  {
+    "name": "VW ID7 GTX Tourer",
+    "slug": "vw-id7-gtx-tourer",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "VW ID7 GTX Tourer 91 kWh",
+    "slug": "vw-id7-gtx-tourer-91-kwh",
+    "type": "car",
+    "tests": [
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID7 Pro",
+    "slug": "vw-id7-pro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1344,11 +5925,49 @@
     ]
   },
   {
+    "name": "VW ID7 Tourer Pro",
+    "slug": "vw-id7-tourer-pro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Xpeng G3",
     "slug": "xpeng-g3",
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Xpeng G3 520",
+    "slug": "xpeng-g3-520",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Xpeng G3 520 Chinese",
+    "slug": "xpeng-g3-520-chinese",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Xpeng G3 520i",
+    "slug": "xpeng-g3-520i",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1360,6 +5979,19 @@
     ]
   },
   {
+    "name": "Xpeng G6 Performance",
+    "slug": "xpeng-g6-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Xpeng G9",
     "slug": "xpeng-g9",
     "type": "car",
@@ -1368,11 +6000,45 @@
     ]
   },
   {
+    "name": "Xpeng G9 Performance",
+    "slug": "xpeng-g9-performance",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Xpeng P7 Performance",
     "slug": "xpeng-p7-performance",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Xpeng P7 Performance Wing Edition",
+    "slug": "xpeng-p7-performance-wing-edition",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Zeekr 001",
+    "slug": "zeekr-001",
+    "type": "car",
+    "tests": [
+      "acceleration"
     ]
   },
   {
@@ -1380,7 +6046,11 @@
     "slug": "zeekr-001-awd",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -1392,11 +6062,33 @@
     ]
   },
   {
+    "name": "Zeekr 7X Performance",
+    "slug": "zeekr-7x-performance",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Zeekr 7X Performance AWD",
+    "slug": "zeekr-7x-performance-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
     "name": "Zeekr X AWD",
     "slug": "zeekr-x-awd",
     "type": "car",
     "tests": [
-      "banana"
+      "banana",
+      "weight",
+      "noise",
+      "range"
     ]
   }
 ]

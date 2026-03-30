@@ -7,5 +7,122 @@
     "lowerIsBetter": false,
     "unit": "banana",
     "description": "Cargo volume with rear seats flat — the Bjørn Nyland banana box test"
+  },
+  {
+    "name": "Weight",
+    "slug": "weight",
+    "icon": "monitor_weight",
+    "colName": "Total",
+    "lowerIsBetter": true,
+    "unit": "kg",
+    "description": "Curb weight distribution across the EV segment"
+  },
+  {
+    "name": "Acceleration",
+    "slug": "acceleration",
+    "icon": "speed",
+    "colName": "0-100",
+    "lowerIsBetter": true,
+    "unit": "s",
+    "description": "0–100 km/h acceleration benchmarks"
+  },
+  {
+    "name": "Noise",
+    "slug": "noise",
+    "icon": "volume_up",
+    "colName": "Average",
+    "lowerIsBetter": true,
+    "unit": "dB",
+    "description": "Interior noise levels at highway speeds"
+  },
+  {
+    "name": "Braking",
+    "slug": "braking",
+    "icon": "tire_repair",
+    "colName": "Distance",
+    "lowerIsBetter": true,
+    "unit": "m",
+    "description": "Emergency braking distance from 100 km/h"
+  },
+  {
+    "name": "Range",
+    "slug": "range",
+    "icon": "ev_station",
+    "colName": "km",
+    "lowerIsBetter": false,
+    "unit": "km",
+    "description": "Real-world range at 90 km/h"
+  },
+  {
+    "name": "Sunday",
+    "slug": "sunday",
+    "icon": "wb_sunny",
+    "colName": "Range",
+    "lowerIsBetter": false,
+    "unit": "km",
+    "description": "Sunday drive range estimates"
+  },
+  {
+    "name": "1000 km",
+    "slug": "1000-km",
+    "icon": "route",
+    "colName": "km/h",
+    "lowerIsBetter": false,
+    "unit": "km/h",
+    "description": "1 000 km challenge — average speed including charging stops"
+  },
+  {
+    "name": "500 km",
+    "slug": "500-km",
+    "icon": "route",
+    "colName": "km/h",
+    "lowerIsBetter": false,
+    "unit": "km/h",
+    "description": "500 km challenge — average speed including charging stops"
+  },
+  {
+    "name": "Geilo",
+    "slug": "geilo",
+    "icon": "terrain",
+    "colName": "Time",
+    "lowerIsBetter": true,
+    "unit": "min",
+    "description": "A mountain route challenge from Oslo to Geilo — a steep, cold-weather drive through Norwegian highlands. Measures total time and number of charging stops. Fewer stops and lower time means better real-world mountain performance."
+  },
+  {
+    "name": "Degradation",
+    "slug": "degradation",
+    "icon": "battery_alert",
+    "colName": "Degradation",
+    "lowerIsBetter": true,
+    "unit": "%",
+    "description": "Battery capacity degradation vs. odometer reading"
+  },
+  {
+    "name": "Zero mile",
+    "slug": "zero-mile",
+    "icon": "battery_0_bar",
+    "colName": "Zero buffer",
+    "lowerIsBetter": false,
+    "unit": "kWh",
+    "description": "What happens when you drive an EV to 0%? This test drains each car completely to see how much hidden battery buffer remains, how far you can still drive, and whether the car bricks or enters limp mode. More buffer means less range anxiety."
+  },
+  {
+    "name": "Arctic Circle",
+    "slug": "arctic-circle",
+    "icon": "ac_unit",
+    "colName": "km/h",
+    "lowerIsBetter": false,
+    "unit": "km/h",
+    "description": "A ~950 km route from southern Norway to the Arctic Circle and back. Each car drives the full route including all charging stops. The key metric is average speed (km/h) — higher means faster charging and better real-world long-distance capability."
+  },
+  {
+    "name": "Bangkok",
+    "slug": "bangkok",
+    "icon": "travel_explore",
+    "colName": "Wh/km",
+    "lowerIsBetter": true,
+    "unit": "Wh/km",
+    "description": "Energy consumption test driven in Bangkok's extreme heat (35°C+) with heavy A/C use. Measures Wh/km — lower is better. Shows how well each car handles tropical conditions where cabin cooling is a major energy drain."
   }
 ]
