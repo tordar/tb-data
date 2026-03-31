@@ -75,7 +75,7 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
 
   return (
     <aside
-      className={`fixed left-0 top-0 h-screen w-64 flex flex-col py-8 px-4 z-50 transition-transform duration-200 lg:translate-x-0 ${
+      className={`fixed left-0 top-0 h-dvh w-64 flex flex-col py-8 px-4 z-50 transition-transform duration-200 lg:translate-x-0 ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       }`}
       style={{ backgroundColor: "var(--surface-container-low)" }}

@@ -34,6 +34,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const { resolvedTheme, setTheme } = useTheme();
   const pageInfo = useMemo(() => getPageInfo(pathname), [pathname]);
 
+  // Lock body scroll when mobile sidebar is open
+  useEffect(() => {
+    document.body.style.overflow = sidebarOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [sidebarOpen]);
+
   // Watch for the page headline scrolling out of view
   useEffect(() => {
     setScrolledPastTitle(false);
