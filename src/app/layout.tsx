@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "TB Test Results Explorer",
     description: "Interactive explorer for Bjørn Nyland's EV test data",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
