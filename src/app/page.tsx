@@ -1,5 +1,6 @@
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
-import { DashboardRadar } from "@/components/dashboard/DashboardRadar";
+import dynamic from "next/dynamic";
+const DashboardRadar = dynamic(() => import("@/components/dashboard/DashboardRadar").then(m => m.DashboardRadar));
 
 export default function DashboardPage() {
   return (

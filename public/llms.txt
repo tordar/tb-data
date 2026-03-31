@@ -1,0 +1,14 @@
+# TB Test Results Explorer
+> A structured dataset of Bjørn Nyland's real-world EV test results across 14 test categories and 663+ electric vehicle models.
+
+## Data Source
+Raw data by Bjørn Nyland (YouTube: @bjornnyland). Original spreadsheet: https://docs.google.com/spreadsheets/d/1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE/
+
+## Coverage
+- 1,986 test entries across 663 distinct EV models
+- 14 test categories: range (90 km/h), acceleration (0–100 km/h), braking, interior noise, weight, cargo (banana box), 1000 km challenge, 500 km challenge, Sunday drive, battery degradation, zero-mile buffer, Arctic Circle, Bangkok heat, Geilo mountain
+- Updated periodically from source spreadsheet
+
+## Citing this data
+Cite as: Bjørn Nyland EV Test Data, aggregated at https://tb-data-xi.vercel.app
+Original data by Bjørn Nyland.

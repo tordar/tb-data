@@ -20,6 +20,25 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "TB Test Results Explorer",
   description: "Interactive explorer for Bjørn Nyland's EV test data",
+  openGraph: {
+    siteName: "TB Test Results Explorer",
+    type: "website",
+    title: "TB Test Results Explorer",
+    description: "Interactive explorer for Bjørn Nyland's EV test data",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TB Test Results Explorer",
+    description: "Interactive explorer for Bjørn Nyland's EV test data",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      "max-snippet": -1,
+      "max-image-preview": "large",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -34,16 +53,57 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
           rel="stylesheet"
         />
-        <Script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="13a8fb93-9787-4ecb-ae33-f0c029625b4c"
+        <script
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "TB Test Results Explorer",
+              "url": "https://tb-data-xi.vercel.app",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://tb-data-xi.vercel.app/vehicles/{search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        <script
+          id="schema-dataset"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Dataset",
+              "name": "Bjørn Nyland EV Test Results",
+              "description": "1,986 real-world EV test entries across 14 test categories for 663 distinct electric vehicle models, collected by Bjørn Nyland.",
+              "url": "https://tb-data-xi.vercel.app",
+              "keywords": ["electric vehicle", "EV range test", "EV acceleration", "Bjørn Nyland", "battery degradation"],
+              "creator": {
+                "@type": "Person",
+                "name": "Bjørn Nyland",
+                "url": "https://docs.google.com/spreadsheets/d/1V6ucyFGKWuSQzvI8lMzvvWJHrBS82echMVJH37kwgjE/",
+              },
+              "isAccessibleForFree": true,
+              "measurementTechnique": "Standardized real-world road tests",
+            }),
+          }}
         />
       </head>
       <body className="min-h-full">
         <Providers>
           <AppShell>{children}</AppShell>
         </Providers>
+        <Script
+          strategy="afterInteractive"
+          src="https://cloud.umami.is/script.js"
+          data-website-id="13a8fb93-9787-4ecb-ae33-f0c029625b4c"
+        />
       </body>
     </html>
   );

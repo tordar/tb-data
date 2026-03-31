@@ -83,9 +83,9 @@ export function Sidebar({ pathname, sidebarOpen, onClose, resolvedTheme, onTheme
       {/* Brand + theme toggle */}
       <div className="mb-8 px-2 flex items-start justify-between">
         <div>
-          <h1 className="font-bold text-xl tracking-tight" style={{ color: "var(--primary)" }}>
+          <div className="font-bold text-xl tracking-tight" style={{ color: "var(--primary)" }}>
             TB Test Results
-          </h1>
+          </div>
           <p
             className="text-xs mt-0.5 uppercase tracking-[0.18em]"
             style={{

@@ -6,12 +6,13 @@ import { parseNum, isNumericCol, colMax } from "@/lib/utils/parsing";
 import { computeStats } from "@/lib/utils/scoring";
 import { StatsBento } from "@/components/tests/StatsBento";
 import { DataTable } from "@/components/tests/DataTable";
-import { AccelScatterChart } from "@/components/tests/charts/AccelScatterChart";
-import { NoiseHistogramChart } from "@/components/tests/charts/NoiseHistogramChart";
-import { RangeEfficiencyChart } from "@/components/tests/charts/RangeEfficiencyChart";
-import { WinterPenaltyChart } from "@/components/tests/charts/WinterPenaltyChart";
-import { DegradationScatterChart } from "@/components/tests/charts/DegradationScatterChart";
-import { WltpRealityChart } from "@/components/tests/charts/WltpRealityChart";
+import dynamic from "next/dynamic";
+const AccelScatterChart = dynamic(() => import("@/components/tests/charts/AccelScatterChart").then(m => m.AccelScatterChart), { ssr: false });
+const NoiseHistogramChart = dynamic(() => import("@/components/tests/charts/NoiseHistogramChart").then(m => m.NoiseHistogramChart), { ssr: false });
+const RangeEfficiencyChart = dynamic(() => import("@/components/tests/charts/RangeEfficiencyChart").then(m => m.RangeEfficiencyChart), { ssr: false });
+const WinterPenaltyChart = dynamic(() => import("@/components/tests/charts/WinterPenaltyChart").then(m => m.WinterPenaltyChart), { ssr: false });
+const DegradationScatterChart = dynamic(() => import("@/components/tests/charts/DegradationScatterChart").then(m => m.DegradationScatterChart), { ssr: false });
+const WltpRealityChart = dynamic(() => import("@/components/tests/charts/WltpRealityChart").then(m => m.WltpRealityChart), { ssr: false });
 
 const SHEET_CHARTS: Record<string, React.ComponentType[]> = {
   acceleration: [AccelScatterChart],

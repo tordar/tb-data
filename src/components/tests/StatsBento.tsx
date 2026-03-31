@@ -2,7 +2,8 @@
 
 import { type Stats } from "@/lib/types";
 import { fmt } from "@/lib/utils/formatting";
-import { TopChart } from "@/components/tests/TopChart";
+import dynamic from "next/dynamic";
+const TopChart = dynamic(() => import("@/components/tests/TopChart").then(m => m.TopChart), { ssr: false });
 
 interface StatsBentoProps {
   stats: Stats;
