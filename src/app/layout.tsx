@@ -61,12 +61,12 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "TB Test Results Explorer",
-              "url": "https://tb-data-xi.vercel.app",
+              "url": "https://tb-data.tordar.no",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://tb-data-xi.vercel.app/vehicles/{search_term_string}",
+                  "urlTemplate": "https://tb-data.tordar.no/vehicles/{search_term_string}",
                 },
                 "query-input": "required name=search_term_string",
               },
@@ -82,7 +82,7 @@ export default function RootLayout({
               "@type": "Dataset",
               "name": "Bjørn Nyland EV Test Results",
               "description": "1,986 real-world EV test entries across 14 test categories for 663 distinct electric vehicle models, collected by Bjørn Nyland.",
-              "url": "https://tb-data-xi.vercel.app",
+              "url": "https://tb-data.tordar.no",
               "keywords": ["electric vehicle", "EV range test", "EV acceleration", "Bjørn Nyland", "battery degradation"],
               "creator": {
                 "@type": "Person",

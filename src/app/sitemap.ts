@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import vehicles from "@/data/vehicles.json";
 
-const BASE_URL = "https://tb-data-xi.vercel.app";
+const BASE_URL = "https://tb-data.tordar.no";
 
 const AUTHORED_DATE = new Date();
 

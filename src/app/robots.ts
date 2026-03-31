@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://tb-data-xi.vercel.app/sitemap.xml",
+    sitemap: "https://tb-data.tordar.no/sitemap.xml",
   };
 }

@@ -34,7 +34,7 @@ export async function generateMetadata(
       type: "website",
     },
     alternates: {
-      canonical: `https://tb-data-xi.vercel.app/tests/${slug}`,
+      canonical: `https://tb-data.tordar.no/tests/${slug}`,
     },
   };
 }

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "website",
     },
     alternates: {
-      canonical: `https://tb-data-xi.vercel.app/vehicles/${slug}`,
+      canonical: `https://tb-data.tordar.no/vehicles/${slug}`,
     },
   };
 }

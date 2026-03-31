@@ -10,5 +10,5 @@ Raw data by Bjørn Nyland (YouTube: @bjornnyland). Original spreadsheet: https:/
 - Updated periodically from source spreadsheet
 
 ## Citing this data
-Cite as: Bjørn Nyland EV Test Data, aggregated at https://tb-data-xi.vercel.app
+Cite as: Bjørn Nyland EV Test Data, aggregated at https://tb-data.tordar.no
 Original data by Bjørn Nyland.
