@@ -3723,7 +3723,8 @@
     "type": "car",
     "tests": [
       "weight",
-      "range"
+      "range",
+      "1000-km"
     ]
   },
   {
