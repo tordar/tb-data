@@ -2848,6 +2848,22 @@
     ]
   },
   {
+    "name": "Kia EV4",
+    "slug": "kia-ev4",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Kia EV4 LR",
+    "slug": "kia-ev4-lr",
+    "type": "car",
+    "tests": [
+      "1000-km"
+    ]
+  },
+  {
     "name": "Kia EV6",
     "slug": "kia-ev6",
     "type": "car",
