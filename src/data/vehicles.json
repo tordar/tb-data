@@ -1185,6 +1185,14 @@
     ]
   },
   {
+    "name": "2025 Kia EV4 Long Range",
+    "slug": "2025-kia-ev4-long-range",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2025 Leapmotor C10",
     "slug": "2025-leapmotor-c10",
     "type": "car",
@@ -2856,10 +2864,20 @@
     ]
   },
   {
+    "name": "Kia EV4 Long Range FWD",
+    "slug": "kia-ev4-long-range-fwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
     "name": "Kia EV4 LR",
     "slug": "kia-ev4-lr",
     "type": "car",
     "tests": [
+      "acceleration",
       "1000-km"
     ]
   },
@@ -3506,6 +3524,23 @@
     "type": "van",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Mercedes eVito",
+    "slug": "mercedes-evito",
+    "type": "car",
+    "tests": [
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Mercedes eVito van",
+    "slug": "mercedes-evito-van",
+    "type": "car",
+    "tests": [
+      "weight"
     ]
   },
   {
