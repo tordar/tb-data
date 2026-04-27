@@ -807,16 +807,28 @@
       "67,43"
     ],
     [
-      "Tesla Model 3 LR RWD Highland",
+      "BMW iX3 50 xDrive ANR off",
       "Dry",
-      "Bridgestone Turanza T005 EV",
+      "Goodyear Eagle F1",
       "Summer",
-      "235/45-18",
-      "235/45-18",
-      "65,3",
-      "67,7",
-      "69,2",
-      "67,68"
+      "255/40-21",
+      "255/40-21",
+      "65,0",
+      "67,3",
+      "69,9",
+      "67,85"
+    ],
+    [
+      "BMW iX3 50 xDrive ANR on",
+      "Dry",
+      "Goodyear Eagle F1",
+      "Summer",
+      "255/40-21",
+      "255/40-21",
+      "64,6",
+      "67,2",
+      "69,3",
+      "67,44"
     ],
     [
       "VW ID4 1st",

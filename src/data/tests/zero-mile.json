@@ -385,6 +385,18 @@
       "Not tested",
       "No",
       "2 kW power limit"
+    ],
+    [
+      "2025 Mercedes eVito",
+      "8468 km",
+      "0,7 kWh",
+      "4 km",
+      "5°C",
+      "Yes",
+      "Yes",
+      "Yes",
+      "No",
+      "Died with 4 bars left"
     ]
   ]
 }

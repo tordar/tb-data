@@ -1218,6 +1218,15 @@
     ]
   },
   {
+    "name": "2025 Mercedes eVito",
+    "slug": "2025-mercedes-evito",
+    "type": "car",
+    "tests": [
+      "sunday",
+      "zero-mile"
+    ]
+  },
+  {
     "name": "2025 MG IM6 75 kWh RWD",
     "slug": "2025-mg-im6-75-kwh-rwd",
     "type": "car",
@@ -1307,6 +1316,14 @@
       "range",
       "sunday",
       "1000-km"
+    ]
+  },
+  {
+    "name": "2026 BMW iX3 50 xDrive",
+    "slug": "2026-bmw-ix3-50-xdrive",
+    "type": "car",
+    "tests": [
+      "sunday"
     ]
   },
   {
@@ -1802,6 +1819,34 @@
       "noise",
       "range",
       "1000-km"
+    ]
+  },
+  {
+    "name": "BMW iX3 50 xDrive",
+    "slug": "bmw-ix3-50-xdrive",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "BMW iX3 50 xDrive ANR off",
+    "slug": "bmw-ix3-50-xdrive-anr-off",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "BMW iX3 50 xDrive ANR on",
+    "slug": "bmw-ix3-50-xdrive-anr-on",
+    "type": "car",
+    "tests": [
+      "noise"
     ]
   },
   {
@@ -3531,8 +3576,10 @@
     "slug": "mercedes-evito",
     "type": "car",
     "tests": [
+      "acceleration",
       "noise",
-      "range"
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -4945,7 +4992,6 @@
     "tests": [
       "weight",
       "acceleration",
-      "noise",
       "braking",
       "range",
       "1000-km"
