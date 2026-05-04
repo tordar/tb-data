@@ -1826,6 +1826,7 @@
     "slug": "bmw-ix3-50-xdrive",
     "type": "car",
     "tests": [
+      "banana",
       "weight",
       "acceleration",
       "braking",
@@ -1868,6 +1869,16 @@
       "acceleration",
       "range",
       "bangkok"
+    ]
+  },
+  {
+    "name": "BYD Atto 3 Evo",
+    "slug": "byd-atto-3-evo",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise"
     ]
   },
   {
