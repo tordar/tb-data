@@ -1876,9 +1876,19 @@
     "slug": "byd-atto-3-evo",
     "type": "car",
     "tests": [
+      "banana",
       "weight",
       "acceleration",
-      "noise"
+      "noise",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "BYD Atto 3 Evo AWD",
+    "slug": "byd-atto-3-evo-awd",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
@@ -5541,6 +5551,25 @@
       "noise",
       "range",
       "1000-km"
+    ]
+  },
+  {
+    "name": "Volvo ES90 RWD",
+    "slug": "volvo-es90-rwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking"
+    ]
+  },
+  {
+    "name": "Volvo ES90 RWD 92 kWh",
+    "slug": "volvo-es90-rwd-92-kwh",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
