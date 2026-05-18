@@ -1292,6 +1292,14 @@
     ]
   },
   {
+    "name": "2025 Volvo ES90 RWD",
+    "slug": "2025-volvo-es90-rwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2025 VW ID3 Pro facelift",
     "slug": "2025-vw-id3-pro-facelift",
     "type": "car",
@@ -5158,6 +5166,17 @@
     ]
   },
   {
+    "name": "Tesla Model 3 Standard",
+    "slug": "tesla-model-3-standard",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
     "name": "Tesla Model S 85D 2016",
     "slug": "tesla-model-s-85d-2016",
     "type": "car",
@@ -5554,6 +5573,14 @@
     ]
   },
   {
+    "name": "Volvo ES90",
+    "slug": "volvo-es90",
+    "type": "car",
+    "tests": [
+      "banana"
+    ]
+  },
+  {
     "name": "Volvo ES90 RWD",
     "slug": "volvo-es90-rwd",
     "type": "car",
@@ -5561,7 +5588,8 @@
       "weight",
       "acceleration",
       "noise",
-      "braking"
+      "braking",
+      "1000-km"
     ]
   },
   {
