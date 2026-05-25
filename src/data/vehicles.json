@@ -3096,6 +3096,18 @@
     ]
   },
   {
+    "name": "Kia PV5 Passenger",
+    "slug": "kia-pv5-passenger",
+    "type": "van",
+    "tests": [
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
     "name": "Kia Soul 30 kWh",
     "slug": "kia-soul-30-kwh",
     "type": "car",
@@ -5173,7 +5185,8 @@
       "acceleration",
       "noise",
       "braking",
-      "range"
+      "range",
+      "1000-km"
     ]
   },
   {
