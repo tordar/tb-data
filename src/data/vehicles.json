@@ -2369,6 +2369,16 @@
     ]
   },
   {
+    "name": "Ford Puma 2025",
+    "slug": "ford-puma-2025",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
     "name": "GAC Aion ES",
     "slug": "gac-aion-es",
     "type": "car",
@@ -5033,6 +5043,7 @@
     "tests": [
       "weight",
       "acceleration",
+      "noise",
       "braking",
       "range",
       "1000-km"
