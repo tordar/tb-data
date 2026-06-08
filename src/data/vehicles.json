@@ -116,6 +116,14 @@
     ]
   },
   {
+    "name": "2015 Kia Soul 27 kWh (new battery)",
+    "slug": "2015-kia-soul-27-kwh-new-battery",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2015 VW e-Golf 24 kWh",
     "slug": "2015-vw-e-golf-24-kwh",
     "type": "car",
@@ -1174,6 +1182,14 @@
     "type": "car",
     "tests": [
       "zero-mile"
+    ]
+  },
+  {
+    "name": "2025 Ford Puma",
+    "slug": "2025-ford-puma",
+    "type": "car",
+    "tests": [
+      "sunday"
     ]
   },
   {
@@ -2369,6 +2385,15 @@
     ]
   },
   {
+    "name": "Ford Puma",
+    "slug": "ford-puma",
+    "type": "car",
+    "tests": [
+      "banana",
+      "weight"
+    ]
+  },
+  {
     "name": "Ford Puma 2025",
     "slug": "ford-puma-2025",
     "type": "car",
@@ -3164,6 +3189,15 @@
       "noise",
       "range",
       "1000-km"
+    ]
+  },
+  {
+    "name": "Lexus RZ 550e F Sport",
+    "slug": "lexus-rz-550e-f-sport",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
     ]
   },
   {
@@ -5936,7 +5970,6 @@
     "type": "car",
     "tests": [
       "weight",
-      "acceleration",
       "noise"
     ]
   },
