@@ -1189,7 +1189,8 @@
     "slug": "2025-ford-puma",
     "type": "car",
     "tests": [
-      "sunday"
+      "sunday",
+      "1000-km"
     ]
   },
   {
@@ -3139,7 +3140,8 @@
       "weight",
       "acceleration",
       "noise",
-      "range"
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -3197,7 +3199,9 @@
     "type": "car",
     "tests": [
       "acceleration",
-      "noise"
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -6314,6 +6318,15 @@
       "weight",
       "range",
       "1000-km"
+    ]
+  },
+  {
+    "name": "Xpeng X9 Performance",
+    "slug": "xpeng-x9-performance",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
     ]
   },
   {
