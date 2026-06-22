@@ -1352,6 +1352,14 @@
     ]
   },
   {
+    "name": "2026 Xpeng X9 Performance",
+    "slug": "2026-xpeng-x9-performance",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "Audi A6 Avant e-tron Quattro",
     "slug": "audi-a6-avant-e-tron-quattro",
     "type": "car",
@@ -6279,6 +6287,15 @@
     ]
   },
   {
+    "name": "Xpeng G6 Performance 2025",
+    "slug": "xpeng-g6-performance-2025",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
     "name": "Xpeng G9",
     "slug": "xpeng-g9",
     "type": "car",
@@ -6323,10 +6340,21 @@
   {
     "name": "Xpeng X9 Performance",
     "slug": "xpeng-x9-performance",
+    "type": "van",
+    "tests": [
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "Xpeng X9 Performance 2026",
+    "slug": "xpeng-x9-performance-2026",
     "type": "car",
     "tests": [
-      "acceleration",
-      "noise"
+      "1000-km"
     ]
   },
   {
