@@ -1344,6 +1344,14 @@
     ]
   },
   {
+    "name": "2025 Xpeng G6 Performance",
+    "slug": "2025-xpeng-g6-performance",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2026 BMW iX3 50 xDrive",
     "slug": "2026-bmw-ix3-50-xdrive",
     "type": "car",
@@ -6291,8 +6299,11 @@
     "slug": "xpeng-g6-performance-2025",
     "type": "car",
     "tests": [
+      "weight",
       "acceleration",
-      "noise"
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -6313,6 +6324,22 @@
       "noise",
       "range",
       "1000-km"
+    ]
+  },
+  {
+    "name": "Xpeng G9 Performance 2025",
+    "slug": "xpeng-g9-performance-2025",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
+    "name": "Xpeng G9 Performance 2026",
+    "slug": "xpeng-g9-performance-2026",
+    "type": "car",
+    "tests": [
+      "acceleration"
     ]
   },
   {
@@ -6344,8 +6371,6 @@
     "tests": [
       "banana",
       "weight",
-      "acceleration",
-      "noise",
       "range"
     ]
   },
@@ -6354,6 +6379,8 @@
     "slug": "xpeng-x9-performance-2026",
     "type": "car",
     "tests": [
+      "acceleration",
+      "noise",
       "1000-km"
     ]
   },
