@@ -3310,7 +3310,7 @@
   {
     "name": "Maxus Mifa 9",
     "slug": "maxus-mifa-9",
-    "type": "car",
+    "type": "van",
     "tests": [
       "banana",
       "weight",
@@ -6331,15 +6331,11 @@
     "slug": "xpeng-g9-performance-2025",
     "type": "car",
     "tests": [
-      "noise"
-    ]
-  },
-  {
-    "name": "Xpeng G9 Performance 2026",
-    "slug": "xpeng-g9-performance-2026",
-    "type": "car",
-    "tests": [
-      "acceleration"
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
@@ -6399,6 +6395,26 @@
     "tests": [
       "banana",
       "weight",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Zeekr 7GT",
+    "slug": "zeekr-7gt",
+    "type": "car",
+    "tests": [
+      "banana"
+    ]
+  },
+  {
+    "name": "Zeekr 7GT Privelege AWD",
+    "slug": "zeekr-7gt-privelege-awd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
       "noise",
       "range",
       "1000-km"
