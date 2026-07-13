@@ -3008,6 +3008,14 @@
     ]
   },
   {
+    "name": "Kia EV5",
+    "slug": "kia-ev5",
+    "type": "car",
+    "tests": [
+      "banana"
+    ]
+  },
+  {
     "name": "Kia EV6",
     "slug": "kia-ev6",
     "type": "car",
@@ -6409,8 +6417,8 @@
     ]
   },
   {
-    "name": "Zeekr 7GT Privelege AWD",
-    "slug": "zeekr-7gt-privelege-awd",
+    "name": "Zeekr 7GT Privilege AWD",
+    "slug": "zeekr-7gt-privilege-awd",
     "type": "car",
     "tests": [
       "weight",
