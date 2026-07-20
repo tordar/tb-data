@@ -3016,6 +3016,16 @@
     ]
   },
   {
+    "name": "Kia EV5 Long Range FWD",
+    "slug": "kia-ev5-long-range-fwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Kia EV6",
     "slug": "kia-ev6",
     "type": "car",
@@ -3222,6 +3232,7 @@
     "slug": "lexus-rz-550e-f-sport",
     "type": "car",
     "tests": [
+      "weight",
       "acceleration",
       "noise",
       "range",
