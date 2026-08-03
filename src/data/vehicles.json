@@ -1352,6 +1352,15 @@
     ]
   },
   {
+    "name": "2026 Audi Q6 e-tron Quattro",
+    "slug": "2026-audi-q6-e-tron-quattro",
+    "type": "car",
+    "tests": [
+      "weight",
+      "range"
+    ]
+  },
+  {
     "name": "2026 BMW iX3 50 xDrive",
     "slug": "2026-bmw-ix3-50-xdrive",
     "type": "car",
@@ -6425,6 +6434,17 @@
     "type": "car",
     "tests": [
       "banana"
+    ]
+  },
+  {
+    "name": "Zeekr 7GT Core RWD",
+    "slug": "zeekr-7gt-core-rwd",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
     ]
   },
   {
