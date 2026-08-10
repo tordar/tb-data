@@ -1377,6 +1377,14 @@
     ]
   },
   {
+    "name": "2026 Zeekr 7GT Core RWD",
+    "slug": "2026-zeekr-7gt-core-rwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "Audi A6 Avant e-tron Quattro",
     "slug": "audi-a6-avant-e-tron-quattro",
     "type": "car",
@@ -3733,6 +3741,17 @@
       "acceleration",
       "noise",
       "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes GLC 400",
+    "slug": "mercedes-glc-400",
+    "type": "car",
+    "tests": [
+      "banana",
+      "weight",
       "range",
       "1000-km"
     ]
@@ -6444,7 +6463,8 @@
       "weight",
       "acceleration",
       "noise",
-      "range"
+      "range",
+      "1000-km"
     ]
   },
   {
