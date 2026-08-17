@@ -1369,6 +1369,14 @@
     ]
   },
   {
+    "name": "2026 Mercedes GLC 400",
+    "slug": "2026-mercedes-glc-400",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2026 Xpeng X9 Performance",
     "slug": "2026-xpeng-x9-performance",
     "type": "car",
@@ -3746,12 +3754,42 @@
     ]
   },
   {
+    "name": "Mercedes GLB 350",
+    "slug": "mercedes-glb-350",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Mercedes GLB 350 4Matic",
+    "slug": "mercedes-glb-350-4matic",
+    "type": "car",
+    "tests": [
+      "banana",
+      "weight",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes GLB 400",
+    "slug": "mercedes-glb-400",
+    "type": "car",
+    "tests": [
+      "noise"
+    ]
+  },
+  {
     "name": "Mercedes GLC 400",
     "slug": "mercedes-glc-400",
     "type": "car",
     "tests": [
       "banana",
       "weight",
+      "acceleration",
+      "noise",
+      "braking",
       "range",
       "1000-km"
     ]
