@@ -5675,6 +5675,19 @@
     ]
   },
   {
+    "name": "Tesla Model Y Standard",
+    "slug": "tesla-model-y-standard",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Toyota bZ4X",
     "slug": "toyota-bz4x",
     "type": "car",
@@ -6443,6 +6456,22 @@
       "weight",
       "range",
       "1000-km"
+    ]
+  },
+  {
+    "name": "Xpeng P7+ LR",
+    "slug": "xpeng-p7-lr",
+    "type": "car",
+    "tests": [
+      "acceleration"
+    ]
+  },
+  {
+    "name": "Xpeng P7+ LR RWD",
+    "slug": "xpeng-p7-lr-rwd",
+    "type": "car",
+    "tests": [
+      "noise"
     ]
   },
   {
