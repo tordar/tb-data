@@ -1377,6 +1377,14 @@
     ]
   },
   {
+    "name": "2026 Xpeng P7+ LR RWD",
+    "slug": "2026-xpeng-p7-lr-rwd",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2026 Xpeng X9 Performance",
     "slug": "2026-xpeng-x9-performance",
     "type": "car",
@@ -3011,6 +3019,7 @@
     "slug": "kia-ev4",
     "type": "car",
     "tests": [
+      "banana",
       "noise"
     ]
   },
@@ -6471,7 +6480,10 @@
     "slug": "xpeng-p7-lr-rwd",
     "type": "car",
     "tests": [
-      "noise"
+      "weight",
+      "noise",
+      "range",
+      "1000-km"
     ]
   },
   {
