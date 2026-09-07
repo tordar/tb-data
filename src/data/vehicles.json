@@ -4419,6 +4419,14 @@
     ]
   },
   {
+    "name": "Nissan Leaf 2026",
+    "slug": "nissan-leaf-2026",
+    "type": "car",
+    "tests": [
+      "banana"
+    ]
+  },
+  {
     "name": "Nissan Leaf 40 kWh",
     "slug": "nissan-leaf-40-kwh",
     "type": "car",
@@ -4432,6 +4440,18 @@
   {
     "name": "Nissan Leaf 62 kWh",
     "slug": "nissan-leaf-62-kwh",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Nissan Leaf 75 kWh",
+    "slug": "nissan-leaf-75-kwh",
     "type": "car",
     "tests": [
       "weight",
@@ -6465,6 +6485,14 @@
       "weight",
       "range",
       "1000-km"
+    ]
+  },
+  {
+    "name": "Xpeng P7+",
+    "slug": "xpeng-p7",
+    "type": "car",
+    "tests": [
+      "banana"
     ]
   },
   {
