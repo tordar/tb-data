@@ -1903,6 +1903,7 @@
       "banana",
       "weight",
       "acceleration",
+      "noise",
       "braking",
       "range",
       "1000-km"
@@ -4457,6 +4458,23 @@
       "weight",
       "acceleration",
       "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Nissan Micra",
+    "slug": "nissan-micra",
+    "type": "car",
+    "tests": [
+      "weight"
+    ]
+  },
+  {
+    "name": "Nissan Micra 55 kWh",
+    "slug": "nissan-micra-55-kwh",
+    "type": "car",
+    "tests": [
       "range",
       "1000-km"
     ]
