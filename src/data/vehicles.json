@@ -6641,5 +6641,17 @@
       "noise",
       "range"
     ]
+  },
+  {
+    "name": "Zeekr X LR RWD 2026",
+    "slug": "zeekr-x-lr-rwd-2026",
+    "type": "car",
+    "tests": [
+      "banana",
+      "weight",
+      "acceleration",
+      "noise",
+      "range"
+    ]
   }
 ]
