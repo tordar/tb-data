@@ -3428,6 +3428,15 @@
     ]
   },
   {
+    "name": "Mercedes CLA 350 4Matic SB",
+    "slug": "mercedes-cla-350-4matic-sb",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
     "name": "Mercedes EQA",
     "slug": "mercedes-eqa",
     "type": "car",
