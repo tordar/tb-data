@@ -2111,7 +2111,7 @@
       "397"
     ],
     [
-      "Tesla Model S P85 (MF)",
+      "2013 Tesla Model S P85 (MF)",
       "Dry",
       "10",
       "Frigus EV Ice 3",
@@ -2128,7 +2128,7 @@
       ""
     ],
     [
-      "Tesla Model S P85 (MF)",
+      "2013 Tesla Model S P85 (MF)",
       "Dry",
       "0",
       "Frigus EV Ice 3",
@@ -2859,7 +2859,7 @@
       "555"
     ],
     [
-      "Tesla Model S P85 (MF)",
+      "2013 Tesla Model S P85 (MF)",
       "Dry",
       "19",
       "Goodyear Eagle RS-A1",
@@ -2876,7 +2876,7 @@
       ""
     ],
     [
-      "Tesla Model S P85 (MF)",
+      "2013 Tesla Model S P85 (MF)",
       "Dry",
       "17",
       "Goodyear Eagle RS-A1",
@@ -11680,6 +11680,108 @@
       "179",
       "14",
       "766"
+    ],
+    [
+      "Mercedes CLA 350 4Matic SB",
+      "Dry",
+      "16",
+      "Pirelli Cinturato P7",
+      "Summer",
+      "225/45-18",
+      "255/40-18",
+      "90",
+      "133",
+      "88,6",
+      "666",
+      "414",
+      "433",
+      "18",
+      "1443"
+    ],
+    [
+      "Mercedes CLA 350 4Matic SB",
+      "Dry",
+      "16",
+      "Pirelli Cinturato P7",
+      "Summer",
+      "225/45-18",
+      "255/40-18",
+      "120",
+      "176",
+      "88,6",
+      "503",
+      "312",
+      "327",
+      "18",
+      "1090"
+    ],
+    [
+      "Kia EV2 Long Range",
+      "Dry",
+      "15",
+      "Hankook iOn Evo",
+      "Summer",
+      "215/50-18",
+      "215/50-18",
+      "90",
+      "142",
+      "58",
+      "408",
+      "253",
+      "265",
+      "28",
+      "568"
+    ],
+    [
+      "Kia EV2 Long Range",
+      "Dry",
+      "15",
+      "Hankook iOn Evo",
+      "Summer",
+      "215/50-18",
+      "215/50-18",
+      "120",
+      "209",
+      "58",
+      "278",
+      "173",
+      "181",
+      "28",
+      "387"
+    ],
+    [
+      "2013 Tesla Model S P85 (MF)",
+      "Dry",
+      "13",
+      "Falken Azenis FK520",
+      "Summer",
+      "245/45-19",
+      "245/45-19",
+      "90",
+      "166",
+      "58,2",
+      "350",
+      "217",
+      "228",
+      "49",
+      "279"
+    ],
+    [
+      "2013 Tesla Model S P85 (MF)",
+      "Dry",
+      "13",
+      "Falken Azenis FK520",
+      "Summer",
+      "245/45-19",
+      "245/45-19",
+      "120",
+      "223",
+      "58,2",
+      "261",
+      "162",
+      "170",
+      "49",
+      "208"
     ]
   ]
 }

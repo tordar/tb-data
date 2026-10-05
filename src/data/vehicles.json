@@ -48,7 +48,9 @@
     "tests": [
       "acceleration",
       "braking",
+      "range",
       "sunday",
+      "1000-km",
       "degradation"
     ]
   },
@@ -1377,6 +1379,14 @@
     ]
   },
   {
+    "name": "2026 Tesla Model Y Standard",
+    "slug": "2026-tesla-model-y-standard",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
     "name": "2026 Xpeng P7+ LR RWD",
     "slug": "2026-xpeng-p7-lr-rwd",
     "type": "car",
@@ -1695,6 +1705,14 @@
     "type": "car",
     "tests": [
       "range"
+    ]
+  },
+  {
+    "name": "BAW Pony",
+    "slug": "baw-pony",
+    "type": "car",
+    "tests": [
+      "weight"
     ]
   },
   {
@@ -2989,6 +3007,26 @@
     ]
   },
   {
+    "name": "Kia EV2",
+    "slug": "kia-ev2",
+    "type": "car",
+    "tests": [
+      "banana"
+    ]
+  },
+  {
+    "name": "Kia EV2 Long Range",
+    "slug": "kia-ev2-long-range",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
     "name": "Kia EV3",
     "slug": "kia-ev3",
     "type": "car",
@@ -3432,8 +3470,19 @@
     "slug": "mercedes-cla-350-4matic-sb",
     "type": "car",
     "tests": [
+      "weight",
       "acceleration",
-      "noise"
+      "noise",
+      "range",
+      "1000-km"
+    ]
+  },
+  {
+    "name": "Mercedes CLA Shooting Brake",
+    "slug": "mercedes-cla-shooting-brake",
+    "type": "car",
+    "tests": [
+      "banana"
     ]
   },
   {
@@ -5388,6 +5437,7 @@
     "slug": "tesla-model-3-standard",
     "type": "car",
     "tests": [
+      "weight",
       "acceleration",
       "noise",
       "braking",
@@ -6660,7 +6710,8 @@
       "weight",
       "acceleration",
       "noise",
-      "range"
+      "range",
+      "1000-km"
     ]
   }
 ]
