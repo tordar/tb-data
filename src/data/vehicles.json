@@ -5921,6 +5921,18 @@
     ]
   },
   {
+    "name": "Volvo EX60 Twin Ultra P10",
+    "slug": "volvo-ex60-twin-ultra-p10",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise",
+      "braking",
+      "range"
+    ]
+  },
+  {
     "name": "Volvo EX90",
     "slug": "volvo-ex90",
     "type": "car",
