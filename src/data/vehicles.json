@@ -51,7 +51,8 @@
       "range",
       "sunday",
       "1000-km",
-      "degradation"
+      "degradation",
+      "zero-mile"
     ]
   },
   {
@@ -1381,6 +1382,14 @@
   {
     "name": "2026 Tesla Model Y Standard",
     "slug": "2026-tesla-model-y-standard",
+    "type": "car",
+    "tests": [
+      "sunday"
+    ]
+  },
+  {
+    "name": "2026 Volvo EX60 Twin Ultra P10",
+    "slug": "2026-volvo-ex60-twin-ultra-p10",
     "type": "car",
     "tests": [
       "sunday"
@@ -5929,7 +5938,8 @@
       "acceleration",
       "noise",
       "braking",
-      "range"
+      "range",
+      "1000-km"
     ]
   },
   {
