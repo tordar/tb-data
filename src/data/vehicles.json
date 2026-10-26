@@ -6176,6 +6176,15 @@
     ]
   },
   {
+    "name": "VW ID Polo",
+    "slug": "vw-id-polo",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
     "name": "VW ID.3",
     "slug": "vw-id3",
     "type": "car",
