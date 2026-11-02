@@ -3443,6 +3443,16 @@
     ]
   },
   {
+    "name": "Mazda CX-6e",
+    "slug": "mazda-cx-6e",
+    "type": "car",
+    "tests": [
+      "weight",
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
     "name": "Mazda MX-30",
     "slug": "mazda-mx-30",
     "type": "car",
@@ -5930,6 +5940,14 @@
     ]
   },
   {
+    "name": "Volvo EX60",
+    "slug": "volvo-ex60",
+    "type": "car",
+    "tests": [
+      "banana"
+    ]
+  },
+  {
     "name": "Volvo EX60 Twin Ultra P10",
     "slug": "volvo-ex60-twin-ultra-p10",
     "type": "car",
@@ -6180,8 +6198,19 @@
     "slug": "vw-id-polo",
     "type": "car",
     "tests": [
+      "banana",
+      "weight",
       "acceleration",
-      "noise"
+      "noise",
+      "range"
+    ]
+  },
+  {
+    "name": "VW ID Polo 56 kWh",
+    "slug": "vw-id-polo-56-kwh",
+    "type": "car",
+    "tests": [
+      "1000-km"
     ]
   },
   {
