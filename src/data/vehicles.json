@@ -1372,6 +1372,15 @@
     ]
   },
   {
+    "name": "2026 Mercedes EQS 500 4Matic",
+    "slug": "2026-mercedes-eqs-500-4matic",
+    "type": "car",
+    "tests": [
+      "acceleration",
+      "noise"
+    ]
+  },
+  {
     "name": "2026 Mercedes GLC 400",
     "slug": "2026-mercedes-glc-400",
     "type": "car",
@@ -3450,6 +3459,14 @@
       "weight",
       "acceleration",
       "noise"
+    ]
+  },
+  {
+    "name": "Mazda CX-6e 78 kWh",
+    "slug": "mazda-cx-6e-78-kwh",
+    "type": "car",
+    "tests": [
+      "range"
     ]
   },
   {
